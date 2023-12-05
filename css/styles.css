@@ -87,6 +87,14 @@ main {
   }
 }
 
+.navbar-nav .nav-link.show,
+.navbar-nav .nav-link.active{
+  padding: 0 8px;
+  color: #ea8172;
+  border: 2px solid #ea8172;
+  border-radius: 10px;
+}
+
 /* Color de boton de navbar */
 .navbar-toggler{
   border-color: #ea8172;
