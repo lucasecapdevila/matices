@@ -76,7 +76,7 @@ main {
 
 @media screen and (min-width: 992px) {
   .logo-navbar{
-    width: 6%;
+    width: 4%;
   }
 }
 
@@ -89,7 +89,7 @@ main {
 
 .navbar-nav .nav-link.show,
 .navbar-nav .nav-link.active{
-  padding: 0 8px;
+  padding: 6px 12px;
   color: #ea8172;
   border: 2px solid #ea8172;
   border-radius: 10px;
@@ -143,6 +143,12 @@ main {
 @media screen and (max-width: 991px) {
   i.fa-heart,
   i.fa-user{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .nav-item p{
     display: none;
   }
 }
