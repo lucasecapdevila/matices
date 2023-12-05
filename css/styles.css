@@ -138,3 +138,11 @@ main {
     display: none;
   }
 }
+
+/* Borrar íconos en mobile y tablet y mostrar en desktop */
+@media screen and (max-width: 991px) {
+  i.fa-heart,
+  i.fa-user{
+    display: none;
+  }
+}
