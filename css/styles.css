@@ -80,10 +80,31 @@ main {
   }
 }
 
+/* Desaparecer título en mobile */
+@media screen and (max-width: 767px) {
+  .navbar-brand{
+    display: none;
+  }
+}
+
+/* Color de boton de navbar */
+.navbar-toggler{
+  border-color: #ea8172;
+  border-width: 2px;
+}
+
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+.navbar-toggler-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(235, 126, 112)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 /* Evitar que cambie a blanco al hacer hover */
 .navbar-brand:hover,
 .nav-link:hover{
-  color: #ea8172;
+  color: #eb7e70
 }
 
 /* Color de barra de búsqueda */
