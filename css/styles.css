@@ -80,13 +80,6 @@ main {
   }
 }
 
-/* Desaparecer título en mobile */
-@media screen and (max-width: 767px) {
-  .navbar-brand{
-    display: none;
-  }
-}
-
 .navbar-nav .nav-link.show,
 .navbar-nav .nav-link.active{
   padding: 6px 12px;
@@ -130,27 +123,6 @@ main {
 :not(.btn-check)+.bg-AzulClaro:hover,
 :not(.btn-check)+.bg-AzulClaro:focus-visible{
   background-color: #0d6399;
-}
-
-/* Barra de búsqueda en mobile */
-@media screen and (max-width: 767px) {
-  .form-control{
-    display: none;
-  }
-}
-
-/* Borrar íconos en mobile y tablet y mostrar en desktop */
-@media screen and (max-width: 991px) {
-  i.fa-heart,
-  i.fa-user{
-    display: none;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .nav-item p{
-    display: none;
-  }
 }
 
 /*----- Efecto hover -----*/
