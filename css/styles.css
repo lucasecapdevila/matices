@@ -111,3 +111,22 @@ main {
 #inputBuscarNavbar:focus{
   background-color: #0b4e77;
 }
+
+/* Color de botón de búsqueda */
+.bg-AzulClaro{
+  background-color: #0d6399;
+}
+
+/* Color de botón de busqueda cuando tiene pseudoclases */
+:not(.btn-check)+.bg-AzulClaro:active,
+:not(.btn-check)+.bg-AzulClaro:hover,
+:not(.btn-check)+.bg-AzulClaro:focus-visible{
+  background-color: #0d6399;
+}
+
+/* Barra de búsqueda en mobile */
+@media screen and (max-width: 767px) {
+  .form-control{
+    display: none;
+  }
+}
