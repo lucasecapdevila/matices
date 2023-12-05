@@ -60,3 +60,33 @@ main {
 .bg-RosaMatices {
   background-color: #ea8172;
 }
+
+/* Tamaños responsive para logo */
+@media screen and (max-width: 767px) {
+  .logo-navbar{
+    width: 15%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .logo-navbar{
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .logo-navbar{
+    width: 6%;
+  }
+}
+
+/* Evitar que cambie a blanco al hacer hover */
+.navbar-brand:hover,
+.nav-link:hover{
+  color: #ea8172;
+}
+
+/* Color de barra de búsqueda */
+#inputBuscarNavbar:focus{
+  background-color: #0b4e77;
+}
