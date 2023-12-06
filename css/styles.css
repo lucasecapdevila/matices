@@ -68,6 +68,19 @@ footer{
   background-color: #0e3361;
 }
 
+/* Tamaños de logo en footer */
+@media screen and (max-width: 767px) {
+  .logo-footer{
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .logo-footer{
+    width: 50%;
+  }
+}
+
 .borde-footer{
   border-top: 1px solid #ea8172;
 }
