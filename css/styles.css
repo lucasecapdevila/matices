@@ -60,3 +60,14 @@ main {
 .bg-RosaMatices {
   background-color: #ea8172;
 }
+
+
+
+/*! FOOTER */
+footer{
+  background-color: #0e3361;
+}
+
+.borde-footer{
+  border-top: 1px solid #ea8172;
+}
