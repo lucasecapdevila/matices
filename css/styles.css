@@ -81,6 +81,19 @@ footer{
   }
 }
 
+@media screen and (min-width: 992px) {
+  .logo-footer{
+    width: 20%;
+  }
+}
+
 .borde-footer{
   border-top: 1px solid #ea8172;
+}
+
+/* Ajusta el ancho de sección "matices" */
+@media screen and (min-width: 991px) {
+  .ancho-matices{
+    width: 70%;
+  }
 }
