@@ -60,3 +60,8 @@ main {
 .bg-RosaMatices {
   background-color: #ea8172;
 }
+
+.bg-verdePrecio{
+  background-color: #3BBC95;
+  pointer-events: none;
+}
