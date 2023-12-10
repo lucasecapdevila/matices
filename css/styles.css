@@ -65,3 +65,38 @@ main {
   background-color: #3BBC95;
   pointer-events: none;
 }
+
+/*! Página detalles */
+.inputCantidad{
+  width: 10%;
+  background-color: #6295d450;
+}
+
+.btnCantidad{
+  background: none;
+  border: 2px solid #0e3361;
+  /* padding: 0 5px 3px 5px; */
+}
+
+.btnAgregarAlCarrito{
+  background-color: #c96e67;
+  border: none;
+  pointer-events: none;
+}
+
+.btnAgregarAlCarrito:hover,
+.btnAgregarAlCarrito:active{
+  background-color: #ea8172;
+}
+
+.btnAgregarAListaDeDeseos{
+  border: 2px solid #ea8172;
+  color: #ea8172;
+}
+
+.btnAgregarAListaDeDeseos:hover,
+.btnAgregarAListaDeDeseos:active{
+  border: none;
+  background: #c96e67;
+  color: #f8f9fa;
+}
