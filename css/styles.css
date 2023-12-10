@@ -100,3 +100,11 @@ main {
   background: #c96e67;
   color: #f8f9fa;
 }
+
+@media screen and (min-width: 768px) {
+  .fondoTitulo{
+    background-color: #6295d450;
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+}
