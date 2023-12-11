@@ -67,6 +67,10 @@ main {
 }
 
 /*! Página detalles */
+.textoDescripcion{
+  text-align: justify;
+}
+
 .inputCantidad{
   width: 10%;
   background-color: #6295d450;
@@ -102,9 +106,26 @@ main {
 }
 
 @media screen and (min-width: 768px) {
-  .fondoTitulo{
+  .fondoAzul{
     background-color: #6295d450;
     padding-top: 10%;
     padding-bottom: 10%;
   }
+}
+
+.caja{
+  height: 500px;
+}
+
+.caja1{
+  background: red;
+}
+.caja2{
+  background: blue;
+}
+.caja3{
+  background: green;
+}
+.caja4{
+  background: yellow;
 }
