@@ -60,3 +60,115 @@ main {
 .bg-RosaMatices {
   background-color: #ea8172;
 }
+
+/* Tamaños responsive para logo */
+@media screen and (max-width: 767px) {
+  .logo-navbar{
+    width: 15%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .logo-navbar{
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .logo-navbar{
+    width: 4%;
+  }
+}
+
+.navbar-nav .nav-link.show,
+.navbar-nav .nav-link.active{
+  padding: 6px 12px;
+  color: #ea8172;
+  border: 2px solid #ea8172;
+  border-radius: 10px;
+}
+
+/* Color de boton de navbar */
+.navbar-toggler{
+  border-color: #ea8172;
+  border-width: 2px;
+}
+
+.navbar-toggler:focus{
+  box-shadow: none;
+}
+
+.navbar-toggler-icon{
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(235, 126, 112)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='3' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Evitar que cambie a blanco al hacer hover */
+.navbar-brand:hover,
+.nav-link:hover{
+  color: #eb7e70;
+}
+
+/* Color de barra de búsqueda */
+#inputBuscarNavbar:focus{
+  background-color: #0b4e77;
+}
+
+/* Color de botón de búsqueda */
+.bg-AzulClaro{
+  background-color: #0d6399;
+}
+
+/* Color de botón de busqueda cuando tiene pseudoclases */
+:not(.btn-check)+.bg-AzulClaro:active,
+:not(.btn-check)+.bg-AzulClaro:hover,
+:not(.btn-check)+.bg-AzulClaro:focus-visible{
+  background-color: #0d6399;
+}
+
+/*----- Efecto hover -----*/
+/* Links en navbar */
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #eb7e70;
+  height: 4px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
+  right: 0;
+}
+
+/* Iconos en navbar */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
