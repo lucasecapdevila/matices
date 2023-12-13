@@ -318,3 +318,49 @@ footer {
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
 }
+
+
+/*! Carousel */
+.banner1{
+  
+  background-position: top center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* @media screen and (max-width: 767px) {
+  .carousel-inner:first-child{
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .carousel-inner:first-child{
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .carousel-inner:first-child{
+    padding: 100px;
+  }
+} */
