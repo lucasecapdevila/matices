@@ -35,49 +35,51 @@
     <link rel="icon" href="../img/Icono_Matices_Rosa.svg" />
     <title>Matices</title>
   </head>
-  <body>
-    <header></header>
-
-    <main class="container-fluid p-0">
-      <!-- <div class="row mx-0">
-        <div class="col-md-6 px-md-0 caja1">1</div>
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        .
-        <div class="col-md-6 d-lg-flex flex-lg-column row mx-0 px-0">
-          <div class="row mx-0 px-md-0 col-md-12 d-lg-flex flex-lg-column px-0">
-            <div class="col-md-12 mx-0 caja2">2</div>
+  <body class="bg-body-detalle">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-AzulOscuro" data-bs-theme="dark">
+        <div class="container-fluid px-3 px-md-4 px-lg-5">
+          <a class="m-0 tx-titulo tx-RosaMatices logo-navbar" href="../index.html">
+            <img src="../img/Icono_Matices_Rosa.svg" class="img-fluid" alt="Logo Matices" />
+          </a>
+          <a class="m-0 fs-2 navbar-brand d-none d-md-block tx-titulo tx-RosaMatices" href="../index.html">matices</a>
+          <form class="d-flex ms-auto me-4 order-lg-1" role="search">
+            <div class="input-group">
+              <input type="search" class="form-control d-none d-md-block bg-AzulMatices border border-0" id="inputBuscarNavbar" placeholder="Busca lo que desees..." aria-label="Busca lo que desees..." aria-describedby="botonBuscar">
+              <button class="btn btn-outline-secondary bg-AzulClaro border border-0" type="button" id="botonBuscar"><i class="fa-solid fa-magnifying-glass text-light"></i></button>
+            </div>
+          </form>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarLibreriaMatices" aria-controls="navbarLibreriaMatices" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-center mx-lg-5 px-lg-5" id="navbarLibreriaMatices">
+            <ul class="navbar-nav me-auto my-2 mb-lg-0">
+              <li class="nav-item ms-auto mb-2 m-lg-0">
+                <a class="hvr-underline-from-left nav-link tx-RosaMatices" href="../index.html">Inicio</a>
+              </li>
+              <li class="nav-item ms-auto mb-2">
+                <a class="hvr-underline-from-left nav-link mx-lg-3 tx-RosaMatices" href="#">Productos</a>
+              </li>
+              <li class="nav-item ms-auto mb-2">
+                <a class="hvr-underline-from-left nav-link tx-RosaMatices" href="#">Nosotros</a>
+              </li>
+            </ul>
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="hvr-grow nav-item ms-auto mb-4 mb-lg-0 me-lg-4">
+                <i class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"></i>
+                <p class="m-0 d-lg-none tx-RosaMatices">Favoritos</p>
+              </li>
+              <li class="hvr-grow nav-item ms-auto">
+                <i class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"></i>
+                <p class="m-0 d-lg-none tx-RosaMatices">Iniciar sesión</p>
+              </li>
+            </ul>
           </div>
-          <div class="col-md-12 caja3">3</div>
-          <div class="col-md-12 caja4">4</div>
         </div>
-      </div> -->
+      </nav>
+    </header>
 
+    <main class="container p-0">
       <section class="row mx-0">
         <!-- Contenedor imágen del producto -->
         <div class="col-md-6 px-0">
@@ -258,7 +260,142 @@
       </section>
     </main>
 
-    <footer></footer>
+    <footer>
+      <section
+        class="w-50 mx-auto py-1 d-flex align-items-center justify-content-center"
+      >
+        <a
+          class="link-underline link-underline-opacity-0 d-flex align-items-center justify-content-center w-50"
+          href="../index.html"
+        >
+          <img
+            src="../img/Icono_Matices_Rosa.svg"
+            class="img-fluid logo-footer"
+            alt="Logo Matices"
+          />
+          <span class="m-0 fs-1 text-light tx-titulo">matices</span>
+        </a>
+      </section>
+
+      <!-- Columnas -->
+      <section
+        class="text-center mx-4 borde-footer d-md-flex align-items-md-baseline justify-content-md-around justify-content-lg-center px-lg-5"
+      >
+        <!-- matices -->
+        <div
+          class="my-4 container d-lg-flex flex-lg-column align-items-lg-start ancho-matices"
+        >
+          <h2 class="mb-3 tx-titulo tx-RosaMatices">matices</h2>
+          <ul class="list-unstyled row">
+            <!--! Revisar rutas dependiendo de la página en que estemos ubicados -->
+
+            <li class="mb-2 col-12 d-lg-flex justify-content-lg-start">
+              <a
+                class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
+                href="../index.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="mb-2 col-12 d-lg-flex justify-content-lg-start">
+              <a
+                class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
+                href="./pages/nosotros.html"
+                >Quiénes somos</a
+              >
+            </li>
+            <li class="col-12 d-lg-flex justify-content-lg-start">
+              <a
+                class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
+                href="./pages/contacto.html"
+                >Contacto</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Social -->
+        <div class="mb-4 container">
+          <h2
+            class="tx-titulo tx-RosaMatices d-lg-flex flex-lg-column align-items-lg-start mb-3"
+          >
+            Social
+          </h2>
+          <ul
+            class="list-unstyled row justify-content-center justify-content-lg-start"
+          >
+            <li class="col-2 col-md-4 col-lg-1 mb-md-3 me-lg-4">
+              <a
+                class="text-light fs-2"
+                href="https://www.facebook.com/"
+                target="_blank"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+            </li>
+            <li class="col-2 col-md-4 col-lg-1 mb-md-3 me-md-1 me-lg-4">
+              <a
+                class="text-light fs-2"
+                href="https://www.instagram.com/"
+                target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li class="col-2 col-md-4 col-lg-1 me-lg-4">
+              <a
+                class="text-light fs-2"
+                href="https://twitter.com/"
+                target="_blank"
+                ><i class="fa-brands fa-twitter"></i
+              ></a>
+            </li>
+            <li class="col-2 col-md-4 col-lg-1 me-lg-4">
+              <a
+                class="text-light fs-2"
+                href="https://www.youtube.com/"
+                target="_blank"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Correción a la columna Contacto -->
+        <article class="container mb-2">
+          <h2 class="tx-titulo tx-RosaMatices text-lg-start">Contacto</h2>
+          <div class="row">
+            <div
+              class="col-12 mb-2 d-flex justify-content-center col-lg-6 justify-content-lg-start"
+            >
+              <i class="bi bi-whatsapp tx-RosaMatices fs-2"> </i>
+              <p class="m-0 ms-2 text-light p-1 pt-lg-2">Whatsapp</p>
+            </div>
+            <div
+              class="col-12 mb-2 d-flex justify-content-center align-items-center col-lg-6 justify-content-lg-start"
+            >
+              <i class="bi bi-envelope tx-RosaMatices fs-2"> </i>
+              <p class="m-0 ms-2 text-light">hola@matices.com</p>
+            </div>
+            <div
+              class="col-12 mb-2 d-flex justify-content-center align-items-center col-lg-6 justify-content-lg-start"
+            >
+              <i class="bi bi-clock tx-RosaMatices fs-2"> </i>
+              <p class="m-0 ms-2 text-light p-1">
+                Lunes a Viernes <br />
+                09:00 a 20:00
+              </p>
+            </div>
+            <div
+              class="col-12 mb-2 d-flex justify-content-center align-items-center col-lg-6 justify-content-lg-start"
+            >
+              <i class="bi bi-telephone tx-RosaMatices fs-2"> </i>
+              <p class="m-0 ms-2 text-light pb-2">+54 381 4646 235</p>
+            </div>
+          </div>
+        </article>
+      </section>
+      <p class="m-0 py-3 text-center text-light bg-RosaMatices">
+        &copy;2023 Matices. Todos los derechos reservados.
+      </p>
+    </footer>
 
     <!-- Font Awesome -->
     <script
