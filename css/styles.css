@@ -318,3 +318,9 @@ footer {
   -webkit-transform: scaleY(1);
   transform: scaleY(1);
 }
+
+/* Boton pagina administracion */
+
+.btn-custom{
+  background: #0e3361;
+}
