@@ -24,3 +24,38 @@ const dibujar = (cursorX, cursorY) => {
   initialX = cursorX;
   initialY = cursorY;
 };
+const mouseDown = (evt) => {
+    evt.preventDefault();
+    if ( evt.changedTouches === undefined) {
+      initialX = evt.offsetX;
+      initialY = evt.offsetY;
+    }else{
+      //evita desfase al dibujar
+      initialX = evt.changedTouches[0].pageX - correccionX;
+      initialY = evt.changedTouches[0].pageY - correccionY;
+    }
+    dibujar(initialX, initialY);
+    mainCanvas.addEventListener("mousemove", mouseMoving);
+    mainCanvas.addEventListener('touchmove', mouseMoving);
+  };
+  
+  const mouseMoving = (evt) => {
+    evt.preventDefault();
+    if ( evt.changedTouches === undefined) {
+      dibujar(evt.offsetX, evt.offsetY);
+    }else{
+      dibujar( evt.changedTouches[0].pageX - correccionX  , evt.changedTouches[0].pageY - correccionY );
+    }
+  };
+  
+  const mouseUp = () => {
+    mainCanvas.removeEventListener("mousemove", mouseMoving);
+    mainCanvas.removeEventListener("touchmove", mouseMoving);
+  };
+  
+  mainCanvas.addEventListener("mousedown", mouseDown);
+  mainCanvas.addEventListener("mouseup", mouseUp);
+  
+  //pantallas tactiles
+  mainCanvas.addEventListener('touchstart', mouseDown);
+  mainCanvas.addEventListener('touchend', mouseUp);
