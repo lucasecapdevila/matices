@@ -79,100 +79,133 @@
       </nav>
     </header>
     <main>
-        <h1>Administración de Usuarios</h1>
-
-  <ul id="listaUsuarios"></ul>
-
-  <form id="formularioUsuario">
-    <label for="nombreUsuario">Nombre de usuario:</label>
-    <input type="text" id="nombreUsuario" required>
+      <!-- Página de Administración -->
+      <div class="container mt-5">
+        <h2>Panel de Administración</h2>
+        <table id="tablaProductos" class="table table-bordered mt-3">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpoTablaProductos"></tbody>
+        </table>
     
-    <label for="correo">Correo electrónico:</label>
-    <input type="email" id="correo" required>
-
-    <button type="button" onclick="agregarUsuario()">Agregar Usuario</button>
-  </form>
-
-  <script>
-    // Datos JSON de ejemplo representando usuarios
-    const datosUsuarios = [
-      { id: 1, nombreUsuario: 'usuario1', correo: 'usuario1@example.com' },
-      { id: 2, nombreUsuario: 'usuario2', correo: 'usuario2@example.com' },
-      { id: 3, nombreUsuario: 'usuario3', correo: 'usuario3@example.com' },
-    ];
-
-    // Función para renderizar la lista de usuarios
-    function renderizarListaUsuarios() {
-      const listaUsuariosElemento = document.getElementById('listaUsuarios');
-      listaUsuariosElemento.innerHTML = '';
-
-      datosUsuarios.forEach(usuario => {
-        const elementoUsuario = document.createElement('li');
-        elementoUsuario.className = 'usuario';
-        elementoUsuario.innerHTML = `
-          <span><strong>ID:</strong> ${usuario.id}</span><br>
-          <span><strong>Nombre de usuario:</strong> ${usuario.nombreUsuario}</span><br>
-          <span><strong>Correo:</strong> ${usuario.correo}</span><br>
-          <button onclick="editarUsuario(${usuario.id})">Editar</button>
-          <button onclick="eliminarUsuario(${usuario.id})">Eliminar</button>
-        `;
-
-        listaUsuariosElemento.appendChild(elementoUsuario);
-      });
-    }
-
-    // Función para agregar un nuevo usuario
-    function agregarUsuario() {
-      const nombreUsuarioInput = document.getElementById('nombreUsuario');
-      const correoInput = document.getElementById('correo');
-
-      const nuevoUsuario = {
-        id: datosUsuarios.length + 1,
-        nombreUsuario: nombreUsuarioInput.value,
-        correo: correoInput.value,
-      };
-
-      datosUsuarios.push(nuevoUsuario);
-
-      // Resetear el formulario
-      nombreUsuarioInput.value = '';
-      correoInput.value = '';
-
-      renderizarListaUsuarios();
-    }
-
-    // Función para editar un usuario
-    function editarUsuario(idUsuario) {
-      const usuarioAEditar = datosUsuarios.find(usuario => usuario.id === idUsuario);
-
-      if (usuarioAEditar) {
-        const nombreUsuarioInput = document.getElementById('nombreUsuario');
-        const correoInput = document.getElementById('correo');
-
-        nombreUsuarioInput.value = usuarioAEditar.nombreUsuario;
-        correoInput.value = usuarioAEditar.correo;
-
-        // Actualizar los datos del usuario después de la edición
-        usuarioAEditar.nombreUsuario = nombreUsuarioInput.value;
-        usuarioAEditar.correo = correoInput.value;
-
-        renderizarListaUsuarios();
-      }
-    }
-
-    // Función para eliminar un usuario
-    function eliminarUsuario(idUsuario) {
-      const indiceUsuario = datosUsuarios.findIndex(usuario => usuario.id === idUsuario);
-
-      if (indiceUsuario !== -1) {
-        datosUsuarios.splice(indiceUsuario, 1);
-        renderizarListaUsuarios();
-      }
-    }
-
-    // Renderizado inicial
-    renderizarListaUsuarios();
-  </script>
+        <form id="formularioProducto" class="mt-3">
+          <div class="form-row">
+            <div class="col">
+              <label for="nombreProducto">Nombre:</label>
+              <input type="text" id="nombreProducto" class="form-control" required>
+            </div>
+            <div class="col">
+              <label for="categoriaProducto">Categoría:</label>
+              <input type="text" id="categoriaProducto" class="form-control" required>
+            </div>
+            <div class="col">
+              <label for="precioProducto">Precio:</label>
+              <input type="number" id="precioProducto" class="form-control" step="0.01" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-custom text-white mt-3" onclick="agregarProducto()">Agregar Producto</button>
+        </form>
+      </div>
+    
+      <script>
+        // Cargar productos desde el almacenamiento local o utilizar un array vacío
+        const datosProductos = JSON.parse(localStorage.getItem('productos')) || [];
+    
+        function renderizarTablaProductos() {
+          const cuerpoTablaProductos = document.getElementById('cuerpoTablaProductos');
+          cuerpoTablaProductos.innerHTML = '';
+    
+          datosProductos.forEach(producto => {
+            const fila = document.createElement('tr');
+            fila.innerHTML = `
+              <td>${producto.id}</td>
+              <td>${producto.nombre}</td>
+              <td>${producto.categoria}</td>
+              <td>$${producto.precio.toFixed(2)}</td>
+              <td>
+                <button class="btn btn-warning btn-sm" onclick="editarProducto(${producto.id})">Editar</button>
+                <button class="btn btn-danger btn-sm" onclick="eliminarProducto(${producto.id})">Eliminar</button>
+              </td>
+            `;
+    
+            cuerpoTablaProductos.appendChild(fila);
+          });
+        }
+    
+        function agregarProducto() {
+          const nombreProducto = document.getElementById('nombreProducto').value;
+          const categoriaProducto = document.getElementById('categoriaProducto').value;
+          const precioProducto = parseFloat(document.getElementById('precioProducto').value);
+    
+          if (!isNaN(precioProducto)) {
+            const nuevoProducto = {
+              id: datosProductos.length + 1,
+              nombre: nombreProducto,
+              categoria: categoriaProducto,
+              precio: precioProducto,
+            };
+    
+            datosProductos.push(nuevoProducto);
+    
+            // Almacenar en el almacenamiento local
+            localStorage.setItem('productos', JSON.stringify(datosProductos));
+    
+            // Resetear el formulario
+            document.getElementById('nombreProducto').value = '';
+            document.getElementById('categoriaProducto').value = '';
+            document.getElementById('precioProducto').value = '';
+    
+            renderizarTablaProductos();
+          }
+        }
+    
+        function editarProducto(idProducto) {
+          // Lógica de edición 
+          const producto = datosProductos.find(p => p.id === idProducto);
+          if (producto) {
+            const nuevoNombre = prompt('Ingrese el nuevo nombre:', producto.nombre);
+            const nuevaCategoria = prompt('Ingrese la nueva categoría:', producto.categoria);
+            const nuevoPrecio = parseFloat(prompt('Ingrese el nuevo precio:', producto.precio));
+    
+            if (nuevoNombre && nuevaCategoria && !isNaN(nuevoPrecio)) {
+              producto.nombre = nuevoNombre;
+              producto.categoria = nuevaCategoria;
+              producto.precio = nuevoPrecio;
+    
+              // Actualizar en el almacenamiento local
+              localStorage.setItem('productos', JSON.stringify(datosProductos));
+    
+              renderizarTablaProductos();
+            }
+          }
+        }
+    
+        function eliminarProducto(idProducto) {
+          // Lógica de eliminación
+          const confirmacion = confirm('¿Estás seguro de que deseas eliminar este producto?');
+          if (confirmacion) {
+            const indice = datosProductos.findIndex(p => p.id === idProducto);
+            if (indice !== -1) {
+              datosProductos.splice(indice, 1);
+    
+              // Actualizar en el almacenamiento local
+              localStorage.setItem('productos', JSON.stringify(datosProductos));
+    
+              renderizarTablaProductos();
+            }
+          }
+        }
+    
+        // Renderizado inicial
+        renderizarTablaProductos();
+      </script>
     </main>
     <footer>
         <section

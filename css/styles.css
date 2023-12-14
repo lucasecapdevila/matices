@@ -319,6 +319,11 @@ footer {
   transform: scaleY(1);
 }
 
+/* Boton pagina administracion */
+
+.btn-custom{
+  background: #0e3361;
+}
 
 /*! Carousel */
 .banner1{
