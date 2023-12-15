@@ -11,7 +11,8 @@ let creandoProducto = true
 //  Traigo item de LS
 const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 
-const seccionTabla = document.getElementById('seccionTabla')
+const tablaProductos = document.getElementById('tabla')
+const tituloSinProductos = document.getElementById('sinProductos')
 const formulario = document.getElementById('formularioProducto')
 const btnNuevoProducto = document.getElementById('btnNuevoProducto')
 const btnConfirmar = document.getElementById('confirmarEdicionProducto')
@@ -30,6 +31,10 @@ const cuerpoTablaProductos = document.getElementById('cuerpoTablaProductos')
 const cargaInicial = () => {
   if(listaProductos.length > 0){
     listaProductos.map((producto, orden) => crearFila(producto, orden + 1))
+    tituloSinProductos.classList.add('d-none')
+    tablaProductos.classList.add('d-table')
+  } else{
+    tablaProductos.classList.add('d-none')
   }
 }
 
@@ -96,8 +101,10 @@ if(creandoProducto){
     limpiarFormulario()
   
     guardarEnLS()
-  
+    
+    tablaProductos.classList.remove('d-none')
     crearFila(nuevoProducto, listaProductos.length)
+    tituloSinProductos.classList.add('d-none')
   
     //  Mostrar Sweet Alert
     Swal.fire({
