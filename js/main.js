@@ -6,37 +6,38 @@ const modalAdminProductos = new bootstrap.Modal(
 );
 
 //* Variables que se usarán
-let creandoProducto = true
+let creandoProducto = true;
 
 //  Traigo item de LS
-const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+const listaProductos =
+  JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 
-const tablaProductos = document.getElementById('tabla')
-const tituloSinProductos = document.getElementById('sinProductos')
-const formulario = document.getElementById('formularioProducto')
-const btnNuevoProducto = document.getElementById('btnNuevoProducto')
-const btnConfirmar = document.getElementById('confirmarEdicionProducto')
+const tablaProductos = document.getElementById("tabla");
+const tituloSinProductos = document.getElementById("sinProductos");
+const formulario = document.getElementById("formularioProducto");
+const btnNuevoProducto = document.getElementById("btnNuevoProducto");
+const btnConfirmar = document.getElementById("confirmarEdicionProducto");
 
 //  Formulario de creación/edición
-const nombre = document.getElementById('nombreProducto'),
-      precio = document.getElementById('precioProducto'),
-      categoria = document.getElementById('categoriaProducto'),
-      urlImagen = document.getElementById('imagenProducto'),
-      descripcion = document.getElementById('descripcionProducto'),
-      stock = document.getElementById('stockDeProducto')
+const nombre = document.getElementById("nombreProducto"),
+  precio = document.getElementById("precioProducto"),
+  categoria = document.getElementById("categoriaProducto"),
+  urlImagen = document.getElementById("imagenProducto"),
+  descripcion = document.getElementById("descripcionProducto"),
+  stock = document.getElementById("stockDeProducto");
 
-const cuerpoTablaProductos = document.getElementById('cuerpoTablaProductos')
+const cuerpoTablaProductos = document.getElementById("cuerpoTablaProductos");
 
 //* Funciones
 const cargaInicial = () => {
-  if(listaProductos.length > 0){
-    listaProductos.map((producto, orden) => crearFila(producto, orden + 1))
-    tituloSinProductos.classList.add('d-none')
-    tablaProductos.classList.add('d-table')
-  } else{
-    tablaProductos.classList.add('d-none')
+  if (listaProductos.length > 0) {
+    listaProductos.map((producto, orden) => crearFila(producto, orden + 1));
+    tituloSinProductos.classList.add("d-none");
+    tablaProductos.classList.add("d-table");
+  } else {
+    tablaProductos.classList.add("d-none");
   }
-}
+};
 
 const crearFila = (producto, fila) => {
   cuerpoTablaProductos.innerHTML += `
@@ -53,59 +54,56 @@ const crearFila = (producto, fila) => {
     </td>
   </tr>
   `;
-}
+};
 
 //  Función para mostrar Modal
 const mostrarModal = () => {
-  limpiarFormulario()
-  modalAdminProductos.show()
-}
+  limpiarFormulario();
+  modalAdminProductos.show();
+};
 
 const ocultarModal = () => {
-  modalAdminProductos.hide()
-}
+  modalAdminProductos.hide();
+};
 
 const limpiarFormulario = () => {
   formulario.reset();
 };
 
 const guardarEnLS = () => {
-  localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos))
-}
+  localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
+};
 
 // Función para agregar un nuevo producto
 function crearProducto(e) {
-e.preventDefault()
+  e.preventDefault();
 
-if(creandoProducto){
-  //! Agregar validaciones JS
-  //! Agregar validaciones JS
-  //! Agregar validaciones JS
-  //! Agregar validaciones JS
-  //! Agregar validaciones JS
-  
-  
-  
-  
-  const nuevoProducto = new Producto(
-    undefined,
-    nombre.value,
-    precio.value,
-    categoria.value,
-    urlImagen.value,
-    descripcion.value,
-    stock.value,
-    )
-  
-    listaProductos.push(nuevoProducto)
-    limpiarFormulario()
-  
-    guardarEnLS()
-    
-    tablaProductos.classList.remove('d-none')
-    crearFila(nuevoProducto, listaProductos.length)
-    tituloSinProductos.classList.add('d-none')
-  
+  if (creandoProducto) {
+    //! Agregar validaciones JS
+    //! Agregar validaciones JS
+    //! Agregar validaciones JS
+    //! Agregar validaciones JS
+    //! Agregar validaciones JS
+
+    const nuevoProducto = new Producto(
+      undefined,
+      nombre.value,
+      precio.value,
+      categoria.value,
+      urlImagen.value,
+      descripcion.value,
+      stock.value
+    );
+
+    listaProductos.push(nuevoProducto);
+    limpiarFormulario();
+
+    guardarEnLS();
+
+    tablaProductos.classList.remove("d-none");
+    crearFila(nuevoProducto, listaProductos.length);
+    tituloSinProductos.classList.add("d-none");
+
     //  Mostrar Sweet Alert
     Swal.fire({
       title: "Se agregó el producto exitosamente",
@@ -117,65 +115,64 @@ if(creandoProducto){
 
 window.editarProducto = (idProducto) => {
   const posicionProductoAEditar = listaProductos.findIndex(
-    (item) =>item.id === idProducto
-  )
+    (item) => item.id === idProducto
+  );
 
   //  Variables necesarias
-  const producto = listaProductos[posicionProductoAEditar]
-  const filaProducto = cuerpoTablaProductos.children[0]
-  const nombreTabla = filaProducto.children[1]
-  const precioTabla = filaProducto.children[2]
-  const categoriaTabla = filaProducto.children[3]
-  const stockTabla = filaProducto.children[4]
-  creandoProducto = false
-  
-  if(!creandoProducto){
-    mostrarModal()
-    nombre.value = producto.nombre
-    precio.value = producto.precio
-    categoria.value = producto.categoria
-    urlImagen.value = producto.urlImagen
-    descripcion.value = producto.descripcion
-    stock.value = producto.stock
+  const producto = listaProductos[posicionProductoAEditar];
+  const filaProducto = cuerpoTablaProductos.children[0];
+  const nombreTabla = filaProducto.children[1];
+  const precioTabla = filaProducto.children[2];
+  const categoriaTabla = filaProducto.children[3];
+  const stockTabla = filaProducto.children[4];
+  creandoProducto = false;
 
-    btnConfirmar.addEventListener('click',() => {
+  if (!creandoProducto) {
+    mostrarModal();
+    nombre.value = producto.nombre;
+    precio.value = producto.precio;
+    categoria.value = producto.categoria;
+    urlImagen.value = producto.urlImagen;
+    descripcion.value = producto.descripcion;
+    stock.value = producto.stock;
+
+    btnConfirmar.addEventListener("click", () => {
       Swal.fire({
         title: "¿Deseas guardar los cambios?",
         showDenyButton: true,
         showCancelButton: true,
-        confirmButtonColor: 'green',
+        confirmButtonColor: "green",
         confirmButtonText: "Guardar",
         denyButtonText: `No guardar`,
-        cancelButtonText: 'Cancelar'
+        cancelButtonText: "Cancelar",
       }).then((result) => {
-        
         if (result.isConfirmed) {
           //  Dibujo datos en la tabla
-          nombreTabla.innerText = nombre.value 
-          precioTabla.innerText = precio.value 
-          categoriaTabla.innerText = categoria.value 
-          stockTabla.innerText = stock.value 
-          
+          nombreTabla.innerText = nombre.value;
+          precioTabla.innerText = precio.value;
+          categoriaTabla.innerText = categoria.value;
+          stockTabla.innerText = stock.value;
+
           //  Guardo los nuevos datos en LS
-          producto.nombre = nombre.value
-          producto.precio = precio.value
-          producto.categoria = categoria.value
-          producto.urlImagen = urlImagen.value
-          producto.descripcion = descripcion.value
-          producto.stock = stock.value
-          guardarEnLS()
-  
+          producto.nombre = nombre.value;
+          producto.precio = precio.value;
+          producto.categoria = categoria.value;
+          producto.urlImagen = urlImagen.value;
+          producto.descripcion = descripcion.value;
+          producto.stock = stock.value;
+          guardarEnLS();
+
           Swal.fire("Guardado exitosamente!", "", "success");
         } else if (result.isDenied) {
           Swal.fire("No se realizaron cambios.", "", "info");
         }
       });
-      ocultarModal()
-    })
+      ocultarModal();
+    });
   }
-}
+};
 
-btnNuevoProducto.addEventListener('click', mostrarModal)
-formulario.addEventListener('submit', crearProducto)
+btnNuevoProducto.addEventListener("click", mostrarModal);
+formulario.addEventListener("submit", crearProducto);
 
-cargaInicial()
+cargaInicial();
