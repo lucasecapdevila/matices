@@ -319,53 +319,9 @@ footer {
   transform: scaleY(1);
 }
 
-/* Boton pagina administracion */
-
-.btn-custom{
-  background: #0e3361;
+/* Borrar flechas en input tipo numero */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-
-/*! Carousel */
-.banner1{
-  
-  background-position: top center;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* @media screen and (max-width: 767px) {
-  .carousel-inner:first-child{
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .carousel-inner:first-child{
-    width: 75%;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .carousel-inner:first-child{
-    padding: 100px;
-  }
-} */
