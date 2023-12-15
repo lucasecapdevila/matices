@@ -130,7 +130,10 @@
                   type="text"
                   class="form-control"
                   id="nombreProducto"
+                  minlength="3"
+                  maxlength="30"
                   placeholder="Nombre"
+                  required
                 />
                 <label for="nombreProducto">Nombre del Producto</label>
               </div>
@@ -139,7 +142,10 @@
                   type="number"
                   class="form-control"
                   id="precioProducto"
+                  min="1"
+                  max="2000"
                   placeholder="Precio"
+                  required
                 />
                 <label for="precioProducto">Precio del Producto</label>
               </div>
@@ -148,7 +154,10 @@
                   type="text"
                   class="form-control"
                   id="categoriaProducto"
+                  minlength="3"
+                  maxlength="20"
                   placeholder="name@example.com"
+                  required
                 />
                 <label for="categoriaProducto">Categoría del producto</label>
               </div>
@@ -158,6 +167,7 @@
                   class="form-control"
                   id="imagenProducto"
                   placeholder="Imagen"
+                  required
                 />
                 <label for="imagenProducto">Agregue una ruta a la imagen del producto</label>
               </div>
@@ -166,7 +176,10 @@
                   type="text"
                   class="form-control"
                   id="descripcionProducto"
+                  minlength="10"
+                  maxlength="100"
                   placeholder="Descripción del producto"
+                  required
                 />
                 <label for="descripcionProducto">Descripción del producto</label>
               </div>
@@ -175,7 +188,10 @@
                   type="number"
                   class="form-control"
                   id="stockDeProducto"
+                  min="1"
+                  max="1000"
                   placeholder="Cantidad en stock"
+                  required
                 />
                 <label for="stockDeProducto">Cantidad en stock</label>
               </div>
