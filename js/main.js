@@ -11,6 +11,7 @@ let creandoProducto = true
 //  Traigo item de LS
 const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 
+const seccionTabla = document.getElementById('seccionTabla')
 const formulario = document.getElementById('formularioProducto')
 const btnNuevoProducto = document.getElementById('btnNuevoProducto')
 const btnConfirmar = document.getElementById('confirmarEdicionProducto')
@@ -98,11 +99,12 @@ if(creandoProducto){
   
     crearFila(nuevoProducto, listaProductos.length)
   
-    //! Agregar sweet alert
-    //! Agregar sweet alert
-    //! Agregar sweet alert
-    //! Agregar sweet alert
-    //! Agregar sweet alert
+    //  Mostrar Sweet Alert
+    Swal.fire({
+      title: "Se agregó el producto exitosamente",
+      text: `El producto ${nuevoProducto.nombre} fue creado exitosamente.`,
+      icon: "success",
+    });
   }
 }
 
@@ -130,29 +132,37 @@ window.editarProducto = (idProducto) => {
     stock.value = producto.stock
 
     btnConfirmar.addEventListener('click',() => {
-      
-      //! Agregar sweet alert
-      //! Agregar sweet alert
-      //! Agregar sweet alert
-      //! Agregar sweet alert
-      //! Agregar sweet alert
-      
-      //  Dibujo datos en la tabla
-      nombreTabla.innerText = nombre.value 
-      precioTabla.innerText = precio.value 
-      categoriaTabla.innerText = categoria.value 
-      stockTabla.innerText = stock.value 
-      
-      //  Guardo los nuevos datos en LS
-      producto.nombre = nombre.value
-      producto.precio = precio.value
-      producto.categoria = categoria.value
-      producto.urlImagen = urlImagen.value
-      producto.descripcion = descripcion.value
-      producto.stock = stock.value
-      guardarEnLS()
-
-
+      Swal.fire({
+        title: "¿Deseas guardar los cambios?",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonColor: 'green',
+        confirmButtonText: "Guardar",
+        denyButtonText: `No guardar`,
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        
+        if (result.isConfirmed) {
+          //  Dibujo datos en la tabla
+          nombreTabla.innerText = nombre.value 
+          precioTabla.innerText = precio.value 
+          categoriaTabla.innerText = categoria.value 
+          stockTabla.innerText = stock.value 
+          
+          //  Guardo los nuevos datos en LS
+          producto.nombre = nombre.value
+          producto.precio = precio.value
+          producto.categoria = categoria.value
+          producto.urlImagen = urlImagen.value
+          producto.descripcion = descripcion.value
+          producto.stock = stock.value
+          guardarEnLS()
+  
+          Swal.fire("Guardado exitosamente!", "", "success");
+        } else if (result.isDenied) {
+          Swal.fire("No se realizaron cambios.", "", "info");
+        }
+      });
       ocultarModal()
     })
   }
@@ -162,4 +172,3 @@ btnNuevoProducto.addEventListener('click', mostrarModal)
 formulario.addEventListener('submit', crearProducto)
 
 cargaInicial()
-
