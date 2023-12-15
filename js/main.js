@@ -40,7 +40,7 @@ const crearFila = (producto, fila) => {
     <td>${producto.precio}</td>
     <td>${producto.categoria}</td>
     <td>${producto.stock}</td>
-    <td>
+    <td class="d-flex justify-content-center">
       <button class="btn btn-primary">Ver detalle</button>
       <button class="btn btn-warning mx-2" onclick="editarProducto('${producto.id}')">Editar</button>
       <button class="btn btn-danger">Borrar</button>
@@ -143,6 +143,14 @@ window.editarProducto = (idProducto) => {
       categoriaTabla.innerText = categoria.value 
       stockTabla.innerText = stock.value 
       
+      //  Guardo los nuevos datos en LS
+      producto.nombre = nombre.value
+      producto.precio = precio.value
+      producto.categoria = categoria.value
+      producto.urlImagen = urlImagen.value
+      producto.descripcion = descripcion.value
+      producto.stock = stock.value
+      guardarEnLS()
 
 
       ocultarModal()
