@@ -6,11 +6,14 @@ const modalAdminProductos = new bootstrap.Modal(
 );
 
 //* Variables que se usarán
+let creandoProducto = true
+
 //  Traigo item de LS
 const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 
 const formulario = document.getElementById('formularioProducto')
 const btnNuevoProducto = document.getElementById('btnNuevoProducto')
+const btnConfirmar = document.getElementById('confirmarEdicionProducto')
 
 //  Formulario de creación/edición
 const nombre = document.getElementById('nombreProducto'),
@@ -39,7 +42,7 @@ const crearFila = (producto, fila) => {
     <td>${producto.stock}</td>
     <td>
       <button class="btn btn-primary">Ver detalle</button>
-      <button class="btn btn-warning mx-2" onclick="editarContacto('${producto.id}')">Editar</button>
+      <button class="btn btn-warning mx-2" onclick="editarProducto('${producto.id}')">Editar</button>
       <button class="btn btn-danger">Borrar</button>
     </td>
   </tr>
@@ -50,6 +53,10 @@ const crearFila = (producto, fila) => {
 const mostrarModal = () => {
   limpiarFormulario()
   modalAdminProductos.show()
+}
+
+const ocultarModal = () => {
+  modalAdminProductos.hide()
 }
 
 const limpiarFormulario = () => {
@@ -64,40 +71,87 @@ const guardarEnLS = () => {
 function crearProducto(e) {
 e.preventDefault()
 
-//! Agregar validaciones JS
-//! Agregar validaciones JS
-//! Agregar validaciones JS
-//! Agregar validaciones JS
-//! Agregar validaciones JS
+if(creandoProducto){
+  //! Agregar validaciones JS
+  //! Agregar validaciones JS
+  //! Agregar validaciones JS
+  //! Agregar validaciones JS
+  //! Agregar validaciones JS
+  
+  
+  
+  
+  const nuevoProducto = new Producto(
+    undefined,
+    nombre.value,
+    precio.value,
+    categoria.value,
+    urlImagen.value,
+    descripcion.value,
+    stock.value,
+    )
+  
+    listaProductos.push(nuevoProducto)
+    limpiarFormulario()
+  
+    guardarEnLS()
+  
+    crearFila(nuevoProducto, listaProductos.length)
+  
+    //! Agregar sweet alert
+    //! Agregar sweet alert
+    //! Agregar sweet alert
+    //! Agregar sweet alert
+    //! Agregar sweet alert
+  }
+}
 
-
-
-
-const nuevoProducto = new Producto(
-  undefined,
-  nombre.value,
-  precio.value,
-  categoria.value,
-  urlImagen.value,
-  descripcion.value,
-  stock.value,
+window.editarProducto = (idProducto) => {
+  const posicionProductoAEditar = listaProductos.findIndex(
+    (item) =>item.id === idProducto
   )
 
-  listaProductos.push(nuevoProducto)
-  limpiarFormulario()
+  //  Variables necesarias
+  const producto = listaProductos[posicionProductoAEditar]
+  const filaProducto = cuerpoTablaProductos.children[0]
+  const nombreTabla = filaProducto.children[1]
+  const precioTabla = filaProducto.children[2]
+  const categoriaTabla = filaProducto.children[3]
+  const stockTabla = filaProducto.children[4]
+  creandoProducto = false
+  
+  if(!creandoProducto){
+    mostrarModal()
+    nombre.value = producto.nombre
+    precio.value = producto.precio
+    categoria.value = producto.categoria
+    urlImagen.value = producto.urlImagen
+    descripcion.value = producto.descripcion
+    stock.value = producto.stock
 
-  guardarEnLS()
+    btnConfirmar.addEventListener('click',() => {
+      
+      //! Agregar sweet alert
+      //! Agregar sweet alert
+      //! Agregar sweet alert
+      //! Agregar sweet alert
+      //! Agregar sweet alert
+      
+      //  Dibujo datos en la tabla
+      nombreTabla.innerText = nombre.value 
+      precioTabla.innerText = precio.value 
+      categoriaTabla.innerText = categoria.value 
+      stockTabla.innerText = stock.value 
+      
 
-  crearFila(nuevoProducto, listaProductos.length)
 
-  //! Agregar sweet alert
-  //! Agregar sweet alert
-  //! Agregar sweet alert
-  //! Agregar sweet alert
-  //! Agregar sweet alert
+      ocultarModal()
+    })
+  }
 }
 
 btnNuevoProducto.addEventListener('click', mostrarModal)
 formulario.addEventListener('submit', crearProducto)
 
 cargaInicial()
+
