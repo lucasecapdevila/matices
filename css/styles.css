@@ -325,3 +325,45 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* Estilos Login */
+.bg-forms {
+  background-color: #f12b2ba4;
+}
+
+.btn-crear {
+  background-color: rgba(0, 255, 255, 0);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+}
+
+.btn-crear:active {
+  transform: scale(0.95);
+}
+
+.inputLogin {
+  display: block;
+  background-color: #bed2e9d5;
+  border: 0px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 7px;
+}
+
+.btn-iniciar {
+  background-color: #ea8172;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+}
+
+.btn-iniciar:active {
+  transform: scale(1.05);
+}
+
+@media only screen and (min-width: 992px) {
+  .formLogin {
+    height: 100vh;
+  }
+}
