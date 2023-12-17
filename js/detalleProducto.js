@@ -1,3 +1,5 @@
+let cantidad = 1
+
 const parametroURL = new URLSearchParams(window.location.search)
 const idProducto = parametroURL.get('id')
 
@@ -13,11 +15,10 @@ mainDetalleProducto.innerHTML += `
       <img
         src="${productoBuscado.urlImagen}"
         class="w-100 h-auto"
-        alt="lapiz"
+        alt="${productoBuscado.nombre}"
       />
     </div>
 
-    <!-- ! Toda esta sección es de prueba, será cambiada con productos creados desde JS -->
     <!-- Título y precio -->
     <div
       class="col-md-6 mx-0 px-0 d-flex flex-column align-items-center align-items-lg-start fondoAzul d-lg-none"
@@ -72,11 +73,12 @@ mainDetalleProducto.innerHTML += `
         </button>
         <input
           class="border-0 rounded-2 text-center mx-4 px-2 py-2 inputCantidad"
-          value="1"
+          value="${cantidad}"
         />
         <button
           type="button"
           class="fs-3 lh-1 rounded-2 px-1 pb-1 btnCantidad"
+          onclick="incrementarCantidad()"
         >
           +
         </button>
@@ -97,57 +99,6 @@ mainDetalleProducto.innerHTML += `
         </button>
       </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <!-- Pantalla en Desktops -->
     <article
@@ -205,11 +156,12 @@ mainDetalleProducto.innerHTML += `
           </button>
           <input
             class="border-0 rounded-2 text-center mx-4 px-2 py-2 inputCantidad"
-            value="1"
+            value="${cantidad}"
           />
           <button
             type="button"
             class="fs-3 lh-1 rounded-2 px-1 pb-1 btnCantidad"
+            onclick="incrementarCantidad()"
           >
             +
           </button>
@@ -230,3 +182,11 @@ mainDetalleProducto.innerHTML += `
       </div>
     </article>
   </section>`
+
+  window.incrementarCantidad = () => {
+    const cantidadAComprar = document.querySelectorAll('.inputCantidad')
+    
+    for (let i = 1; i < cantidadAComprar.length; i++){
+      console.log(cantidad++);
+    }
+  }
