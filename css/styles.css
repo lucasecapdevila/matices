@@ -331,6 +331,28 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+/*! Estilos Agostina Error404 */
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  background-image: url(../img/fondolapiz_error404_Ok.png);
+}
+
+#btnVolverInicio {
+  margin-top: -930px;
+  margin-left: -450px;
+}
+
 /* Estilos Login */
 .bg-forms {
   background-color: #f12b2ba4;
