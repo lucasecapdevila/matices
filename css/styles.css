@@ -339,13 +339,11 @@ input::-webkit-inner-spin-button {
   align-items: center;
 }
 
-.canvas {
- 
- background-image:url(../img/fondolapiz_error404_Ok.png);
-
+canvas {
+  background-image:url(../img/fondolapiz_error404_Ok.png);
 }
 
-.btn{
+#btnVolverInicio{
   margin-top: -930px;
   margin-left: -450px;
 }
