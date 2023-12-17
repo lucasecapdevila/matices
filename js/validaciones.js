@@ -26,10 +26,10 @@ export const validarCategoria = (texto, min, max) => {
 };
 
 export const validarImgProd = (url) => {
-    const patron =
-    /^(ftp|http|https):\/\/[^ "]+$/;
+    const patronURL =/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/;
+    const patronIMG =/\.(png|jpg|jpeg|gif)$/i;
 
-   if (patron.test(url)) {
+   if (patronURL.test(url) && patronIMG.test(url)) {
      return true;
    } else {
      alert('Por favor, ingrese una URL válida.');
