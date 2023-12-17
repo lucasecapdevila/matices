@@ -115,7 +115,7 @@ function crearProducto(e) {
       text: `El producto ${nuevoProducto.nombre} fue creado exitosamente.`,
       icon: "success",
     });
-    }else alert('Hay errores en el formulario');
+    }
   }
 }
 
