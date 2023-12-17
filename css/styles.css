@@ -13,6 +13,7 @@ body {
 
 main {
   flex-grow: 1;
+  min-height: 90vh;
 }
 
 /* Tipografias */
@@ -344,7 +345,7 @@ input::-webkit-inner-spin-button {
 
 .inputLogin {
   display: block;
-  background-color: #bed2e9d5;
+  background-color: #bed2e960;
   border: 0px;
   border-radius: 10px;
   width: 100%;
@@ -366,4 +367,9 @@ input::-webkit-inner-spin-button {
   .formLogin {
     height: 100vh;
   }
+}
+
+.btn-modal {
+  background-color: #3bbc95 !important;
+  border-color: #3bbc95;
 }

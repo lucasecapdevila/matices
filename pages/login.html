@@ -45,7 +45,7 @@
           >
             <img
               src="../img/Icono_Matices_Rosa.svg"
-              class="img-fluid"
+              class="img-fluid me-3"
               alt="Logo Matices"
             />
           </a>
@@ -54,25 +54,7 @@
             href="../index.html"
             >matices</a
           >
-          <form class="d-flex ms-auto me-4 order-lg-1" role="search">
-            <div class="input-group">
-              <input
-                type="search"
-                class="form-control d-none d-md-block bg-AzulMatices border border-0"
-                id="inputBuscarNavbar"
-                placeholder="Busca lo que desees..."
-                aria-label="Busca lo que desees..."
-                aria-describedby="botonBuscar"
-              />
-              <button
-                class="btn btn-outline-secondary bg-AzulClaro border border-0"
-                type="button"
-                id="botonBuscar"
-              >
-                <i class="fa-solid fa-magnifying-glass text-light"></i>
-              </button>
-            </div>
-          </form>
+
           <button
             class="navbar-toggler"
             type="button"
@@ -82,30 +64,23 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon fs-6"></span>
           </button>
           <div
-            class="collapse navbar-collapse text-center mx-lg-5 px-lg-5"
+            class="collapse navbar-collapse text-center ms-lg-5 ps-lg-5"
             id="navbarLibreriaMatices"
           >
-            <ul class="navbar-nav me-auto my-2 mb-lg-0">
+            <ul class="navbar-nav me-auto my-2 mb-lg-0" id="lista-navbar">
               <li class="nav-item ms-auto mb-2 m-lg-0">
                 <a
-                  class="hvr-underline-from-left nav-link tx-RosaMatices"
+                  class="hvr-underline-from-left nav-link tx-RosaMatices fs-5"
                   href="../index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item ms-auto mb-2">
                 <a
-                  class="hvr-underline-from-left nav-link mx-lg-3 tx-RosaMatices"
-                  href="#"
-                  >Productos</a
-                >
-              </li>
-              <li class="nav-item ms-auto mb-2">
-                <a
-                  class="hvr-underline-from-left nav-link tx-RosaMatices"
+                  class="hvr-underline-from-left nav-link mx-lg-3 tx-RosaMatices fs-5"
                   href="#"
                   >Nosotros</a
                 >
@@ -130,9 +105,12 @@
       </nav>
     </header>
 
-    <main class="container-fluid d-flex flex-column d-md-block">
+    <main class="container-fluid d-flex flex-column justify-content-center">
       <!-- Sign in -->
-      <section class="row justify-content-center p-4 p-md-0">
+      <section
+        class="row justify-content-center p-4 p-md-0 bg-light"
+        id="container-login"
+      >
         <article
           class="col-lg-6 col-md-8 d-flex flex-column justify-content-center p-md-5 formLogin p-3 bg-light"
         >
@@ -360,7 +338,9 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/main.js"></script>
+
+    <!-- Sweet Alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/login.js"></script>
   </body>
 </html>
