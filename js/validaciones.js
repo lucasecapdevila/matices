@@ -2,13 +2,14 @@ export const validarNombreProducto = (texto, min, max) => {
     if (texto.length >= min && texto.length <= max) {
       return true;
     } else {
-      alert('Por favor, ingrese una nombre válido.');
+      alert(`El nombre debe tener entre ${min} y ${max} caracteres.`);
       return false;
     }
 };
   
 export const validarPrecio = (precio) => {
     if (isNaN(precio) || precio <= 0) {
+      alert('Por favor, ingrese un valor numérico mayor que cero.');
       return false;
     } else {
       return true;
@@ -19,6 +20,7 @@ export const validarCategoria = (texto, min, max) => {
     if (texto.length >= min && texto.length <= max) {
       return true;
     } else {
+      alert(`La categoría debe tener entre ${min} y ${max} caracteres.`);
       return false;
     }
 };
@@ -39,12 +41,14 @@ export const validarDescripcionProd = (texto, min, max) => {
     if (texto.length >= min && texto.length <= max) {
       return true;
     } else {
+      alert(`La descripción debe tener entre ${min} y ${max} caracteres.`);
       return false;
     }
 };
 
-export const validarCantStock = () => {
+export const validarCantStock = (precio) => {
     if (isNaN(precio) || precio <= 0) {
+      alert('Por favor, ingrese un valor numérico mayor que cero.');
       return false;
     } else {
       return true;
