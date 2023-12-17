@@ -327,7 +327,7 @@ footer {
 }
 
 /*! Estilos Agostina Error404 */
-body {
+.body {
   margin: 0;
   padding: 0;
 }
@@ -339,7 +339,7 @@ body {
   align-items: center;
 }
 
-canvas {
+.canvas {
  
  background-image:url(../img/fondolapiz_error404_Ok.png);
 
@@ -368,22 +368,3 @@ canvas {
 
 
 
-
-
-/* @media screen and (max-width: 767px) {
-  .carousel-inner:first-child{
-    width: 100%;
-  }
-}
-
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .carousel-inner:first-child{
-    width: 75%;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .carousel-inner:first-child{
-    padding: 100px;
-  }
-} */
