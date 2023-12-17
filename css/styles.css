@@ -1,7 +1,7 @@
 /* Estilos Principales */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@500&family=Roboto&display=swap");
 
-.bg-body-detalle{
+.bg-body-detalle {
   background: #dbe8f7;
 }
 
@@ -319,11 +319,11 @@ footer {
   transform: scaleY(1);
 }
 
-
-/*! Carousel */
-.banner1{
-  
-  background-position: top center;
+/* Borrar flechas en input tipo numero */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /*! Estilos Agostina Error404 */
@@ -349,22 +349,3 @@ footer {
   margin-top: -930px;
   margin-left: -450px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
