@@ -1,8 +1,8 @@
 export const validarNombreProducto = (texto, min, max) => {
     if (texto.length >= min && texto.length <= max) {
-      return true;
+      return null;
     } else {
-      return false;
+       alert(`El nombre debe tener entre ${min} y ${max} caracteres.`);
     }
 };
   
