@@ -109,7 +109,7 @@ formulario.addEventListener("submit", (e) => {
             }
           });
           token = true;
-          localStorage.setItem("logged", "true");
+          localStorage.setItem("logged", 1);
         }
       });
 
@@ -139,7 +139,7 @@ const navbar = document.getElementById("lista-navbar");
 function navbar_admin() {
   let logged = localStorage.getItem("logged");
 
-  if (logged) {
+  if (logged == 1) {
     navbar.innerHTML += `<li class="nav-item ms-auto mb-2" id="administracion-navbar">
     <a
       class="hvr-underline-from-left nav-link tx-RosaMatices fs-5"
@@ -158,8 +158,8 @@ const admin_navbar = document.getElementById("administracion-navbar");
 
 function desactivarLogin() {
   let logged = localStorage.getItem("logged");
-  console.log(localStorage);
-  if (logged) {
+
+  if (logged == 1) {
     Swal.fire({
       icon: "success",
       title: '<h2 class="tx-titulo text-center">¡Ya iniciaste sesión!</h2>',
@@ -181,7 +181,7 @@ function desactivarLogin() {
       if (result.isConfirmed) {
         window.location.href = "../pages/administracion.html";
       } else if (result.isDenied) {
-        localStorage.setItem("logged", "false");
+        localStorage.setItem("logged", 0);
         admin_navbar.remove();
       }
     });
