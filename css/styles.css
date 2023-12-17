@@ -341,11 +341,11 @@ footer {
 
 canvas {
  
- background-image:url(../img/);
- display: block;
- margin: 0 auto;
- max-width: 100%;
- height: auto;
+ background-image:url(../);
+ background-repeat: no-repeat;
+ top: 300px;
+
+
 
 }
 
