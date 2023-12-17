@@ -11,7 +11,7 @@ mainDetalleProducto.innerHTML += `
     <!-- Contenedor imágen del producto -->
     <div class="col-md-6 px-0">
       <img
-        src="../img/productos/PD-Lapiz_1.jpg"
+        src="${productoBuscado.urlImagen}"
         class="w-100 h-auto"
         alt="lapiz"
       />
@@ -30,21 +30,21 @@ mainDetalleProducto.innerHTML += `
       <p
         class="text-center text-lg-start col-lg-4 my-2 my-md-4 text-uppercase text-secondary"
       >
-        Código: lp-1502564
+        Código: ${productoBuscado.id}
       </p>
       <h1 class="col-10 text-center text-lg-start text-uppercase tx-titulo">
-        Lápiz de color lacolor
+        ${productoBuscado.nombre}
       </h1>
       <p
         class="my-2 my-md-4 text-center text-lg-start text-uppercase tx-RosaMatices"
       >
-        Lápices profesionales
+        ${productoBuscado.categoria}
       </p>
       <button
         class="btn col-4 text-light rounded-5 mt-2 px-3 fw-medium bg-verdePrecio"
         type="button"
       >
-        $1500.0
+        $${productoBuscado.precio}
       </button>
     </div>
 
@@ -56,10 +56,7 @@ mainDetalleProducto.innerHTML += `
         Descripción
       </h2>
       <p class="col-12 tx-parrafo lh-lg textoDescripcion">
-        Experimenta la excelencia artística con nuestro lápiz de alta
-        calidad. Con una punta suave y pigmentos vibrantes, este lápiz
-        ofrece un trazo preciso y rico en color. El cuerpo elegante y
-        ergonómico proporciona comodidad para largas sesiones de dibujo.
+        ${productoBuscado.descripcion}
       </p>
     </div>
 
@@ -85,7 +82,7 @@ mainDetalleProducto.innerHTML += `
         </button>
       </div>
       <p class="col-12 my-3 my-md-4 text-center text-secondary tx-parrafo">
-        (85 Disponibles)
+        (${productoBuscado.stock} Disponibles)
       </p>
       <div
         class="col-9 d-flex flex-column flex-lg-row align-items-lg-center mx-auto mb-lg-5 pb-lg-5"
@@ -101,6 +98,57 @@ mainDetalleProducto.innerHTML += `
       </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Pantalla en Desktops -->
     <article
       class="col-6 d-none d-lg-flex flex-column px-5 py-0 fondoAzul justify-content-center"
@@ -115,21 +163,21 @@ mainDetalleProducto.innerHTML += `
         <p
           class="text-center text-lg-start text-uppercase text-secondary mb-2"
         >
-          Código: lp-1502564
+          Código: ${productoBuscado.id}
         </p>
         <h1
           class="col-10 text-center text-lg-start text-uppercase tx-titulo"
         >
-          Lápiz de color lacolor
+          ${productoBuscado.nombre}
         </h1>
         <p class="text-center text-lg-start text-uppercase tx-RosaMatices">
-          Lápices profesionales
+          ${productoBuscado.categoria}
         </p>
         <button
           class="btn col-4 text-light rounded-5 mt-2 px-3 fw-medium bg-verdePrecio fs-4"
           type="button"
         >
-          $1500.0
+          $${productoBuscado.precio}
         </button>
       </div>
 
@@ -141,10 +189,7 @@ mainDetalleProducto.innerHTML += `
           Descripción
         </h2>
         <p class="col-12 tx-parrafo lh-lg textoDescripcion">
-          Experimenta la excelencia artística con nuestro lápiz de alta
-          calidad. Con una punta suave y pigmentos vibrantes, este lápiz
-          ofrece un trazo preciso y rico en color. El cuerpo elegante y
-          ergonómico proporciona comodidad para largas sesiones de dibujo.
+          ${productoBuscado.descripcion}
         </p>
       </div>
 
@@ -172,7 +217,7 @@ mainDetalleProducto.innerHTML += `
         <p
           class="col-12 my-3 my-md-4 text-center text-secondary tx-parrafo"
         >
-          (85 Disponibles)
+          (${productoBuscado.stock} Disponibles)
         </p>
         <div class="text-center">
           <button class="btn mx-2 text-light fw-medium btnAgregarAlCarrito">
