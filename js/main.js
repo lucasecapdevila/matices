@@ -48,7 +48,7 @@ const crearFila = (producto, fila) => {
     <td>${producto.categoria}</td>
     <td>${producto.stock}</td>
     <td class="d-flex justify-content-center">
-      <button class="btn btn-primary">Ver detalle</button>
+      <button class="btn btn-primary" onclick="verDetalleProducto('${producto.id}')">Ver detalle</button>
       <button class="btn btn-warning mx-2" onclick="editarProducto('${producto.id}')">Editar</button>
       <button class="btn btn-danger">Borrar</button>
     </td>
@@ -171,6 +171,10 @@ window.editarProducto = (idProducto) => {
     });
   }
 };
+
+window.verDetalleProducto = (idProducto) => {
+  window.location.href = window.location.origin + '/pages/detalleProducto.html?id=' + idProducto
+}
 
 btnNuevoProducto.addEventListener("click", mostrarModal);
 formulario.addEventListener("submit", crearProducto);
