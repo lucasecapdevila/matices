@@ -340,10 +340,10 @@ input::-webkit-inner-spin-button {
 }
 
 canvas {
-  background-image:url(../img/fondolapiz_error404_Ok.png);
+  background-image: url(../img/fondolapiz_error404_Ok.png);
 }
 
-#btnVolverInicio{
+#btnVolverInicio {
   margin-top: -930px;
   margin-left: -450px;
 }
