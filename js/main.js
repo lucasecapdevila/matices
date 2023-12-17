@@ -178,6 +178,37 @@ window.editarProducto = (idProducto) => {
   }
 };
 
+window.eliminarProducto = (idProducto) => {
+  Swal.fire({
+    title: "¿Estas seguro que quieres borrar?",
+    text: "No puedes revertir este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const posicionProductoAEliminar = listaProductos.findIndex(
+        (itemProducto) => itemProducto.id === idProducto
+      );
+      listaProductos.splice(posicionProductoAEliminar, 1);
+      guardarEnLS();
+      const tablaProductos = document.querySelector("tbody");
+      console.log(tablaProductos.children[posicionProductoAEliminar]);
+      tablaProductos.removeChild(
+        tablaProductos.children[posicionProductoAEliminar]
+      );
+      Swal.fire({
+        title: "Producto eliminado",
+        text: "El Producto fue eliminado exitosamente",
+        icon: "success",
+      });
+    }
+  });
+};
+
 btnNuevoProducto.addEventListener("click", mostrarModal);
 formulario.addEventListener("submit", crearProducto);
 

@@ -1,8 +1,9 @@
 export const validarNombreProducto = (texto, min, max) => {
     if (texto.length >= min && texto.length <= max) {
-      return null;
+      return true;
     } else {
-       alert(`El nombre debe tener entre ${min} y ${max} caracteres.`);
+      alert('Por favor, ingrese una nombre válido.');
+      return false;
     }
 };
   
@@ -22,13 +23,14 @@ export const validarCategoria = (texto, min, max) => {
     }
 };
 
-export const validarImgProd = (texto) => {
+export const validarImgProd = (url) => {
     const patron =
-    /^https?:\/\/[\w\-]+(\.[\w\-]+)+[/#?]?.*$/;
+    /^(ftp|http|https):\/\/[^ "]+$/;
 
-   if (patron.test(texto)) {
+   if (patron.test(url)) {
      return true;
    } else {
+     alert('Por favor, ingrese una URL válida.');
      return false;
    }
 };
