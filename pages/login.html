@@ -143,17 +143,22 @@
             Ingresa tus datos para empezar.
           </p>
 
-          <form action="#" class="mx-lg-5">
-            <div class="mb-md-4 mb-3">
+          <form action="" class="mx-lg-5" method="post" id="form">
+            <div class="mb-md-4 mb-3" id="div-mail">
               <label for="inputEmail" class="form-label tx-parrafo ps-1"
                 >E-Mail</label
               >
               <input
                 type="email"
+                required
+                autocomplete="username"
+                minlength="15"
+                maxlength="50"
                 class="inputLogin tx-parrafo ps-3"
                 id="inputEmail"
                 placeholder="johndoe@xyz.com"
               />
+              <p class="text-danger ms-1 m-2" id="errorEmail"></p>
             </div>
             <div class="mb-md-4 mb-3">
               <label for="inputPassword" class="form-label tx-parrafo ps-1"
@@ -161,11 +166,16 @@
               >
               <input
                 type="password"
+                autocomplete="current-password"
+                required
+                minlength="8"
+                maxlength="35"
                 id="inputPassword"
                 class="inputLogin tx-parrafo ps-3"
                 placeholder="********"
                 aria-describedby="passwordHelpBlock"
               />
+              <p class="text-danger ms-1 m-2" id="errorPassword"></p>
             </div>
             <div class="text-center">
               <button
@@ -351,5 +361,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/main.js"></script>
+    <script src="../js/login.js"></script>
   </body>
 </html>
