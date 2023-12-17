@@ -46,7 +46,7 @@ export const validarDescripcionProd = (texto, min, max) => {
     }
 };
 
-export const validarCantStock = (precio) => {
+export const validarCantStock = () => {
     if (isNaN(precio) || precio <= 0) {
       alert('Por favor, ingrese un valor numérico mayor que cero.');
       return false;
