@@ -1,29 +1,181 @@
-const parametroURL = new URLSearchParams(window.location.search)
-const idProducto = parametroURL.get('id')
+const parametroURL = new URLSearchParams(window.location.search);
+const idProducto = parametroURL.get("id");
 
-const listaProductos = JSON.parse(localStorage.getItem('listaProductosKey'))
+const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey"));
 
-const productoBuscado = listaProductos.find((iteProducto) => iteProducto.id === idProducto)
+const productoBuscado = listaProductos.find(
+  (iteProducto) => iteProducto.id === idProducto
+);
 
-const mainDetalleProducto = document.querySelector('main')
+const mainDetalleProducto = document.querySelector("main");
 mainDetalleProducto.innerHTML += `
-  <article class="card mb-3">
-    <div class="row g-0">
-      <div class="col-md-4">
-        <img
-          src="https://images.pexels.com/photos/5797908/pexels-photo-5797908.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-          class="img-fluid rounded-start"
-          alt="${productoBuscado.nombre}"
+  <section class="row mx-0">
+    <div class="col-md-6 px-0">
+      <img
+        src="../img/productos/PD-Lapiz_1.jpg"
+        class="w-100 h-auto"
+        alt="lapiz"
+      />
+    </div>
+
+    <div
+      class="col-md-6 mx-0 px-0 d-flex flex-column align-items-center align-items-lg-start fondoAzul d-lg-none"
+    >
+      <p
+        class="w-50 text-center text-uppercase fw-bold px-2 my-2 mx-auto mx-lg-0 text-light fw-lighter rounded-2 tx-parrafo bg-RosaOscuro"
+      >
+        Hotsale
+      </p>
+      <p
+        class="text-center text-lg-start col-lg-4 my-2 my-md-4 text-uppercase text-secondary"
+      >
+        Código: lp-1502564
+      </p>
+      <h1 class="col-10 text-center text-lg-start text-uppercase tx-titulo">
+        Lápiz de color lacolor
+      </h1>
+      <p
+        class="my-2 my-md-4 text-center text-lg-start text-uppercase tx-RosaMatices"
+      >
+        Lápices profesionales
+      </p>
+      <button
+        class="btn col-4 text-light rounded-5 mt-2 px-3 fw-medium bg-verdePrecio"
+        type="button"
+      >
+        $1500.0
+      </button>
+    </div>
+
+    <div
+      class="mt-2 mt-md-5 col-12 col-md-6 mt-5 mx-0 d-lg-none ps-md-4 px-4"
+    >
+      <h2 class="col-12 text-md-start text-center text-uppercase tx-titulo">
+        Descripción
+      </h2>
+      <p class="col-12 tx-parrafo lh-lg textoDescripcion">
+        Experimenta la excelencia artística con nuestro lápiz de alta
+        calidad. Con una punta suave y pigmentos vibrantes, este lápiz
+        ofrece un trazo preciso y rico en color. El cuerpo elegante y
+        ergonómico proporciona comodidad para largas sesiones de dibujo.
+      </p>
+    </div>
+
+    <div class="col-12 col-md-6 mb-4 mt-md-5 d-lg-none">
+      <div class="d-flex justify-content-center align-items-center">
+        <p class="mb-0 me-5 fs-4">Cantidad:</p>
+        <button
+          type="button"
+          class="fs-3 lh-1 rounded-2 px-2 pb-1 btnCantidad"
+        >
+          -
+        </button>
+        <input
+          class="border-0 rounded-2 text-center mx-4 px-2 py-2 inputCantidad"
+          value="1"
         />
+        <button
+          type="button"
+          class="fs-3 lh-1 rounded-2 px-1 pb-1 btnCantidad"
+        >
+          +
+        </button>
       </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Producto: ${productoBuscado.nombre}</h5>
-          <ul>
-            <li>Precio: ${productoBuscado.precio}</li>
-            <li>Descripción: ${productoBuscado.descripcion}</li>
-          </ul>
-        </div>
+      <p class="col-12 my-3 my-md-4 text-center text-secondary tx-parrafo">
+        (85 Disponibles)
+      </p>
+      <div
+        class="col-9 d-flex flex-column flex-lg-row align-items-lg-center mx-auto mb-lg-5 pb-lg-5"
+      >
+        <button
+          class="btn w-100 my-3 mx-lg-2 text-light fw-medium btnAgregarAlCarrito"
+        >
+          Agregar al Carrito
+        </button>
+        <button class="btn w-100 fw-medium btnAgregarAListaDeDeseos">
+          Agregar a Lista de Deseos
+        </button>
       </div>
     </div>
-  </article>`
+
+    <article
+      class="col-6 d-none d-lg-flex flex-column px-5 py-0 fondoAzul justify-content-center"
+    >
+      <div class="align-items-lg-start mb-4">
+        <p
+          class="w-25 text-center text-uppercase fw-bold py-1 text-light fw-lighter rounded-2 tx-parrafo bg-RosaOscuro"
+        >
+          Hotsale
+        </p>
+        <p
+          class="text-center text-lg-start text-uppercase text-secondary mb-2"
+        >
+          Código: lp-1502564
+        </p>
+        <h1
+          class="col-10 text-center text-lg-start text-uppercase tx-titulo"
+        >
+          Lápiz de color lacolor
+        </h1>
+        <p class="text-center text-lg-start text-uppercase tx-RosaMatices">
+          Lápices profesionales
+        </p>
+        <button
+          class="btn col-4 text-light rounded-5 mt-2 px-3 fw-medium bg-verdePrecio fs-4"
+          type="button"
+        >
+          $1500.0
+        </button>
+      </div>
+
+      <div>
+        <h2
+          class="col-12 text-md-start text-center text-uppercase tx-titulo"
+        >
+          Descripción
+        </h2>
+        <p class="col-12 tx-parrafo lh-lg textoDescripcion">
+          Experimenta la excelencia artística con nuestro lápiz de alta
+          calidad. Con una punta suave y pigmentos vibrantes, este lápiz
+          ofrece un trazo preciso y rico en color. El cuerpo elegante y
+          ergonómico proporciona comodidad para largas sesiones de dibujo.
+        </p>
+      </div>
+
+      <div>
+        <div class="d-flex justify-content-center align-items-center">
+          <p class="mb-0 me-5 fs-4">Cantidad:</p>
+          <button
+            type="button"
+            class="fs-3 lh-1 rounded-2 px-2 pb-1 btnCantidad"
+          >
+            -
+          </button>
+          <input
+            class="border-0 rounded-2 text-center mx-4 px-2 py-2 inputCantidad"
+            value="1"
+          />
+          <button
+            type="button"
+            class="fs-3 lh-1 rounded-2 px-1 pb-1 btnCantidad"
+          >
+            +
+          </button>
+        </div>
+        <p
+          class="col-12 my-3 my-md-4 text-center text-secondary tx-parrafo"
+        >
+          (85 Disponibles)
+        </p>
+        <div class="text-center">
+          <button class="btn mx-2 text-light fw-medium btnAgregarAlCarrito">
+            Agregar al Carrito
+          </button>
+          <button class="btn fw-medium btnAgregarAListaDeDeseos">
+            Agregar a Lista de Deseos
+          </button>
+        </div>
+      </div>
+    </article>
+  </section>
+  `
