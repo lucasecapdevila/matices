@@ -1,15 +1,14 @@
-const parametroURL = new URLSearchParams(window.location.search);
-const idProducto = parametroURL.get("id");
+const parametroURL = new URLSearchParams(window.location.search)
+const idProducto = parametroURL.get('id')
 
-const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey"));
+const listaProductos = JSON.parse(localStorage.getItem('listaProductosKey'))
 
-const productoBuscado = listaProductos.find(
-  (iteProducto) => iteProducto.id === idProducto
-);
+const productoBuscado = listaProductos.find((iteProducto) => iteProducto.id === idProducto)
 
-const mainDetalleProducto = document.querySelector("main");
+const mainDetalleProducto = document.querySelector('main')
 mainDetalleProducto.innerHTML += `
   <section class="row mx-0">
+    <!-- Contenedor imágen del producto -->
     <div class="col-md-6 px-0">
       <img
         src="../img/productos/PD-Lapiz_1.jpg"
@@ -18,6 +17,8 @@ mainDetalleProducto.innerHTML += `
       />
     </div>
 
+    <!-- ! Toda esta sección es de prueba, será cambiada con productos creados desde JS -->
+    <!-- Título y precio -->
     <div
       class="col-md-6 mx-0 px-0 d-flex flex-column align-items-center align-items-lg-start fondoAzul d-lg-none"
     >
@@ -47,6 +48,7 @@ mainDetalleProducto.innerHTML += `
       </button>
     </div>
 
+    <!-- Descripción -->
     <div
       class="mt-2 mt-md-5 col-12 col-md-6 mt-5 mx-0 d-lg-none ps-md-4 px-4"
     >
@@ -61,6 +63,7 @@ mainDetalleProducto.innerHTML += `
       </p>
     </div>
 
+    <!-- Comprar -->
     <div class="col-12 col-md-6 mb-4 mt-md-5 d-lg-none">
       <div class="d-flex justify-content-center align-items-center">
         <p class="mb-0 me-5 fs-4">Cantidad:</p>
@@ -98,9 +101,11 @@ mainDetalleProducto.innerHTML += `
       </div>
     </div>
 
+    <!-- Pantalla en Desktops -->
     <article
       class="col-6 d-none d-lg-flex flex-column px-5 py-0 fondoAzul justify-content-center"
     >
+      <!-- Título y precio -->
       <div class="align-items-lg-start mb-4">
         <p
           class="w-25 text-center text-uppercase fw-bold py-1 text-light fw-lighter rounded-2 tx-parrafo bg-RosaOscuro"
@@ -128,7 +133,8 @@ mainDetalleProducto.innerHTML += `
         </button>
       </div>
 
-      <div>
+      <!-- Descripción -->
+      <div class="">
         <h2
           class="col-12 text-md-start text-center text-uppercase tx-titulo"
         >
@@ -142,7 +148,8 @@ mainDetalleProducto.innerHTML += `
         </p>
       </div>
 
-      <div>
+      <!-- Comprar -->
+      <div class="">
         <div class="d-flex justify-content-center align-items-center">
           <p class="mb-0 me-5 fs-4">Cantidad:</p>
           <button
@@ -177,5 +184,4 @@ mainDetalleProducto.innerHTML += `
         </div>
       </div>
     </article>
-  </section>
-  `
+  </section>`
