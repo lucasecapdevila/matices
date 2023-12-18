@@ -353,6 +353,30 @@ canvas {
   margin-left: -450px;
 }
 
+/*! Estilos Agostina - página Nosotros */
+
+body {
+  padding-top: 70px; 
+  background-image: url(../img/nuevofondo.jpg);
+}
+.banner {
+  background-color: transparent;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-family: poppins;
+}
+.banner h1:hover {
+  color: rgba(232, 84, 202, 0.966); 
+}
+
+
+
+
+
+
+
+
 /* Estilos Login */
 .bg-forms {
   background-color: #f12b2ba4;
