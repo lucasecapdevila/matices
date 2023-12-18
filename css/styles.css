@@ -354,10 +354,8 @@ canvas {
 }
 
 /*! Estilos Agostina - página Nosotros */
-
-body {
-  padding-top: 70px; 
-  background-image: url(../img/nuevofondo.jpg);
+.cuerpoNos{
+   background-image: url(../img/nuevofondo.jpg);
 }
 .bannerNos {
   background-color: transparent;
