@@ -7,7 +7,7 @@ export const validarNombreProducto = (texto, min, max) => {
   }
 };
 
-export const validarPrecio = (precio) => {
+export const validarPrecio = (precio, min, max) => {
   if (isNaN(precio) || precio <= 0) {
     alert("Por favor, ingrese un valor numérico mayor que cero.");
     return false;
@@ -47,8 +47,8 @@ export const validarDescripcionProd = (texto, min, max) => {
   }
 };
 
-export const validarCantStock = (precio) => {
-  if (isNaN(precio) || precio <= 0) {
+export const validarCantStock = (cantidad) => {
+  if (isNaN(cantidad) || cantidad <= 0) {
     alert("Por favor, ingrese un valor numérico mayor que cero.");
     return false;
   } else {
