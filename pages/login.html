@@ -29,31 +29,32 @@
       crossorigin="anonymous"
     />
     <!-- Estilos Propios -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
 
     <!-- Titulo de la Pestaña -->
-    <link rel="icon" href="./img/Icono_Matices_Rosa.svg" />
+    <link rel="icon" href="../img/Icono_Matices_Rosa.svg" />
     <title>Matices</title>
   </head>
-  <body>
+  <body class="bg-body-detalle">
     <header>
       <nav class="navbar navbar-expand-lg bg-AzulOscuro" data-bs-theme="dark">
         <div class="container-fluid px-3 px-md-4 px-lg-5">
           <a
             class="m-0 tx-titulo tx-RosaMatices logo-navbar"
-            href="./index.html"
+            href="../index.html"
           >
             <img
-              src="img/Icono_Matices_Rosa.svg"
-              class="img-fluid me-lg-3"
+              src="../img/Icono_Matices_Rosa.svg"
+              class="img-fluid me-3"
               alt="Logo Matices"
             />
           </a>
           <a
             class="m-0 fs-2 navbar-brand d-none d-md-block tx-titulo tx-RosaMatices"
-            href="./index.html"
+            href="../index.html"
             >matices</a
           >
+
           <button
             class="navbar-toggler"
             type="button"
@@ -63,7 +64,7 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon fs-6"></span>
           </button>
           <div
             class="collapse navbar-collapse text-center ms-lg-5 ps-lg-5"
@@ -71,33 +72,35 @@
           >
             <ul class="navbar-nav me-auto my-2 mb-lg-0" id="lista-navbar">
               <li class="nav-item ms-auto mb-2 m-lg-0">
-                <a class="nav-link tx-RosaMatices active fs-5" href="#"
+                <a
+                  class="hvr-underline-from-left nav-link tx-RosaMatices fs-5"
+                  href="../index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item ms-auto mb-2">
                 <a
                   class="hvr-underline-from-left nav-link mx-lg-3 tx-RosaMatices fs-5"
-                  href="./pages/nosotros.html"
+                  href="./nosotros.html"
                   >Nosotros</a
                 >
               </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="hvr-grow nav-item ms-auto mb-4 mb-lg-0 me-lg-4">
-                <a href="./pages/error404.html" class="unstyled-Link"
+                <a href="./error404.html" class="unstyled-Link"
                   ><i
                     class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
                   ></i>
-                  <p class="m-0 d-lg-none tx-RosaMatices fs-5">Favoritos</p></a
+                  <p class="m-0 d-lg-none tx-RosaMatices">Favoritos</p></a
                 >
               </li>
               <li class="hvr-grow nav-item ms-auto">
-                <a href="./pages/login.html" class="unstyled-Link"
+                <a href="./login.html" class="unstyled-Link"
                   ><i
                     class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
                   ></i>
-                  <p class="m-0 d-lg-none tx-RosaMatices fs-5">Iniciar sesión</p></a
+                  <p class="m-0 d-lg-none tx-RosaMatices">Iniciar sesión</p></a
                 >
               </li>
             </ul>
@@ -106,71 +109,86 @@
       </nav>
     </header>
 
-    <main>
-      <section>
-        <div
-          id="carouselMatices"
-          class="carousel slide"
-          data-bs-ride="carousel"
+    <main class="container-fluid d-flex flex-column justify-content-center">
+      <!-- Sign in -->
+      <section
+        class="row justify-content-center p-4 p-md-0 bg-light"
+        id="container-login"
+      >
+        <article
+          class="col-lg-6 col-md-8 d-flex flex-column justify-content-center p-md-5 formLogin p-3 bg-light"
         >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/banner1.webp" class="d-block w-100" alt="banner" />
-            </div>
-            <div class="carousel-item">
-              <img src="img/banner2.webp" class="d-block w-100" alt="banner" />
-            </div>
-            <div class="carousel-item">
-              <img src="img/banner3.webp" class="d-block w-100" alt="banner" />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselMatices"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselMatices"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
+          <h2 class="tx-titulo text-center mb-lg-3 fs-1 tx-AzulOscuro">
+            ¡Bienvenido de nuevo!
+          </h2>
+          <p class="text-center tx-parrafo mb-lg-3">
+            Ingresa tus datos para empezar.
+          </p>
 
-      <section class="my-5 container">
-        <article class="row">
-          <div class="col-lg-6">
-            <h1 class="text-center tx-titulo">
-              ¿Ya compraste los regalos para estas fiestas?
-            </h1>
-            <p class="lead">
-              Nuestra cuidadosa selección de libros abarca desde clásicos
-              atemporales hasta las últimas tendencias en arte contemporáneo.
-              Explora las obras maestras de grandes maestros y descubre nuevas
-              voces que están dando forma al futuro del arte. <br />Nuestro
-              equipo apasionado está listo para guiarte y recomendarte las joyas
-              literarias y las herramientas perfectas para tu viaje artístico.
-              ¡Visítanos y déjate llevar por la magia de la creatividad en
-              Matices, donde cada libro es una obra de arte esperando ser
-              descubierta!
-            </p>
-          </div>
-          <aside class="col-lg-6">
+          <form action="" class="mx-lg-5" method="post" id="form">
+            <div class="mb-md-4 mb-3" id="div-mail">
+              <label for="inputEmail" class="form-label tx-parrafo ps-1"
+                >E-Mail</label
+              >
+              <input
+                type="email"
+                required
+                autocomplete="username"
+                minlength="15"
+                maxlength="50"
+                class="inputLogin tx-parrafo ps-3"
+                id="inputEmail"
+                placeholder="johndoe@xyz.com"
+              />
+              <p class="text-danger ms-1 m-2" id="errorEmail"></p>
+            </div>
+            <div class="mb-md-4 mb-3">
+              <label for="inputPassword" class="form-label tx-parrafo ps-1"
+                >Contraseña</label
+              >
+              <input
+                type="password"
+                autocomplete="current-password"
+                required
+                minlength="8"
+                maxlength="35"
+                id="inputPassword"
+                class="inputLogin tx-parrafo ps-3"
+                placeholder="********"
+                aria-describedby="passwordHelpBlock"
+              />
+              <p class="text-danger ms-1 m-2" id="errorPassword"></p>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn-iniciar tx-titulo px-4 py-2 my-lg-3 mb-md-4 mb-3"
+              >
+                Iniciar Sesión
+              </button>
+              <a href="#" class="d-block tx-parrafo mt-lg-2"
+                >¿Olvidaste tu contraseña?</a
+              >
+            </div>
+          </form>
+        </article>
+        <article
+          class="col-lg-6 col-md-12 bg-forms text-center d-none d-md-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="mb-3 py-3">
             <img
-              src="img/fox-60CpKQ7u-yE-unsplash.jpg"
-              class="img-fluid"
-              alt="publicidad"
+              src="../img/Ilustración_Login.svg"
+              alt="Mujer Pintando"
+              class="w-100 mb-4 p-md-3"
             />
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quasi, alias numquam atque nihil et. Illo nostrum, veritatis voluptas sint nisi tempora nam excepturi odit exercitationem ad, optio, obcaecati consectetur!</p> -->
-          </aside>
+            <h2 class="tx-titulo text-light mb-3">¿Eres nuevo?</h2>
+            <p class="text-light mb-3 tx-parrafo">
+              Sé miembro de Matices ¡hoy mismo!
+            </p>
+            <button type="submit" class="btn-crear tx-titulo px-4 py-2 mb-lg-3">
+              Crear Cuenta
+            </button>
+          </div>
         </article>
       </section>
     </main>
@@ -181,10 +199,10 @@
       >
         <a
           class="link-underline link-underline-opacity-0 d-flex align-items-center justify-content-center w-50"
-          href="index.html"
+          href="../index.html"
         >
           <img
-            src="img/Icono_Matices_Rosa.svg"
+            src="../img/Icono_Matices_Rosa.svg"
             class="img-fluid logo-footer"
             alt="Logo Matices"
           />
@@ -207,7 +225,7 @@
             <li class="mb-2 col-12 d-lg-flex justify-content-lg-start">
               <a
                 class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
-                href="index.html"
+                href="../index.html"
                 >Inicio</a
               >
             </li>
@@ -312,9 +330,6 @@
       </p>
     </footer>
 
-    <!--Canva de dibujo Error404-->
-    <script src="../js/canva.js"></script>
-
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/c7393ce70b.js"
@@ -327,7 +342,10 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="js/main.js"></script>
-    <script src="js/navbar.js"></script>
+
+    <!-- Sweet Alert 2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/navbar.js"></script>
   </body>
 </html>

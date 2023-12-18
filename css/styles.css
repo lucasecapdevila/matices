@@ -1,7 +1,7 @@
 /* Estilos Principales */
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@500&family=Roboto&display=swap");
 
-.bg-body-detalle{
+.bg-body-detalle {
   background: #dbe8f7;
 }
 
@@ -13,6 +13,7 @@ body {
 
 main {
   flex-grow: 1;
+  min-height: 90vh;
 }
 
 /* Tipografias */
@@ -266,6 +267,10 @@ footer {
 }
 
 /* Efectos hover de enlaces */
+.unstyled-Link {
+  text-decoration: none;
+}
+
 .fa-facebook-f:hover,
 .fa-instagram:hover,
 .fa-twitter:hover,
@@ -319,48 +324,78 @@ footer {
   transform: scaleY(1);
 }
 
-
-/*! Carousel */
-.banner1{
-  
-  background-position: top center;
+/* Borrar flechas en input tipo numero */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
+/*! Estilos Agostina Error404 */
+.body {
+  margin: 0;
+  padding: 0;
+}
 
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+canvas {
+  background-image: url(../img/fondolapiz_error404_Ok.png);
+}
 
+#btnVolverInicio {
+  margin-top: -930px;
+  margin-left: -450px;
+}
 
+/* Estilos Login */
+.bg-forms {
+  background-color: #f12b2ba4;
+}
 
+.btn-crear {
+  background-color: rgba(0, 255, 255, 0);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+}
 
+.btn-crear:active {
+  transform: scale(0.95);
+}
 
+.inputLogin {
+  display: block;
+  background-color: #bed2e960;
+  border: 0px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 7px;
+}
 
+.btn-iniciar {
+  background-color: #ea8172;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+}
 
+.btn-iniciar:active {
+  transform: scale(1.05);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-/* @media screen and (max-width: 767px) {
-  .carousel-inner:first-child{
-    width: 100%;
+@media only screen and (min-width: 992px) {
+  .formLogin {
+    height: 100vh;
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .carousel-inner:first-child{
-    width: 75%;
-  }
+.btn-modal {
+  background-color: #3bbc95 !important;
+  border-color: #3bbc95;
 }
-
-@media screen and (min-width: 992px) {
-  .carousel-inner:first-child{
-    padding: 100px;
-  }
-} */
