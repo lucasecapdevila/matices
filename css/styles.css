@@ -394,7 +394,30 @@ border-radius: 50%;
 transform: scale(1.1);
 }
 
+ /* Centrar las cards y las columnas */
 
+ .card, .col-md-6 {
+  margin: auto;
+}
+
+ /* Texto justificado en los aside */
+ .aside-text {
+  text-align: justify;
+}
+
+/*Espacio entre los asides */
+.aside {
+      margin-bottom: 30px;
+    }
+/* Centrar y poner en negrita el nombre */
+ .card-title {
+  text-align: center;
+  font-weight:  bold;
+ }
+/* Para aumetar el espacio entre las secciones */
+ .space-between-sections {
+  margin-bottom: 20px;
+}
 
 
 
