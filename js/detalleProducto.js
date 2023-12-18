@@ -68,17 +68,19 @@ mainDetalleProducto.innerHTML += `
         <button
           type="button"
           class="fs-3 lh-1 rounded-2 px-2 pb-1 btnCantidad"
+          onclick="decrementarCantidadEnResponsive()"
         >
           -
         </button>
         <input
           class="border-0 rounded-2 text-center mx-4 px-2 py-2 inputCantidad"
+          id="inputCantidadResponsive"
           value="${cantidad}"
         />
         <button
           type="button"
           class="fs-3 lh-1 rounded-2 px-1 pb-1 btnCantidad"
-          onclick="incrementarCantidad()"
+          onclick="incrementarCantidadEnResponsive()"
         >
           +
         </button>
@@ -151,17 +153,19 @@ mainDetalleProducto.innerHTML += `
           <button
             type="button"
             class="fs-3 lh-1 rounded-2 px-2 pb-1 btnCantidad"
+            onclick="decrementarCantidadEnDesktop()"
           >
             -
           </button>
           <input
+            id="inputCantidadDesktop"
             class="border-0 rounded-2 text-center mx-4 px-2 py-2 inputCantidad"
             value="${cantidad}"
           />
           <button
             type="button"
             class="fs-3 lh-1 rounded-2 px-1 pb-1 btnCantidad"
-            onclick="incrementarCantidad()"
+            onclick="incrementarCantidadEnDesktop()"
           >
             +
           </button>
@@ -183,10 +187,34 @@ mainDetalleProducto.innerHTML += `
     </article>
   </section>`
 
-  window.incrementarCantidad = () => {
-    const cantidadAComprar = document.querySelectorAll('.inputCantidad')
-    
-    for (let i = 1; i < cantidadAComprar.length; i++){
-      console.log(cantidad++);
+  window.incrementarCantidadEnResponsive = () => {
+    const inputCantidadResponsive = document.getElementById('inputCantidadResponsive')
+    if(cantidad > 0 && cantidad < productoBuscado.stock){
+      cantidad++
+      inputCantidadResponsive.value = cantidad
+    }
+  }
+
+  window.incrementarCantidadEnDesktop = () => {
+    const inputCantidadDesktop = document.getElementById('inputCantidadDesktop')
+    if(cantidad > 0 && cantidad < productoBuscado.stock){
+      cantidad++
+      inputCantidadDesktop.value = cantidad
+    }
+  }
+
+  window.decrementarCantidadEnResponsive = () => {
+    const inputCantidadResponsive = document.getElementById('inputCantidadResponsive')
+    if(cantidad > 1 && cantidad < productoBuscado.stock){
+      cantidad--
+      inputCantidadResponsive.value = cantidad
+    }
+  }
+
+  window.decrementarCantidadEnDesktop = () => {
+    const inputCantidadDesktop = document.getElementById('inputCantidadDesktop')
+    if(cantidad > 1 && cantidad < productoBuscado.stock){
+      cantidad--
+      inputCantidadDesktop.value = cantidad
     }
   }
