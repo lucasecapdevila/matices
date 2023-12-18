@@ -359,17 +359,40 @@ body {
   padding-top: 70px; 
   background-image: url(../img/nuevofondo.jpg);
 }
-.banner {
+.bannerNos {
   background-color: transparent;
   color: #fff;
   padding: 20px 0;
   text-align: center;
   font-family: poppins;
 }
-.banner h1:hover {
+.bannerNos h1:hover {
   color: rgba(232, 84, 202, 0.966); 
 }
 
+.team-section {
+  background-color: transparent;
+  padding: 40px 0;
+  text-align: center;
+  font-family: nunito;
+  font-size: x-large;
+}
+
+.card {
+margin: 20px 0;
+padding: 0;
+border: none;
+background: transparent;
+transition: transform 0.3s ease-in-out;
+font-family: Nunito;
+}
+
+.card img {
+border-radius: 50%; 
+}
+.card:hover {
+transform: scale(1.1);
+}
 
 
 
