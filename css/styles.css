@@ -361,13 +361,16 @@ body {
 }
 .bannerNos {
   background-color: transparent;
-  color: #fff;
+  color: rgb(67, 7, 40);
   padding: 20px 0;
   text-align: center;
   font-family: poppins;
 }
 .bannerNos h1:hover {
-  color: rgba(232, 84, 202, 0.966); 
+  background: #ccc;
+  background: linear-gradient(90deg, #0e3361, #c96e67);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .team-section {
