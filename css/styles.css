@@ -354,8 +354,8 @@ canvas {
 }
 
 /*! Estilos Agostina - página Nosotros */
-.cuerpoNos{
-   background-image: url(../img/nuevofondo.jpg);
+.cuerpoNos {
+  background-image: url(../img/nuevofondo.jpg);
 }
 .bannerNos {
   background-color: transparent;
@@ -380,49 +380,46 @@ canvas {
 }
 
 .card {
-margin: 20px 0;
-padding: 0;
-border: none;
-background: transparent;
-transition: transform 0.3s ease-in-out;
-font-family: Nunito;
+  margin: 20px 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  transition: transform 0.3s ease-in-out;
+  font-family: Nunito;
 }
 
 .card img {
-border-radius: 50%; 
+  border-radius: 50%;
 }
 .card:hover {
-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
- /* Centrar las cards y las columnas */
+/* Centrar las cards y las columnas */
 
- .card, .col-md-6 {
+.card,
+.col-md-6 {
   margin: auto;
 }
 
- /* Texto justificado en los aside */
- .aside-text {
+/* Texto justificado en los aside */
+.aside-text {
   text-align: justify;
 }
 
 /*Espacio entre los asides */
 .aside {
-      margin-bottom: 30px;
-    }
+  margin-bottom: 30px;
+}
 /* Centrar y poner en negrita el nombre */
- .card-title {
+.card-title {
   text-align: center;
-  font-weight:  bold;
- }
+  font-weight: bold;
+}
 /* Para aumetar el espacio entre las secciones */
- .space-between-sections {
+.space-between-sections {
   margin-bottom: 20px;
 }
-
-
-
-
 
 /* Estilos Login */
 .bg-forms {
@@ -482,6 +479,7 @@ transform: scale(1.1);
 
 .cardProducto {
   width: 90%;
+  background-color: #f8f9fa;
 }
 
 @media screen and (min-width: 992px) {
