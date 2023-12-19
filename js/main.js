@@ -19,11 +19,12 @@ const modalAdminProductos = new bootstrap.Modal(
 let creandoProducto = true;
 
 //  Traigo item de LS
-const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+const listaProductos =
+  JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 let logged = localStorage.getItem("logged");
 
-const imagenPrevisualizada = document.createElement('img')
-const contenedorImagen = document.getElementById('contenedorUrlImagen')
+const imagenPrevisualizada = document.createElement("img");
+const contenedorImagen = document.getElementById("contenedorUrlImagen");
 const tablaProductos = document.getElementById("tabla");
 const tituloSinProductos = document.getElementById("sinProductos");
 const formulario = document.getElementById("formularioProducto");
@@ -42,10 +43,11 @@ const cuerpoTablaProductos = document.getElementById("cuerpoTablaProductos");
 
 //* Funciones
 const logueado = () => {
-  if(logged == 0){
+  if (logged == 0) {
     Swal.fire({
       icon: "error",
-      title: '<h2 class="tx-titulo text-center">¡No tienes los permisos para entrar a esta sección!</h2>',
+      title:
+        '<h2 class="tx-titulo text-center">¡No tienes los permisos para entrar a esta sección!</h2>',
       text: "¿Quiers iniciar sesión?",
       showDenyButton: true,
       showConfirmButton: true,
@@ -68,10 +70,9 @@ const logueado = () => {
       }
     });
   }
-}
+};
 
-logueado()
-
+logueado();
 
 const cargaInicial = () => {
   if (listaProductos.length > 0) {
@@ -111,16 +112,22 @@ const ocultarModal = () => {
 };
 
 const limpiarFormulario = () => {
+  imagenPrevisualizada.remove();
   formulario.reset();
 };
 
 //  Mostrar previsualización de imagen en formulario
 const previsualizarProducto = () => {
-  imagenPrevisualizada.classList.add('img-responsive', 'img-fluid', 'h-auto', 'mx-auto')
-  imagenPrevisualizada.setAttribute('src', `${urlImagen.value}`)
-  imagenPrevisualizada.setAttribute('alt', `${nombre.value}`)
-  contenedorImagen.appendChild(imagenPrevisualizada)
-}
+  imagenPrevisualizada.classList.add(
+    "img-responsive",
+    "img-fluid",
+    "h-auto",
+    "mx-auto"
+  );
+  imagenPrevisualizada.setAttribute("src", `${urlImagen.value}`);
+  imagenPrevisualizada.setAttribute("alt", `${nombre.value}`);
+  contenedorImagen.appendChild(imagenPrevisualizada);
+};
 
 const guardarEnLS = () => {
   localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
@@ -137,7 +144,7 @@ function crearProducto(e) {
       validarPrecio(precioProducto.value, 1, 2000) &&
       validarCategoria(categoriaProducto.value, 3, 20) &&
       validarImgProd(imagenProducto.value) &&
-      validarDescripcionProd(descripcionProducto.value, 10, 100) &&
+      validarDescripcionProd(descripcionProducto.value, 10, 400) &&
       validarCantStock(stockDeProducto.value, 1, 1000)
     ) {
       const nuevoProducto = new Producto(
@@ -152,7 +159,6 @@ function crearProducto(e) {
 
       listaProductos.push(nuevoProducto);
       limpiarFormulario();
-
       guardarEnLS();
 
       tablaProductos.classList.remove("d-none");
@@ -191,8 +197,8 @@ window.editarProducto = (idProducto) => {
     urlImagen.value = producto.urlImagen;
     descripcion.value = producto.descripcion;
     stock.value = producto.stock;
-    imagenPrevisualizada.remove()
-    
+    imagenPrevisualizada.remove();
+
     btnConfirmar.addEventListener("click", () => {
       Swal.fire({
         title: "¿Deseas guardar los cambios?",
@@ -264,9 +270,8 @@ window.eliminarProducto = (idProducto) => {
   });
 };
 
-
 btnNuevoProducto.addEventListener("click", mostrarModal);
 formulario.addEventListener("submit", crearProducto);
-urlImagen.addEventListener('change', previsualizarProducto)
+urlImagen.addEventListener("change", previsualizarProducto);
 
 cargaInicial();

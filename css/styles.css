@@ -109,7 +109,7 @@ main {
 
 @media screen and (min-width: 768px) {
   .fondoAzul {
-    background-color: #bbc8d8;
+    background-color: #c0d8f5;
     padding-top: 10%;
     padding-bottom: 10%;
   }
@@ -333,19 +333,19 @@ input::-webkit-inner-spin-button {
 
 /*! Estilos Agostina Error404 */
 @media screen and (max-width: 767px) {
-  .main-container button {
+  .main-container a {
     width: 80%;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .main-container button {
+  .main-container a {
     width: 50%;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .main-container button {
+  .main-container a {
     width: 33%;
   }
 }
@@ -366,6 +366,7 @@ input::-webkit-inner-spin-button {
   background: linear-gradient(90deg, #0e3361, #c96e67);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .team-section {
@@ -519,6 +520,16 @@ input::-webkit-inner-spin-button {
 
 .bg-blanco {
   background-color: #ffffff;
+}
+
+.textAreaAdmin {
+  min-height: 100px !important;
+}
+
+/* Correciones detalle producto*/
+.contenedorDetalleProductos {
+  background-color: #f1dfdc;
+  min-height: 110vh;
 }
 
 /* Corección Página administración */
