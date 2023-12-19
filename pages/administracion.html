@@ -85,6 +85,13 @@
                   >Nosotros</a
                 >
               </li>
+              <li class="nav-item ms-auto mb-2" id="administracion-navbar">
+                <a
+                  class="nav-link tx-RosaMatices fs-5 active"
+                  href="/pages/administracion.html"
+                  >Administración</a
+                >
+              </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="hvr-grow nav-item ms-auto mb-4 mb-lg-0 me-lg-4">
@@ -92,7 +99,7 @@
                   ><i
                     class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
                   ></i>
-                  <p class="m-0 d-lg-none tx-RosaMatices">Favoritos</p></a
+                  <p class="m-0 d-lg-none tx-RosaMatices fs-5">Favoritos</p></a
                 >
               </li>
               <li class="hvr-grow nav-item ms-auto">
@@ -100,7 +107,9 @@
                   ><i
                     class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
                   ></i>
-                  <p class="m-0 d-lg-none tx-RosaMatices">Iniciar sesión</p></a
+                  <p class="m-0 d-lg-none tx-RosaMatices fs-5">
+                    Iniciar sesión
+                  </p></a
                 >
               </li>
             </ul>
@@ -110,14 +119,23 @@
     </header>
 
     <main class="container mt-2 text-center">
-      <h1>Lista de Productos</h1>
-      <button id="btnNuevoProducto" class="btn btn-primary">
-        Agregar nuevo producto
-      </button>
+      <section
+        class="d-flex flex-column align-items-center contenedor-busqueda py-3 rounded-4 mt-3"
+      >
+        <h1 class="tx-titulo text-center py-2 tx-AzulOscuro">
+          Lista de Productos
+        </h1>
+        <button
+          id="btnNuevoProducto"
+          class="btn btn-crearProducto tx-parrafo p-2 px-3"
+        >
+          <i class="bi bi-plus-circle pe-1"></i> Agregar nuevo producto
+        </button>
+      </section>
 
-      <section class="table-responsive mt-4">
+      <section class="table-responsive mt-4 rounded-4">
         <h3 id="sinProductos">En este momento no hay productos</h3>
-        <table id="tabla" class="table table-striped">
+        <table id="tabla" class="table table-striped table-primary border-2">
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -236,7 +254,7 @@
               <button
                 id="confirmarEdicionProducto"
                 type="submit"
-                class="btn btn-primary mt-2"
+                class="btn btn-crearProducto mt-2"
               >
                 Confirmar
               </button>
@@ -397,7 +415,6 @@
 
     <!-- Sweet Alert 2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
     <script src="../js/main.js" type="module"></script>
   </body>
 </html>
