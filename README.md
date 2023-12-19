@@ -12,7 +12,7 @@ Participaron en este proyecto:
 
 - Bellotti, Laura Agostina
 
-- Capdevila, Lucas ()
+- Capdevila, Lucas
 
 - Diaz, Santiago Díaz
 

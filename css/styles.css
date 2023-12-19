@@ -345,7 +345,7 @@ input::-webkit-inner-spin-button {
 }
 
 @media screen and (max-width: 767px){
-  background-image:
+ 
   
 }
 canvas {
@@ -364,8 +364,7 @@ canvas {
   margin-left: -450px;
 }
 
-<<<<<<< HEAD
-=======
+
 /*! Estilos Agostina - página Nosotros */
 .cuerpoNos {
   background-image: url(../img/nuevofondo.jpg);
@@ -518,4 +517,3 @@ canvas {
   background-color: #3b8fbc !important;
   color: #f8f9fa;
 }
->>>>>>> d0789b825fffa6ff57210c092c748aa820348413
