@@ -91,14 +91,19 @@ mainDetalleProducto.innerHTML += `
       <div
         class="col-9 d-flex flex-column flex-lg-row align-items-lg-center mx-auto mb-lg-5 pb-lg-5"
       >
-        <button
+        <a
           class="btn w-100 my-3 mx-lg-2 text-light fw-medium btnAgregarAlCarrito"
+          href="../pages/Error404.html"
         >
           Agregar al Carrito
-        </button>
-        <button class="btn w-100 fw-medium btnAgregarAListaDeDeseos">
+        </a>
+
+        <a 
+          class="btn w-100 fw-medium btnAgregarAListaDeDeseos"
+          href="../pages/Error404.html"
+        >
           Agregar a Lista de Deseos
-        </button>
+        </a>
       </div>
     </div>
 
@@ -176,12 +181,12 @@ mainDetalleProducto.innerHTML += `
           (${productoBuscado.stock} Disponibles)
         </p>
         <div class="text-center">
-          <button class="btn mx-2 text-light fw-medium btnAgregarAlCarrito">
+          <a class="btn mx-2 text-light fw-medium btnAgregarAlCarrito" href="../pages/Error404.html">
             Agregar al Carrito
-          </button>
-          <button class="btn fw-medium btnAgregarAListaDeDeseos">
+          </a>
+          <a class="btn fw-medium btnAgregarAListaDeDeseos" href="../pages/Error404.html">
             Agregar a Lista de Deseos
-          </button>
+          </a>
         </div>
       </div>
     </article>
