@@ -54,7 +54,25 @@
             href="../index.html"
             >matices</a
           >
-
+          <form class="d-flex ms-auto me-4 order-lg-1" role="search">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control d-none d-md-block bg-AzulMatices border border-0"
+                id="inputBuscarNavbar"
+                placeholder="Busca lo que desees..."
+                aria-label="Busca lo que desees..."
+                aria-describedby="botonBuscar"
+              />
+              <button
+                class="btn btn-outline-secondary bg-AzulClaro border border-0"
+                type="button"
+                id="botonBuscar"
+              >
+                <i class="fa-solid fa-magnifying-glass text-light"></i>
+              </button>
+            </div>
+          </form>
           <button
             class="navbar-toggler"
             type="button"
@@ -262,5 +280,6 @@
     ></script>
     <script src="../js/navbar.js"></script>
     <script src="../js/detalleProducto.js"></script>
+
   </body>
 </html>

@@ -19,9 +19,11 @@ const modalAdminProductos = new bootstrap.Modal(
 let creandoProducto = true;
 
 //  Traigo item de LS
-const listaProductos =
-  JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+let logged = localStorage.getItem("logged");
 
+const imagenPrevisualizada = document.createElement('img')
+const contenedorImagen = document.getElementById('contenedorUrlImagen')
 const tablaProductos = document.getElementById("tabla");
 const tituloSinProductos = document.getElementById("sinProductos");
 const formulario = document.getElementById("formularioProducto");
@@ -39,6 +41,38 @@ const nombre = document.getElementById("nombreProducto"),
 const cuerpoTablaProductos = document.getElementById("cuerpoTablaProductos");
 
 //* Funciones
+const logueado = () => {
+  if(logged == 0){
+    Swal.fire({
+      icon: "error",
+      title: '<h2 class="tx-titulo text-center">¡No tienes los permisos para entrar a esta sección!</h2>',
+      text: "¿Quiers iniciar sesión?",
+      showDenyButton: true,
+      showConfirmButton: true,
+      confirmButtonText: "Iniciar sesión",
+      denyButtonText: "Cancelar",
+      customClass: {
+        popup: "rounded-5",
+        confirmButton: "btn-modal rounded-4",
+        denyButton: "rounded-4",
+      },
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.href = "login.html";
+      } else if (result.isDenied) {
+        window.location.href = "../index.html";
+      }
+    });
+  }
+}
+
+logueado()
+
+
 const cargaInicial = () => {
   if (listaProductos.length > 0) {
     listaProductos.map((producto, orden) => crearFila(producto, orden + 1));
@@ -79,6 +113,14 @@ const ocultarModal = () => {
 const limpiarFormulario = () => {
   formulario.reset();
 };
+
+//  Mostrar previsualización de imagen en formulario
+const previsualizarProducto = () => {
+  imagenPrevisualizada.classList.add('img-responsive', 'img-fluid', 'h-auto', 'mx-auto')
+  imagenPrevisualizada.setAttribute('src', `${urlImagen.value}`)
+  imagenPrevisualizada.setAttribute('alt', `${nombre.value}`)
+  contenedorImagen.appendChild(imagenPrevisualizada)
+}
 
 const guardarEnLS = () => {
   localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
@@ -149,7 +191,8 @@ window.editarProducto = (idProducto) => {
     urlImagen.value = producto.urlImagen;
     descripcion.value = producto.descripcion;
     stock.value = producto.stock;
-
+    imagenPrevisualizada.remove()
+    
     btnConfirmar.addEventListener("click", () => {
       Swal.fire({
         title: "¿Deseas guardar los cambios?",
@@ -209,7 +252,6 @@ window.eliminarProducto = (idProducto) => {
       listaProductos.splice(posicionProductoAEliminar, 1);
       guardarEnLS();
       const tablaProductos = document.querySelector("tbody");
-      console.log(tablaProductos.children[posicionProductoAEliminar]);
       tablaProductos.removeChild(
         tablaProductos.children[posicionProductoAEliminar]
       );
@@ -222,7 +264,9 @@ window.eliminarProducto = (idProducto) => {
   });
 };
 
+
 btnNuevoProducto.addEventListener("click", mostrarModal);
 formulario.addEventListener("submit", crearProducto);
+urlImagen.addEventListener('change', previsualizarProducto)
 
 cargaInicial();
