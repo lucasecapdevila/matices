@@ -219,7 +219,7 @@
           class="container my-3 p-4 bg-light rounded-top-5 d-flex justify-content-center align-items-center contenedor-busqueda"
         >
           <!-- Buscador -->
-          <form class="d-flex w-auto">
+          <form class="d-flex w-auto" id="buscador">
             <div class="input-group">
               <label
                 for="inputBuscar"
@@ -234,11 +234,7 @@
                 placeholder="Lapices..."
                 aria-label="search"
               />
-              <button
-                type="submit"
-                class="btn BotonBusqueda rounded-end-4"
-                id="botonBuscar"
-              >
+              <button type="submit" class="btn BotonBusqueda rounded-end-4">
                 <i class="bi bi-search"></i>
               </button>
             </div>
@@ -253,7 +249,10 @@
         <h2 class="text-center tx-titulo fs-1 mb-4 tx-AzulOscuro">
           Nuestros Productos
         </h2>
-        <article class="d-flex flex-wrap" id="grillaProductos"></article>
+        <article
+          class="d-flex flex-wrap justify-content-md-between justify-content-center"
+          id="grillaProductos"
+        ></article>
       </section>
     </main>
 
