@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@500&family=Roboto&display=swap");
 
 .bg-body-detalle {
-  background: #dbe8f7;
+  background: #fefefe;
 }
 
 body {
@@ -511,8 +511,7 @@ input::-webkit-inner-spin-button {
 }
 
 .BotonBusqueda:hover {
-  background-color: #0d2572;
-  color: white;
+  background-color: #6f84c8;
 }
 
 .contenedor-busqueda {
@@ -531,4 +530,15 @@ input::-webkit-inner-spin-button {
 .contenedorDetalleProductos {
   background-color: #f1dfdc;
   min-height: 110vh;
+}
+
+/* Corección Página administración */
+.btn-crearProducto {
+  background-color: #274090;
+  color: white;
+}
+
+.btn-crearProducto:hover {
+  background-color: #6f84c8;
+  color: white;
 }
