@@ -11,6 +11,7 @@ let inputBuscador = document.getElementById("inputBuscar");
 // Creamos un constante para manejar el formulario del buscador
 let buscador = document.getElementById("buscador");
 
+// Funcion para crear el producto
 function crearProducto(producto) {
   grillaProductos.innerHTML += `
   <div class="card cardProducto rounded-5 shadow mb-4 mb-lg-5 mx-0">
@@ -39,24 +40,41 @@ function crearProducto(producto) {
 `;
 }
 
+// Funcion para generar la grilla al entrar a inicio
 function generarGrilla() {
   listaProductos.forEach((producto) => {
     crearProducto(producto);
   });
 }
 
+generarGrilla();
+
+// Función para realizar la busqueda
 buscador.addEventListener("submit", (e) => {
   e.preventDefault();
-  console.log(inputBuscador.value);
+  // Limpiamos la grilla
+  grillaProductos.innerHTML = "";
+
+  // Recorremos el arreglo de productos
   listaProductos.forEach((producto) => {
-    if (inputBuscador.value == "") generarGrilla();
+    // Convertimos a minusculas el nombre y la categoria del producto
+    let nombreProducto = producto.nombre.toLowerCase();
+    let categoriaProducto = producto.categoria.toLowerCase();
+
+    // Si se ingreso texto en la busqueda, se busca esa entrada en el nombre o la categoria de cada producto
     if (
-      producto.nombre == inputBuscador.value ||
-      producto.categoria == inputBuscador.value
+      nombreProducto.includes(inputBuscador.value.toLowerCase()) ||
+      categoriaProducto.includes(inputBuscador.value.toLowerCase())
     ) {
       crearProducto(producto);
     }
   });
 });
 
-//generarGrilla();
+inputBuscador.addEventListener("input", () => {
+  // Si no se busco nada, se genera la grilla completa nuevamente
+  if (inputBuscador.value == "") {
+    grillaProductos.innerHTML = "";
+    generarGrilla();
+  }
+});
