@@ -12,8 +12,8 @@ const modalAdminProductos = new bootstrap.Modal(
 let creandoProducto = true;
 
 //  Traigo item de LS
-const listaProductos =
-  JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+let logged = localStorage.getItem("logged");
 
 const tablaProductos = document.getElementById("tabla");
 const tituloSinProductos = document.getElementById("sinProductos");
@@ -32,6 +32,38 @@ const nombre = document.getElementById("nombreProducto"),
 const cuerpoTablaProductos = document.getElementById("cuerpoTablaProductos");
 
 //* Funciones
+const logueado = () => {
+  if(logged == 0){
+    Swal.fire({
+      icon: "error",
+      title: '<h2 class="tx-titulo text-center">¡No tienes los permisos para entrar a esta sección!</h2>',
+      text: "¿Quiers iniciar sesión?",
+      showDenyButton: true,
+      showConfirmButton: true,
+      confirmButtonText: "Iniciar sesión",
+      denyButtonText: "Cancelar",
+      customClass: {
+        popup: "rounded-5",
+        confirmButton: "btn-modal rounded-4",
+        denyButton: "rounded-4",
+      },
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.href = "login.html";
+      } else if (result.isDenied) {
+        window.location.href = "../index.html";
+      }
+    });
+  }
+}
+
+logueado()
+
+
 const cargaInicial = () => {
   if (listaProductos.length > 0) {
     listaProductos.map((producto, orden) => crearFila(producto, orden + 1));
