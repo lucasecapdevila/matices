@@ -333,23 +333,22 @@ input::-webkit-inner-spin-button {
 
 /*! Estilos Agostina Error404 */
 @media screen and (max-width: 767px) {
-  .main-container button{
+  .main-container button {
     width: 80%;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .main-container button{
+  .main-container button {
     width: 50%;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .main-container button{
+  .main-container button {
     width: 33%;
   }
 }
-
 
 /*! Estilos Agostina - página Nosotros */
 .cuerpoNos {
@@ -521,4 +520,8 @@ input::-webkit-inner-spin-button {
 
 .bg-blanco {
   background-color: #ffffff;
+}
+
+.textAreaAdmin {
+  min-height: 100px !important;
 }
