@@ -15,6 +15,8 @@ let creandoProducto = true;
 const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
 let logged = localStorage.getItem("logged");
 
+const imagenPrevisualizada = document.createElement('img')
+const contenedorImagen = document.getElementById('contenedorUrlImagen')
 const tablaProductos = document.getElementById("tabla");
 const tituloSinProductos = document.getElementById("sinProductos");
 const formulario = document.getElementById("formularioProducto");
@@ -104,6 +106,14 @@ const ocultarModal = () => {
 const limpiarFormulario = () => {
   formulario.reset();
 };
+
+//  Mostrar previsualización de imagen en formulario
+const previsualizarProducto = () => {
+  imagenPrevisualizada.classList.add('img-responsive', 'img-fluid', 'h-auto', 'mx-auto')
+  imagenPrevisualizada.setAttribute('src', `${urlImagen.value}`)
+  imagenPrevisualizada.setAttribute('alt', `${nombre.value}`)
+  contenedorImagen.appendChild(imagenPrevisualizada)
+}
 
 const guardarEnLS = () => {
   localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
@@ -247,5 +257,6 @@ window.verDetalleProducto = (idProducto) => {
 
 btnNuevoProducto.addEventListener("click", mostrarModal);
 formulario.addEventListener("submit", crearProducto);
+urlImagen.addEventListener('change', previsualizarProducto)
 
 cargaInicial();
