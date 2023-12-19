@@ -1,4 +1,4 @@
-# Librería Artistica "Matices"
+# Librería Artistica "Matices" 🎨
 
 Se trata de un proyecto grupal, de la Comisión 76i, de Rolling Code, en donde desarrollamos en conjunto una página web de e-commerce dedicado a la venta de insumos de arte. 
 En esta página ponemos en práctica todo lo aprendido sobre html,css y Javascript hasta el momento, contenido correspondiente al módulo 2 del curso del FullStack.  
@@ -6,28 +6,28 @@ En esta página ponemos en práctica todo lo aprendido sobre html,css y Javascri
 
 ## Autores del proyecto página web "Matices - Librería Artistica" 👩‍💻👨‍💻
 
-Participaron en este proyecto:
+Participaron en este proyecto: 👩‍💻👨‍💻
 
-- Asmet, Patricio
+- Asmet, Patricio https://github.com/Patricio-Asmet
 
-- Bellotti, Laura Agostina
+- Bellotti, Laura Agostina https://github.com/AgosBell
 
-- Capdevila, Lucas
+- Capdevila, Lucas  https://github.com/lucasecapdevila
 
-- Diaz, Santiago Díaz
+- Diaz, Santiago Díaz  https://github.com/DylanSDev
 
-- Sosa, Mariana
+- Sosa, Mariana https://github.com/MaruSosa 
 
 
-## 🔗 Link Repositorio de GitHub
+## 🔗 Link Repositorio de GitHub 😺 :octocat: :octocat:
 https://github.com/lucasecapdevila/matices
 
 
-## 🔗 Link de Netlify
+## 🔗 Link de Netlify 💻
 
 http://libreriamatices.netlify.app/
 
-## -Te interesa descargar este proyecto?
+## -Te interesa descargar este proyecto? 😏
 
 - Debes tener instaladas todas las herramientas nombradas en el archivo.
 - Abriendo una carpeta nueva en tu pc, desde ahi trabajar con Git Bash, que abre un CDN donde podrás insertar el comando git clone y el link que descargan el repositorio directo a tu pc:
@@ -37,7 +37,7 @@ http://libreriamatices.netlify.app/
 
 
 
-## Herramientas utilizadas en este proyecto
+## Herramientas utilizadas en este proyecto ⌨
 
 - Editor de código Visual Code Studio
     https://code.visualstudio.com/download
@@ -48,7 +48,7 @@ http://libreriamatices.netlify.app/
 - Sistema de control de Versiones "Git":
     https://git-scm.com/downloads
 
-## Librerias 
+## Librerias  📔📕 📖
 
 - Boostrap:
     https://getbootstrap.com/
@@ -59,7 +59,7 @@ http://libreriamatices.netlify.app/
 - Sweet Alert:
     https://sweetalert2.github.io/
 
-## Identidad visual del proyecto
+## Identidad visual del proyecto ✏ 📝
 - Elementos gráficos:
   - Íconos:
 
@@ -73,6 +73,19 @@ http://libreriamatices.netlify.app/
 ![ilustracion nosotros mision](https://github.com/lucasecapdevila/matices/blob/dev/img/Mision22_matices.png)
 
 ![ilustracion nosotros vision](https://github.com/lucasecapdevila/matices/blob/dev/img/Vision2_matices.png)
+
+![Avatar Patricio](https://github.com/lucasecapdevila/matices/blob/dev/img/Patricio.png)
+
+![Avatar Agos](https://github.com/lucasecapdevila/matices/blob/dev/img/Agos.png)
+
+![Avatar Lucas]((https://github.com/lucasecapdevila/matices/blob/dev/img/Lucas.png))
+
+![Avatar Dylan](https://github.com/lucasecapdevila/matices/blob/dev/img/Agos.png)
+
+![Avatar Mariana](https://github.com/lucasecapdevila/matices/blob/dev/img/Mariana.png)
+
+
+
 
 
 
