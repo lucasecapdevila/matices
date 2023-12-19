@@ -29,10 +29,10 @@
       crossorigin="anonymous"
     />
     <!-- Estilos Propios -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css">
 
     <!-- Titulo de la Pestaña -->
-    <link rel="icon" href="./img/Icono_Matices_Rosa.svg" />
+    <link rel="icon" href="../img/Icono_Matices_Rosa.svg" />
     <title>Matices</title>
   </head>
   <body>
@@ -41,17 +41,17 @@
         <div class="container-fluid px-3 px-md-4 px-lg-5">
           <a
             class="m-0 tx-titulo tx-RosaMatices logo-navbar"
-            href="./index.html"
+            href="../index.html"
           >
             <img
-              src="img/Icono_Matices_Rosa.svg"
+              src="../img/Icono_Matices_Rosa.svg"
               class="img-fluid me-lg-3"
               alt="Logo Matices"
             />
           </a>
           <a
             class="m-0 fs-2 navbar-brand d-none d-md-block tx-titulo tx-RosaMatices"
-            href="./index.html"
+            href="../index.html"
             >matices</a
           >
           <button
@@ -71,21 +71,21 @@
           >
             <ul class="navbar-nav me-auto my-2 mb-lg-0" id="lista-navbar">
               <li class="nav-item ms-auto mb-2 m-lg-0">
-                <a class="nav-link tx-RosaMatices active fs-5" href="#"
+                <a class="hvr-underline-from-left nav-link tx-RosaMatices fs-5" href="../index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item ms-auto mb-2">
                 <a
                   class="hvr-underline-from-left nav-link mx-lg-3 tx-RosaMatices fs-5"
-                  href="./pages/nosotros.html"
+                  href="../pages/Nosotros.html"
                   >Nosotros</a
                 >
               </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="hvr-grow nav-item ms-auto mb-4 mb-lg-0 me-lg-4">
-                <a href="./pages/error404.html" class="unstyled-Link"
+                <a href="./Error404.html" class="unstyled-Link"
                   ><i
                     class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
                   ></i>
@@ -93,7 +93,7 @@
                 >
               </li>
               <li class="hvr-grow nav-item ms-auto">
-                <a href="./pages/login.html" class="unstyled-Link"
+                <a href="./login.html" class="unstyled-Link"
                   ><i
                     class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
                   ></i>
@@ -108,152 +108,14 @@
       </nav>
     </header>
 
-    <main>
-      <!-- Carousel -->
-      <section class="bg-RosaMatices">
-        <!-- Carousel Medianos y Grandes -->
-        <article class="d-none d-md-block">
-          <div
-            id="carouselMediano"
-            class="carousel slide"
-            data-bs-ride="carousel"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active" data-bs-interval="7000">
-                <img src="./img/Banner0.png" class="d-block w-100" alt="Promo navideña desktop" />
-              </div>
-              <div class="carousel-item" data-bs-interval="7000">
-                <img src="./img/Banner1.png" class="d-block w-100" alt="Banner oferta 50% desktop" />
-              </div>
-              <div class="carousel-item" data-bs-interval="7000">
-                <img src="./img/Banner2.png" class="d-block w-100" alt="Banner oferta EQ desktop" />
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselMediano"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselMediano"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Siguiente</span>
-            </button>
-          </div>
-        </article>
-        <!-- Carousel Pequeños -->
-        <article class="d-bloc d-md-none">
-          <div
-            id="carouselTelefonos"
-            class="carousel slide"
-            data-bs-ride="carousel"
-          >
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img
-                  src="./img/Banner0_Movil.png"
-                  class="d-block w-100"
-                  alt="Promo navideña responsive"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./img/Banner1_Movil.png"
-                  class="d-block w-100"
-                  alt="Banner oferta 50% responsive"
-                />
-              </div>
-              <div class="carousel-item">
-                <img
-                  src="./img/Banner2_Movil.png"
-                  class="d-block w-100"
-                  alt="Banner oferta EQ responsive"
-                />
-              </div>
-            </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselTelefonos"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselTelefonos"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Siguiente</span>
-            </button>
-          </div>
-        </article>
-      </section>
 
-      <!-- Filtros -->
-      <section class="bg-blanco">
-        <article
-          class="container my-3 p-4 bg-light rounded-top-5 d-flex justify-content-center align-items-center contenedor-busqueda"
-        >
-          <!-- Buscador -->
-          <form class="d-flex w-auto" id="buscador">
-            <div class="input-group">
-              <label
-                for="inputBuscar"
-                class="w-100 pt-2 me-2 tx-parrafo text-center mb-2 fs-5 fw-bold"
-              >
-                Buscar por producto o categoria:
-              </label>
-              <input
-                class="form-control rounded-start-4 ps-3 pb-2 inputBuscar border border-light"
-                id="inputBuscar"
-                type="search"
-                placeholder="Lapices..."
-                aria-label="search"
-              />
-              <button type="submit" class="btn BotonBusqueda rounded-end-4">
-                <i class="bi bi-search"></i>
-              </button>
-            </div>
-          </form>
-        </article>
-      </section>
-
-      <!-- Productos -->
-      <section
-        class="container p-4 pb-5 contenedorProductos rounded-bottom-5 my-3"
-      >
-        <h2 class="text-center tx-titulo fs-1 mb-4 tx-AzulOscuro">
-          Nuestros Productos
-        </h2>
-        <article
-          class="d-flex flex-wrap justify-content-md-between justify-content-center"
-          id="grillaProductos"
-        ></article>
-      </section>
+    <!-- Aquí se ubica la imagen de Error 404 -->
+    <main class="main-container d-flex flex-column justify-content-around my-4">
+      <div class="w-100 contenedorImagen">
+        <img src="../img/Error404_Desktop.png" class="img-fluid d-none d-lg-inline" alt="Error 404">
+        <img src="../img/Error404_Movil.png" class="img-fluid d-block d-lg-none mx-auto" alt="Error 404">
+      </div>
+      <a class="btn btn-danger mx-auto" href="../index.html" role="button">Volver al inicio</a>
     </main>
 
     <footer>
@@ -262,10 +124,10 @@
       >
         <a
           class="link-underline link-underline-opacity-0 d-flex align-items-center justify-content-center w-50"
-          href="index.html"
+          href="../index.html"
         >
           <img
-            src="img/Icono_Matices_Rosa.svg"
+            src="../img/Icono_Matices_Rosa.svg"
             class="img-fluid logo-footer"
             alt="Logo Matices"
           />
@@ -287,21 +149,21 @@
             <li class="mb-2 col-12 d-lg-flex justify-content-lg-start">
               <a
                 class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
-                href="index.html"
+                href="../index.html"
                 >Inicio</a
               >
             </li>
             <li class="mb-2 col-12 d-lg-flex justify-content-lg-start">
               <a
                 class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
-                href="./pages/Nosotros.html"
+                href="../pages/Nosotros.html"
                 >Quiénes somos</a
               >
             </li>
             <li class="col-12 d-lg-flex justify-content-lg-start">
               <a
                 class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
-                href="./pages/Error404.html"
+                href="../pages/Error404.html"
                 >Contacto</a
               >
             </li>
@@ -404,7 +266,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="js/index.js"></script>
-    <script src="js/navbar.js"></script>
+    <script src="../js/navbar.js"></script>
   </body>
 </html>
