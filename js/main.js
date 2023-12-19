@@ -183,7 +183,8 @@ window.editarProducto = (idProducto) => {
     urlImagen.value = producto.urlImagen;
     descripcion.value = producto.descripcion;
     stock.value = producto.stock;
-
+    imagenPrevisualizada.remove()
+    
     btnConfirmar.addEventListener("click", () => {
       Swal.fire({
         title: "¿Deseas guardar los cambios?",
@@ -238,7 +239,6 @@ window.eliminarProducto = (idProducto) => {
       listaProductos.splice(posicionProductoAEliminar, 1);
       guardarEnLS();
       const tablaProductos = document.querySelector("tbody");
-      console.log(tablaProductos.children[posicionProductoAEliminar]);
       tablaProductos.removeChild(
         tablaProductos.children[posicionProductoAEliminar]
       );
