@@ -84,11 +84,27 @@ http://libreriamatices.netlify.app/
 
 ![Avatar Mariana](https://github.com/lucasecapdevila/matices/blob/dev/img/Mariana.png)
 
+![Ilustración de Error404](https://github.com/lucasecapdevila/matices/blob/dev/img/Error404_Movil.png)
 
 
+## Tipografias 🔤 🅰 🅱 🅾
+
+![Poppins](https://fonts.google.com/?query=Poppins) TÍTULO
+
+![Roboto](https://fonts.google.com/specimen/Roboto?query=Roboto) SUBTITULOS
+
+![Nunito](https://fonts.google.com/?query=nunito) PÁRRAFOS
 
 
+## Paleta de colores 🎨 🎨 🎨
 
+`#0e3361`- Azul Oscuro Matices.
+
+`#0b4e77`- Azul Clarito Matices.
+
+`#c96e67`- Rosa Oscuro Matices.
+
+`#ea8172`- Rosa clarito Matices.
 
 
 
