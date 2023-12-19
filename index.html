@@ -108,7 +108,7 @@
       </nav>
     </header>
 
-    <main class="contenedorInicio">
+    <main>
       <!-- Carousel -->
       <section class="bg-RosaMatices">
         <!-- Carousel Medianos y Grandes -->
@@ -120,13 +120,13 @@
           >
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="7000">
-                <img src="./img/Banner0.png" class="d-block w-100" alt="..." />
+                <img src="./img/Banner0.png" class="d-block w-100" alt="Promo navideña desktop" />
               </div>
               <div class="carousel-item" data-bs-interval="7000">
-                <img src="./img/Banner1.png" class="d-block w-100" alt="..." />
+                <img src="./img/Banner1.png" class="d-block w-100" alt="Banner oferta 50% desktop" />
               </div>
               <div class="carousel-item" data-bs-interval="7000">
-                <img src="./img/Banner2.png" class="d-block w-100" alt="..." />
+                <img src="./img/Banner2.png" class="d-block w-100" alt="Banner oferta EQ desktop" />
               </div>
             </div>
             <button
@@ -167,21 +167,21 @@
                 <img
                   src="./img/Banner0_Movil.png"
                   class="d-block w-100"
-                  alt="..."
+                  alt="Promo navideña responsive"
                 />
               </div>
               <div class="carousel-item">
                 <img
                   src="./img/Banner1_Movil.png"
                   class="d-block w-100"
-                  alt="..."
+                  alt="Banner oferta 50% responsive"
                 />
               </div>
               <div class="carousel-item">
                 <img
                   src="./img/Banner2_Movil.png"
                   class="d-block w-100"
-                  alt="..."
+                  alt="Banner oferta EQ responsive"
                 />
               </div>
             </div>
@@ -213,13 +213,44 @@
         </article>
       </section>
 
+      <!-- Filtros -->
+      <section class="bg-blanco">
+        <article
+          class="container my-3 p-4 bg-light rounded-top-5 d-flex justify-content-center align-items-center contenedor-busqueda"
+        >
+          <!-- Buscador -->
+          <form class="d-flex w-auto" id="buscador">
+            <div class="input-group">
+              <label
+                for="inputBuscar"
+                class="w-100 pt-2 me-2 tx-parrafo text-center mb-2 fs-5 fw-bold"
+              >
+                Buscar por producto o categoria:
+              </label>
+              <input
+                class="form-control rounded-start-4 ps-3 pb-2 inputBuscar border border-light"
+                id="inputBuscar"
+                type="search"
+                placeholder="Lapices..."
+                aria-label="search"
+              />
+              <button type="submit" class="btn BotonBusqueda rounded-end-4">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+        </article>
+      </section>
+
       <!-- Productos -->
-      <section class="container p-4 pb-5 contenedorroductos my-3">
+      <section
+        class="container p-4 pb-5 contenedorProductos rounded-bottom-5 my-3"
+      >
         <h2 class="text-center tx-titulo fs-1 mb-4 tx-AzulOscuro">
           Nuestros Productos
         </h2>
         <article
-          class="d-flex justify-content-around flex-wrap"
+          class="d-flex flex-wrap justify-content-md-between justify-content-center"
           id="grillaProductos"
         ></article>
       </section>
@@ -361,9 +392,6 @@
         &copy;2023 Matices. Todos los derechos reservados.
       </p>
     </footer>
-
-    <!--Canva de dibujo Error404-->
-    <script src="../js/canva.js"></script>
 
     <!-- Font Awesome -->
     <script
