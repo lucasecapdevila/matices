@@ -1,15 +1,17 @@
-let cantidad = 1
+let cantidad = 1;
 
-const parametroURL = new URLSearchParams(window.location.search)
-const idProducto = parametroURL.get('id')
+const parametroURL = new URLSearchParams(window.location.search);
+const idProducto = parametroURL.get("id");
 
-const listaProductos = JSON.parse(localStorage.getItem('listaProductosKey'))
+const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey"));
 
-const productoBuscado = listaProductos.find((iteProducto) => iteProducto.id === idProducto)
+const productoBuscado = listaProductos.find(
+  (iteProducto) => iteProducto.id === idProducto
+);
 
-const mainDetalleProducto = document.querySelector('main')
+const mainDetalleProducto = document.querySelector("main");
 mainDetalleProducto.innerHTML += `
-  <section class="row mx-0">
+  <section class="row mx-0 contenedorDetalleProductos">
     <!-- Contenedor imágen del producto -->
     <div class="col-md-6 px-0">
       <img
@@ -190,36 +192,40 @@ mainDetalleProducto.innerHTML += `
         </div>
       </div>
     </article>
-  </section>`
+  </section>`;
 
-  window.incrementarCantidadEnResponsive = () => {
-    const inputCantidadResponsive = document.getElementById('inputCantidadResponsive')
-    if(cantidad > 0 && cantidad < productoBuscado.stock){
-      cantidad++
-      inputCantidadResponsive.value = cantidad
-    }
+window.incrementarCantidadEnResponsive = () => {
+  const inputCantidadResponsive = document.getElementById(
+    "inputCantidadResponsive"
+  );
+  if (cantidad > 0 && cantidad < productoBuscado.stock) {
+    cantidad++;
+    inputCantidadResponsive.value = cantidad;
   }
+};
 
-  window.incrementarCantidadEnDesktop = () => {
-    const inputCantidadDesktop = document.getElementById('inputCantidadDesktop')
-    if(cantidad > 0 && cantidad < productoBuscado.stock){
-      cantidad++
-      inputCantidadDesktop.value = cantidad
-    }
+window.incrementarCantidadEnDesktop = () => {
+  const inputCantidadDesktop = document.getElementById("inputCantidadDesktop");
+  if (cantidad > 0 && cantidad < productoBuscado.stock) {
+    cantidad++;
+    inputCantidadDesktop.value = cantidad;
   }
+};
 
-  window.decrementarCantidadEnResponsive = () => {
-    const inputCantidadResponsive = document.getElementById('inputCantidadResponsive')
-    if(cantidad > 1 && cantidad < productoBuscado.stock){
-      cantidad--
-      inputCantidadResponsive.value = cantidad
-    }
+window.decrementarCantidadEnResponsive = () => {
+  const inputCantidadResponsive = document.getElementById(
+    "inputCantidadResponsive"
+  );
+  if (cantidad > 1 && cantidad < productoBuscado.stock) {
+    cantidad--;
+    inputCantidadResponsive.value = cantidad;
   }
+};
 
-  window.decrementarCantidadEnDesktop = () => {
-    const inputCantidadDesktop = document.getElementById('inputCantidadDesktop')
-    if(cantidad > 1 && cantidad < productoBuscado.stock){
-      cantidad--
-      inputCantidadDesktop.value = cantidad
-    }
+window.decrementarCantidadEnDesktop = () => {
+  const inputCantidadDesktop = document.getElementById("inputCantidadDesktop");
+  if (cantidad > 1 && cantidad < productoBuscado.stock) {
+    cantidad--;
+    inputCantidadDesktop.value = cantidad;
   }
+};

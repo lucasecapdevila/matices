@@ -109,7 +109,7 @@ main {
 
 @media screen and (min-width: 768px) {
   .fondoAzul {
-    background-color: #bbc8d8;
+    background-color: #c0d8f5;
     padding-top: 10%;
     padding-bottom: 10%;
   }
@@ -524,4 +524,10 @@ input::-webkit-inner-spin-button {
 
 .textAreaAdmin {
   min-height: 100px !important;
+}
+
+/* Correciones detalle producto*/
+.contenedorDetalleProductos {
+  background-color: #f1dfdc;
+  min-height: 110vh;
 }
