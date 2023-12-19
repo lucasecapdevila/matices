@@ -9,7 +9,10 @@ export const validarNombreProducto = (texto, min, max) => {
 
 export const validarPrecio = (precio, min, max) => {
   if (isNaN(precio) || precio <= 0) {
-    alert("Por favor, ingrese un valor numérico mayor que cero.");
+    alert("Por favor, ingrese un valor numérico y que sea mayor que cero.");
+    return false;
+  } else if (precio < min || precio > max){
+    alert(`El precio debe estar entre ${min} y ${max}.`);
     return false;
   } else {
     return true;
