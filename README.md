@@ -58,3 +58,24 @@ http://libreriamatices.netlify.app/
 
 - Sweet Alert:
     https://sweetalert2.github.io/
+
+## Identidad visual del proyecto
+- Elementos gráficos:
+  - Íconos:
+
+![logo rosa](https://github.com/lucasecapdevila/matices/blob/dev/img/Icono_Matices_Rosa.svg)
+
+![logo blanco](https://github.com/lucasecapdevila/matices/blob/dev/img/Icono_Matices_Blanco.svg)
+
+- Ilustraciones:
+![login](https://github.com/lucasecapdevila/matices/blob/dev/img/Ilustraci%C3%B3n_Login.svg)
+
+![ilustracion nosotros mision](https://github.com/lucasecapdevila/matices/blob/dev/img/Mision22_matices.png)
+
+![ilustracion nosotros vision](https://github.com/lucasecapdevila/matices/blob/dev/img/Vision2_matices.png)
+
+
+
+
+
+
