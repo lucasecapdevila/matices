@@ -45,7 +45,7 @@
           >
             <img
               src="../img/Icono_Matices_Rosa.svg"
-              class="img-fluid"
+              class="img-fluid me-lg-3"
               alt="Logo Matices"
             />
           </a>
@@ -54,25 +54,6 @@
             href="../index.html"
             >matices</a
           >
-          <form class="d-flex ms-auto me-4 order-lg-1" role="search">
-            <div class="input-group">
-              <input
-                type="search"
-                class="form-control d-none d-md-block bg-AzulMatices border border-0"
-                id="inputBuscarNavbar"
-                placeholder="Busca lo que desees..."
-                aria-label="Busca lo que desees..."
-                aria-describedby="botonBuscar"
-              />
-              <button
-                class="btn btn-outline-secondary bg-AzulClaro border border-0"
-                type="button"
-                id="botonBuscar"
-              >
-                <i class="fa-solid fa-magnifying-glass text-light"></i>
-              </button>
-            </div>
-          </form>
           <button
             class="navbar-toggler"
             type="button"
@@ -85,33 +66,41 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div
-            class="collapse navbar-collapse text-center mx-lg-5 px-lg-5"
+            class="collapse navbar-collapse text-center ms-lg-5 ps-lg-5"
             id="navbarLibreriaMatices"
           >
-            <ul class="navbar-nav me-auto my-2 mb-lg-0">
+            <ul class="navbar-nav me-auto my-2 mb-lg-0" id="lista-navbar">
               <li class="nav-item ms-auto mb-2 m-lg-0">
-                <a
-                  class="hvr-underline-from-left nav-link tx-RosaMatices"
-                  href="../index.html"
+                <a class="hvr-underline-from-left nav-link tx-RosaMatices fs-5" href="../index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item ms-auto mb-2">
-                <a class="nav-link active tx-RosaMatices" href="#">Nosotros</a>
+                <a
+                  class="nav-link mx-lg-3 active tx-RosaMatices fs-5"
+                  href="./Nosotros.html"
+                  >Nosotros</a
+                >
               </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="hvr-grow nav-item ms-auto mb-4 mb-lg-0 me-lg-4">
-                <i
-                  class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
-                ></i>
-                <p class="m-0 d-lg-none tx-RosaMatices">Favoritos</p>
+                <a href="#" class="unstyled-Link"
+                  ><i
+                    class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
+                  ></i>
+                  <p class="m-0 d-lg-none tx-RosaMatices fs-5">Favoritos</p></a
+                >
               </li>
               <li class="hvr-grow nav-item ms-auto">
-                <i
-                  class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
-                ></i>
-                <p class="m-0 d-lg-none tx-RosaMatices">Iniciar sesión</p>
+                <a href="./login.html" class="unstyled-Link"
+                  ><i
+                    class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
+                  ></i>
+                  <p class="m-0 d-lg-none tx-RosaMatices fs-5">
+                    Iniciar sesión
+                  </p></a
+                >
               </li>
             </ul>
           </div>
@@ -123,144 +112,143 @@
     
     <!-- Banner Horizontal -->
     <main>
-      <div class="bannerNos">
-
-        <h1>"Somos Matices"</h1>
-      </div>
-      <div class="team-section space-between-sections">
+      <div class="cuerpoNos">
+        <div class="bannerNos">
+  
+          <h1>"Somos Matices"</h1>
+        </div>
+        <div class="team-section space-between-sections">
+          <div class="container">
+            <p>
+              Conoce al increíble equipo que forma parte de tu libreria artística
+              favorita!
+            </p>
+          </div>
+        </div>
+  
         <div class="container">
-          <p>
-            Conoce al increíble equipo que forma parte de tu libreria artística
-            favorita!
-          </p>
-        </div>
-      </div>
-
-      <div class="container">
-        <!-- Cards de Presentación del equipo -->
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card">
-              <img
-                src="../img/Dylan.png"
-                class="card-img-top"
-                alt="Miembro 1"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Dylan Santiago Díaz</h5>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mx-auto">
-            <div class="card">
-              <img
-                src="../img/Lucas.png"
-                class="card-img-top"
-                alt="Miembro 2"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Lucas Capdevila</h5>
-              </div>
-            </div>
-          </div>
-
-
- 
-      
-
-          <div class="col-md-4">
-            <div class="card">
-              <img
-                src="../img/Patricio.png"
-                class="card-img-top"
-                alt="Miembro 3"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Patricio Asmet</h5>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mx-auto">
-            <div class="card">
-              <img
-                src="../img/Mariana.png"
-                class="card-img-top"
-                alt="Miembro 4"
-              />
-              <div class="card-body">
-                <h5 class="card-title">Mariana Sosa</h5>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mx-auto">
-            <div class="card">
-              <img src="../img/Agos.png" class="card-img-top" alt="Miembro 5" />
-              <div class="card-body">
-                <h5 class="card-title">Agostina Bellotti</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-section space-between-sections"></div>
-        <section>
+          <!-- Cards de Presentación del equipo -->
           <div class="row">
-            <aside class="col-md-6">
-              <div class="row">
-                <div class="col-md-12">
-                  <h2>Misión</h2>
-                  <p class="aside-text">
-                    Nuestra misión como e-commerce es lograr la satisfacción
-                    total de las necesidades y expectativas de nuestros
-                    clientes, brindándoles productos de primera calidad pero lo
-                    mas importante prestándoles un excelente servicio, amable,
-                    eficaz y personalizado. Como equipo y empresa, perseguimos y
-                    participamos de procesos productivos como la promoción de
-                    actividades del campo de las artes visuales, teniendo en
-                    cuenta siempre el cuidado y respeto hacia los recursos
-                    naturales de nuestra tierra.
-                  </p>
-                  <!-- Contenido del Aside 1 -->
-                </div>
-
-                <div class="col-md-12">
-                  <img
-                    src="../img/Mision22_matices.png"
-                    class="img-fluid"
-                    alt="Imagen 4"
-                  />
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="../img/Dylan.png"
+                  class="card-img-top"
+                  alt="Miembro 1"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Dylan Santiago Díaz</h5>
                 </div>
               </div>
-            </aside>
-
-            <aside class="col-md-6">
-              <div class="row">
-                <div class="col-md-12">
-                  <img
-                    src="../img/Vision2_matices.png"
-                    class="img-fluid"
-                    alt="Imagen 5"
-                  />
-                  <h2>Visión</h2>
-                  <p class="aside-text">
-                    Nuestra visión es lograr ser los más grandes líderes en la
-                    industria de los insumos de arte, ofrecer los productos
-                    innovadores y de la más alta calidad, para acompañar y
-                    potenciar las habilidades artisticas de cada persona y
-                    contar con la inteligencia y logística para competir con el
-                    mercado nacional. Además de esto queremos destacarnos por la
-                    dedicación a la formación , capacitación y desarrollo de
-                    nuestros empleados, respeto integral al medio ambiente y
-                    compromiso con el desarrollo del país.
-                  </p>
+            </div>
+  
+            <div class="col-md-4 mx-auto">
+              <div class="card">
+                <img
+                  src="../img/Lucas.png"
+                  class="card-img-top"
+                  alt="Miembro 2"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Lucas Capdevila</h5>
                 </div>
               </div>
-            </aside>
+            </div>
+            
+            <div class="col-md-4">
+              <div class="card">
+                <img
+                  src="../img/Patricio.png"
+                  class="card-img-top"
+                  alt="Miembro 3"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Patricio Asmet</h5>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-4 mx-auto">
+              <div class="card">
+                <img
+                  src="../img/Mariana.png"
+                  class="card-img-top"
+                  alt="Miembro 4"
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Mariana Sosa</h5>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-4 mx-auto">
+              <div class="card">
+                <img src="../img/Agos.png" class="card-img-top" alt="Miembro 5" />
+                <div class="card-body">
+                  <h5 class="card-title">Agostina Bellotti</h5>
+                </div>
+              </div>
+            </div>
           </div>
-        </section>
+  
+          <div class="team-section space-between-sections"></div>
+          <section>
+            <div class="row">
+              <aside class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h2>Misión</h2>
+                    <p class="aside-text">
+                      Nuestra misión como e-commerce es lograr la satisfacción
+                      total de las necesidades y expectativas de nuestros
+                      clientes, brindándoles productos de primera calidad pero lo
+                      mas importante prestándoles un excelente servicio, amable,
+                      eficaz y personalizado. Como equipo y empresa, perseguimos y
+                      participamos de procesos productivos como la promoción de
+                      actividades del campo de las artes visuales, teniendo en
+                      cuenta siempre el cuidado y respeto hacia los recursos
+                      naturales de nuestra tierra.
+                    </p>
+                    <!-- Contenido del Aside 1 -->
+                  </div>
+  
+                  <div class="col-md-12">
+                    <img
+                      src="../img/Mision22_matices.png"
+                      class="img-fluid"
+                      alt="Imagen 4"
+                    />
+                  </div>
+                </div>
+              </aside>
+  
+              <aside class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img
+                      src="../img/Vision2_matices.png"
+                      class="img-fluid"
+                      alt="Imagen 5"
+                    />
+                    <h2>Visión</h2>
+                    <p class="aside-text">
+                      Nuestra visión es lograr ser los más grandes líderes en la
+                      industria de los insumos de arte, ofrecer los productos
+                      innovadores y de la más alta calidad, para acompañar y
+                      potenciar las habilidades artisticas de cada persona y
+                      contar con la inteligencia y logística para competir con el
+                      mercado nacional. Además de esto queremos destacarnos por la
+                      dedicación a la formación , capacitación y desarrollo de
+                      nuestros empleados, respeto integral al medio ambiente y
+                      compromiso con el desarrollo del país.
+                    </p>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </section>
+        </div>
+
       </div>
     </main>
 
@@ -414,5 +402,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+
+    <script src="../js/navbar.js"></script>
   </body>
 </html>
