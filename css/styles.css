@@ -365,6 +365,8 @@ canvas {
 }
 
 
+
+
 /*! Estilos Agostina - página Nosotros */
 .cuerpoNos {
   background-image: url(../img/nuevofondo.jpg);
@@ -516,4 +518,6 @@ canvas {
 .btn-verProducto:hover {
   background-color: #3b8fbc !important;
   color: #f8f9fa;
+
 }
+
