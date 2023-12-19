@@ -52,7 +52,11 @@ export const validarImgProd = (url) => {
   if (patronURL.test(url) && patronIMG.test(url)) {
     return true;
   } else {
-    alert("Por favor, ingrese una URL válida.");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Por favor, ingrese una URL válida.",
+    });
     return false;
   }
 };
@@ -61,14 +65,22 @@ export const validarDescripcionProd = (texto, min, max) => {
   if (texto.length >= min && texto.length <= max) {
     return true;
   } else {
-    alert(`La descripción debe tener entre ${min} y ${max} caracteres.`);
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: `La descripción debe tener entre ${min} y ${max} caracteres.`,
+    });
     return false;
   }
 };
 
 export const validarCantStock = (cantidad) => {
   if (isNaN(cantidad) || cantidad <= 0) {
-    alert("Por favor, ingrese un valor numérico mayor que cero.");
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Por favor, ingrese un valor numérico mayor que cero.",
+    });
     return false;
   } else {
     return true;
