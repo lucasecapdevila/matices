@@ -45,7 +45,7 @@
           >
             <img
               src="../img/Icono_Matices_Rosa.svg"
-              class="img-fluid"
+              class="img-fluid me-3"
               alt="Logo Matices"
             />
           </a>
@@ -54,25 +54,7 @@
             href="../index.html"
             >matices</a
           >
-          <form class="d-flex ms-auto me-4 order-lg-1" role="search">
-            <div class="input-group">
-              <input
-                type="search"
-                class="form-control d-none d-md-block bg-AzulMatices border border-0"
-                id="inputBuscarNavbar"
-                placeholder="Busca lo que desees..."
-                aria-label="Busca lo que desees..."
-                aria-describedby="botonBuscar"
-              />
-              <button
-                class="btn btn-outline-secondary bg-AzulClaro border border-0"
-                type="button"
-                id="botonBuscar"
-              >
-                <i class="fa-solid fa-magnifying-glass text-light"></i>
-              </button>
-            </div>
-          </form>
+
           <button
             class="navbar-toggler"
             type="button"
@@ -82,47 +64,44 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon fs-6"></span>
           </button>
           <div
-            class="collapse navbar-collapse text-center mx-lg-5 px-lg-5"
+            class="collapse navbar-collapse text-center ms-lg-5 ps-lg-5"
             id="navbarLibreriaMatices"
           >
-            <ul class="navbar-nav me-auto my-2 mb-lg-0">
+            <ul class="navbar-nav me-auto my-2 mb-lg-0" id="lista-navbar">
               <li class="nav-item ms-auto mb-2 m-lg-0">
                 <a
-                  class="hvr-underline-from-left nav-link tx-RosaMatices"
+                  class="hvr-underline-from-left nav-link tx-RosaMatices fs-5"
                   href="../index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item ms-auto mb-2">
                 <a
-                  class="hvr-underline-from-left nav-link mx-lg-3 tx-RosaMatices"
-                  href="#"
-                  >Productos</a
-                >
-              </li>
-              <li class="nav-item ms-auto mb-2">
-                <a
-                  class="hvr-underline-from-left nav-link tx-RosaMatices"
-                  href="#"
+                  class="hvr-underline-from-left nav-link mx-lg-3 tx-RosaMatices fs-5"
+                  href="./nosotros.html"
                   >Nosotros</a
                 >
               </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="hvr-grow nav-item ms-auto mb-4 mb-lg-0 me-lg-4">
-                <i
-                  class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
-                ></i>
-                <p class="m-0 d-lg-none tx-RosaMatices">Favoritos</p>
+                <a href="./error404.html" class="unstyled-Link"
+                  ><i
+                    class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
+                  ></i>
+                  <p class="m-0 d-lg-none tx-RosaMatices">Favoritos</p></a
+                >
               </li>
               <li class="hvr-grow nav-item ms-auto">
-                <i
-                  class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
-                ></i>
-                <p class="m-0 d-lg-none tx-RosaMatices">Iniciar sesión</p>
+                <a href="./login.html" class="unstyled-Link"
+                  ><i
+                    class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
+                  ></i>
+                  <p class="m-0 d-lg-none tx-RosaMatices">Iniciar sesión</p></a
+                >
               </li>
             </ul>
           </div>
@@ -216,7 +195,7 @@
                 />
                 <label for="categoriaProducto">Categoría del producto</label>
               </div>
-              <div class="form-floating mb-3">
+              <div id="contenedorUrlImagen" class="form-floating mb-3">
                 <input
                   type="text"
                   class="form-control"
