@@ -1,5 +1,15 @@
 import Producto from "./classProducto.js";
 
+// Validaciones JS para formulario de administración
+import {
+  validarNombreProducto,
+  validarPrecio,
+  validarCategoria,
+  validarImgProd,
+  validarDescripcionProd,
+  validarCantStock,
+} from "./validaciones.js";
+
 // Modal de Bootstrap
 const modalAdminProductos = new bootstrap.Modal(
   document.getElementById("adminProductos")
@@ -9,9 +19,11 @@ const modalAdminProductos = new bootstrap.Modal(
 let creandoProducto = true;
 
 //  Traigo item de LS
-const listaProductos =
-  JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+const listaProductos = JSON.parse(localStorage.getItem("listaProductosKey")) || [];
+let logged = localStorage.getItem("logged");
 
+const imagenPrevisualizada = document.createElement('img')
+const contenedorImagen = document.getElementById('contenedorUrlImagen')
 const tablaProductos = document.getElementById("tabla");
 const tituloSinProductos = document.getElementById("sinProductos");
 const formulario = document.getElementById("formularioProducto");
@@ -29,6 +41,38 @@ const nombre = document.getElementById("nombreProducto"),
 const cuerpoTablaProductos = document.getElementById("cuerpoTablaProductos");
 
 //* Funciones
+const logueado = () => {
+  if(logged == 0){
+    Swal.fire({
+      icon: "error",
+      title: '<h2 class="tx-titulo text-center">¡No tienes los permisos para entrar a esta sección!</h2>',
+      text: "¿Quiers iniciar sesión?",
+      showDenyButton: true,
+      showConfirmButton: true,
+      confirmButtonText: "Iniciar sesión",
+      denyButtonText: "Cancelar",
+      customClass: {
+        popup: "rounded-5",
+        confirmButton: "btn-modal rounded-4",
+        denyButton: "rounded-4",
+      },
+      allowOutsideClick: false,
+      allowEscapeKey: false,
+      allowEnterKey: false,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.href = "login.html";
+      } else if (result.isDenied) {
+        window.location.href = "../index.html";
+      }
+    });
+  }
+}
+
+logueado()
+
+
 const cargaInicial = () => {
   if (listaProductos.length > 0) {
     listaProductos.map((producto, orden) => crearFila(producto, orden + 1));
@@ -48,9 +92,9 @@ const crearFila = (producto, fila) => {
     <td>${producto.categoria}</td>
     <td>${producto.stock}</td>
     <td class="d-flex justify-content-center">
-      <button class="btn btn-primary">Ver detalle</button>
+      <button class="btn btn-primary" onclick="verDetalleProducto('${producto.id}')">Ver detalle</button>
       <button class="btn btn-warning mx-2" onclick="editarProducto('${producto.id}')">Editar</button>
-      <button class="btn btn-danger">Borrar</button>
+      <button class="btn btn-danger" onclick="eliminarProducto('${producto.id}')">Borrar</button>
     </td>
   </tr>
   `;
@@ -70,6 +114,14 @@ const limpiarFormulario = () => {
   formulario.reset();
 };
 
+//  Mostrar previsualización de imagen en formulario
+const previsualizarProducto = () => {
+  imagenPrevisualizada.classList.add('img-responsive', 'img-fluid', 'h-auto', 'mx-auto')
+  imagenPrevisualizada.setAttribute('src', `${urlImagen.value}`)
+  imagenPrevisualizada.setAttribute('alt', `${nombre.value}`)
+  contenedorImagen.appendChild(imagenPrevisualizada)
+}
+
 const guardarEnLS = () => {
   localStorage.setItem("listaProductosKey", JSON.stringify(listaProductos));
 };
@@ -79,37 +131,41 @@ function crearProducto(e) {
   e.preventDefault();
 
   if (creandoProducto) {
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
+    //Validaciones JS
+    if (
+      validarNombreProducto(nombreProducto.value, 3, 30) &&
+      validarPrecio(precioProducto.value, 1, 2000) &&
+      validarCategoria(categoriaProducto.value, 3, 20) &&
+      validarImgProd(imagenProducto.value) &&
+      validarDescripcionProd(descripcionProducto.value, 10, 100) &&
+      validarCantStock(stockDeProducto.value, 1, 1000)
+    ) {
+      const nuevoProducto = new Producto(
+        undefined,
+        nombre.value,
+        precio.value,
+        categoria.value,
+        urlImagen.value,
+        descripcion.value,
+        stock.value
+      );
 
-    const nuevoProducto = new Producto(
-      undefined,
-      nombre.value,
-      precio.value,
-      categoria.value,
-      urlImagen.value,
-      descripcion.value,
-      stock.value
-    );
+      listaProductos.push(nuevoProducto);
+      limpiarFormulario();
 
-    listaProductos.push(nuevoProducto);
-    limpiarFormulario();
+      guardarEnLS();
 
-    guardarEnLS();
+      tablaProductos.classList.remove("d-none");
+      crearFila(nuevoProducto, listaProductos.length);
+      tituloSinProductos.classList.add("d-none");
 
-    tablaProductos.classList.remove("d-none");
-    crearFila(nuevoProducto, listaProductos.length);
-    tituloSinProductos.classList.add("d-none");
-
-    //  Mostrar Sweet Alert
-    Swal.fire({
-      title: "Se agregó el producto exitosamente",
-      text: `El producto ${nuevoProducto.nombre} fue creado exitosamente.`,
-      icon: "success",
-    });
+      //  Mostrar Sweet Alert
+      Swal.fire({
+        title: "Se agregó el producto exitosamente",
+        text: `El producto ${nuevoProducto.nombre} fue creado exitosamente.`,
+        icon: "success",
+      });
+    }
   }
 }
 
@@ -135,7 +191,8 @@ window.editarProducto = (idProducto) => {
     urlImagen.value = producto.urlImagen;
     descripcion.value = producto.descripcion;
     stock.value = producto.stock;
-
+    imagenPrevisualizada.remove()
+    
     btnConfirmar.addEventListener("click", () => {
       Swal.fire({
         title: "¿Deseas guardar los cambios?",
@@ -172,7 +229,44 @@ window.editarProducto = (idProducto) => {
   }
 };
 
+window.verDetalleProducto = (idProducto) => {
+  window.location.href =
+    window.location.origin + "/pages/detalleProducto.html?id=" + idProducto;
+};
+
+window.eliminarProducto = (idProducto) => {
+  Swal.fire({
+    title: "¿Estas seguro que quieres borrar?",
+    text: "No puedes revertir este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const posicionProductoAEliminar = listaProductos.findIndex(
+        (itemProducto) => itemProducto.id === idProducto
+      );
+      listaProductos.splice(posicionProductoAEliminar, 1);
+      guardarEnLS();
+      const tablaProductos = document.querySelector("tbody");
+      tablaProductos.removeChild(
+        tablaProductos.children[posicionProductoAEliminar]
+      );
+      Swal.fire({
+        title: "Producto eliminado",
+        text: "El Producto fue eliminado exitosamente",
+        icon: "success",
+      });
+    }
+  });
+};
+
+
 btnNuevoProducto.addEventListener("click", mostrarModal);
 formulario.addEventListener("submit", crearProducto);
+urlImagen.addEventListener('change', previsualizarProducto)
 
 cargaInicial();

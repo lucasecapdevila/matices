@@ -35,7 +35,7 @@
     <link rel="icon" href="../img/Icono_Matices_Rosa.svg" />
     <title>Matices</title>
   </head>
-  <body class="bg-body-detalle">
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg bg-AzulOscuro" data-bs-theme="dark">
         <div class="container-fluid px-3 px-md-4 px-lg-5">
@@ -45,7 +45,7 @@
           >
             <img
               src="../img/Icono_Matices_Rosa.svg"
-              class="img-fluid me-3"
+              class="img-fluid"
               alt="Logo Matices"
             />
           </a>
@@ -54,7 +54,25 @@
             href="../index.html"
             >matices</a
           >
-
+          <form class="d-flex ms-auto me-4 order-lg-1" role="search">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control d-none d-md-block bg-AzulMatices border border-0"
+                id="inputBuscarNavbar"
+                placeholder="Busca lo que desees..."
+                aria-label="Busca lo que desees..."
+                aria-describedby="botonBuscar"
+              />
+              <button
+                class="btn btn-outline-secondary bg-AzulClaro border border-0"
+                type="button"
+                id="botonBuscar"
+              >
+                <i class="fa-solid fa-magnifying-glass text-light"></i>
+              </button>
+            </div>
+          </form>
           <button
             class="navbar-toggler"
             type="button"
@@ -64,44 +82,36 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon fs-6"></span>
+            <span class="navbar-toggler-icon"></span>
           </button>
           <div
-            class="collapse navbar-collapse text-center ms-lg-5 ps-lg-5"
+            class="collapse navbar-collapse text-center mx-lg-5 px-lg-5"
             id="navbarLibreriaMatices"
           >
-            <ul class="navbar-nav me-auto my-2 mb-lg-0" id="lista-navbar">
+            <ul class="navbar-nav me-auto my-2 mb-lg-0">
               <li class="nav-item ms-auto mb-2 m-lg-0">
                 <a
-                  class="hvr-underline-from-left nav-link tx-RosaMatices fs-5"
+                  class="hvr-underline-from-left nav-link tx-RosaMatices"
                   href="../index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item ms-auto mb-2">
-                <a
-                  class="hvr-underline-from-left nav-link mx-lg-3 tx-RosaMatices fs-5"
-                  href="./nosotros.html"
-                  >Nosotros</a
-                >
+                <a class="nav-link active tx-RosaMatices" href="#">Nosotros</a>
               </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="hvr-grow nav-item ms-auto mb-4 mb-lg-0 me-lg-4">
-                <a href="./error404.html" class="unstyled-Link"
-                  ><i
-                    class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
-                  ></i>
-                  <p class="m-0 d-lg-none tx-RosaMatices">Favoritos</p></a
-                >
+                <i
+                  class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
+                ></i>
+                <p class="m-0 d-lg-none tx-RosaMatices">Favoritos</p>
               </li>
               <li class="hvr-grow nav-item ms-auto">
-                <a href="./login.html" class="unstyled-Link"
-                  ><i
-                    class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
-                  ></i>
-                  <p class="m-0 d-lg-none tx-RosaMatices">Iniciar sesión</p></a
-                >
+                <i
+                  class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
+                ></i>
+                <p class="m-0 d-lg-none tx-RosaMatices">Iniciar sesión</p>
               </li>
             </ul>
           </div>
@@ -109,142 +119,151 @@
       </nav>
     </header>
 
-    <main class="container mt-2 text-center">
-      <h1>Lista de Productos</h1>
-      <button id="btnNuevoProducto" class="btn btn-primary">
-        Agregar nuevo producto
-      </button>
 
-      <section class="table-responsive mt-4">
-        <h3 id="sinProductos">En este momento no hay productos</h3>
-        <table id="tabla" class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Categoría</th>
-              <th scope="col">Stock</th>
-              <th scope="col">Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="cuerpoTablaProductos">
-            <!-- Se crea dinamicamente -->
-          </tbody>
-        </table>
-      </section>
-    </main>
+    
+    <!-- Banner Horizontal -->
+    <main>
+      <div class="bannerNos">
 
-    <!--* MODAL -->
-    <div
-      class="modal fade"
-      id="adminProductos"
-      tabindex="-1"
-      aria-labelledby="adminProductosLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="adminProductosLabel">
-              Administración de Productos
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form id="formularioProducto">
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombreProducto"
-                  minlength="3"
-                  maxlength="30"
-                  placeholder="Nombre"
-                  required
-                />
-                <label for="nombreProducto">Nombre del Producto</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="precioProducto"
-                  min="1"
-                  max="2000"
-                  step=".01"
-                  placeholder="Precio"
-                  required
-                />
-                <label for="precioProducto">Precio del Producto</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="categoriaProducto"
-                  minlength="3"
-                  maxlength="20"
-                  placeholder="name@example.com"
-                  required
-                />
-                <label for="categoriaProducto">Categoría del producto</label>
-              </div>
-              <div id="contenedorUrlImagen" class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="imagenProducto"
-                  placeholder="Imagen"
-                  required
-                />
-                <label for="imagenProducto"
-                  >Agregue una ruta a la imagen del producto</label
-                >
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="descripcionProducto"
-                  minlength="10"
-                  maxlength="100"
-                  placeholder="Descripción del producto"
-                  required
-                />
-                <label for="descripcionProducto"
-                  >Descripción del producto</label
-                >
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="stockDeProducto"
-                  min="1"
-                  max="1000"
-                  placeholder="Cantidad en stock"
-                  required
-                />
-                <label for="stockDeProducto">Cantidad en stock</label>
-              </div>
-              <button
-                id="confirmarEdicionProducto"
-                type="submit"
-                class="btn btn-primary mt-2"
-              >
-                Confirmar
-              </button>
-            </form>
-          </div>
+        <h1>"Somos Matices"</h1>
+      </div>
+      <div class="team-section space-between-sections">
+        <div class="container">
+          <p>
+            Conoce al increíble equipo que forma parte de tu libreria artística
+            favorita!
+          </p>
         </div>
       </div>
-    </div>
+
+      <div class="container">
+        <!-- Cards de Presentación del equipo -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="../img/Dylan.png"
+                class="card-img-top"
+                alt="Miembro 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Dylan Santiago Díaz</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mx-auto">
+            <div class="card">
+              <img
+                src="../img/Lucas.png"
+                class="card-img-top"
+                alt="Miembro 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Lucas Capdevila</h5>
+              </div>
+            </div>
+          </div>
+
+
+ 
+      
+
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="../img/Patricio.png"
+                class="card-img-top"
+                alt="Miembro 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Patricio Asmet</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mx-auto">
+            <div class="card">
+              <img
+                src="../img/Mariana.png"
+                class="card-img-top"
+                alt="Miembro 4"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mariana Sosa</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mx-auto">
+            <div class="card">
+              <img src="../img/Agos.png" class="card-img-top" alt="Miembro 5" />
+              <div class="card-body">
+                <h5 class="card-title">Agostina Bellotti</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-section space-between-sections"></div>
+        <section>
+          <div class="row">
+            <aside class="col-md-6">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2>Misión</h2>
+                  <p class="aside-text">
+                    Nuestra misión como e-commerce es lograr la satisfacción
+                    total de las necesidades y expectativas de nuestros
+                    clientes, brindándoles productos de primera calidad pero lo
+                    mas importante prestándoles un excelente servicio, amable,
+                    eficaz y personalizado. Como equipo y empresa, perseguimos y
+                    participamos de procesos productivos como la promoción de
+                    actividades del campo de las artes visuales, teniendo en
+                    cuenta siempre el cuidado y respeto hacia los recursos
+                    naturales de nuestra tierra.
+                  </p>
+                  <!-- Contenido del Aside 1 -->
+                </div>
+
+                <div class="col-md-12">
+                  <img
+                    src="../img/Mision22_matices.png"
+                    class="img-fluid"
+                    alt="Imagen 4"
+                  />
+                </div>
+              </div>
+            </aside>
+
+            <aside class="col-md-6">
+              <div class="row">
+                <div class="col-md-12">
+                  <img
+                    src="../img/Vision2_matices.png"
+                    class="img-fluid"
+                    alt="Imagen 5"
+                  />
+                  <h2>Visión</h2>
+                  <p class="aside-text">
+                    Nuestra visión es lograr ser los más grandes líderes en la
+                    industria de los insumos de arte, ofrecer los productos
+                    innovadores y de la más alta calidad, para acompañar y
+                    potenciar las habilidades artisticas de cada persona y
+                    contar con la inteligencia y logística para competir con el
+                    mercado nacional. Además de esto queremos destacarnos por la
+                    dedicación a la formación , capacitación y desarrollo de
+                    nuestros empleados, respeto integral al medio ambiente y
+                    compromiso con el desarrollo del país.
+                  </p>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </div>
+    </main>
+
 
     <footer>
       <section
@@ -285,7 +304,7 @@
             <li class="mb-2 col-12 d-lg-flex justify-content-lg-start">
               <a
                 class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
-                href="./pages/nosotros.html"
+                href="#"
                 >Quiénes somos</a
               >
             </li>
@@ -395,10 +414,5 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-
-    <!-- Sweet Alert 2 -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="../js/main.js" type="module"></script>
   </body>
 </html>
