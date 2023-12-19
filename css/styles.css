@@ -13,6 +13,7 @@ body {
 
 main {
   flex-grow: 1;
+  min-height: 90vh;
 }
 
 /* Tipografias */
@@ -266,6 +267,10 @@ footer {
 }
 
 /* Efectos hover de enlaces */
+.unstyled-Link {
+  text-decoration: none;
+}
+
 .fa-facebook-f:hover,
 .fa-instagram:hover,
 .fa-twitter:hover,
@@ -324,4 +329,144 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+/*! Estilos Agostina Error404 */
+.body {
+  margin: 0;
+  padding: 0;
+}
+
+.main-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  background-image: url(../img/fondolapiz_error404_Ok.png);
+}
+
+#btnVolverInicio {
+  margin-top: -930px;
+  margin-left: -450px;
+}
+
+/*! Estilos Agostina - página Nosotros */
+.cuerpoNos{
+   background-image: url(../img/nuevofondo.jpg);
+}
+.bannerNos {
+  background-color: transparent;
+  color: rgb(67, 7, 40);
+  padding: 20px 0;
+  text-align: center;
+  font-family: poppins;
+}
+.bannerNos h1:hover {
+  background: #ccc;
+  background: linear-gradient(90deg, #0e3361, #c96e67);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.team-section {
+  background-color: transparent;
+  padding: 40px 0;
+  text-align: center;
+  font-family: nunito;
+  font-size: x-large;
+}
+
+.card {
+margin: 20px 0;
+padding: 0;
+border: none;
+background: transparent;
+transition: transform 0.3s ease-in-out;
+font-family: Nunito;
+}
+
+.card img {
+border-radius: 50%; 
+}
+.card:hover {
+transform: scale(1.1);
+}
+
+ /* Centrar las cards y las columnas */
+
+ .card, .col-md-6 {
+  margin: auto;
+}
+
+ /* Texto justificado en los aside */
+ .aside-text {
+  text-align: justify;
+}
+
+/*Espacio entre los asides */
+.aside {
+      margin-bottom: 30px;
+    }
+/* Centrar y poner en negrita el nombre */
+ .card-title {
+  text-align: center;
+  font-weight:  bold;
+ }
+/* Para aumetar el espacio entre las secciones */
+ .space-between-sections {
+  margin-bottom: 20px;
+}
+
+
+
+
+
+/* Estilos Login */
+.bg-forms {
+  background-color: #f12b2ba4;
+}
+
+.btn-crear {
+  background-color: rgba(0, 255, 255, 0);
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+}
+
+.btn-crear:active {
+  transform: scale(0.95);
+}
+
+.inputLogin {
+  display: block;
+  background-color: #bed2e960;
+  border: 0px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 7px;
+}
+
+.btn-iniciar {
+  background-color: #ea8172;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+}
+
+.btn-iniciar:active {
+  transform: scale(1.05);
+}
+
+@media only screen and (min-width: 992px) {
+  .formLogin {
+    height: 100vh;
+  }
+}
+
+.btn-modal {
+  background-color: #3bbc95 !important;
+  border-color: #3bbc95;
 }

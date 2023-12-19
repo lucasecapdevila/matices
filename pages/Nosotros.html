@@ -29,10 +29,10 @@
       crossorigin="anonymous"
     />
     <!-- Estilos Propios -->
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
 
     <!-- Titulo de la Pestaña -->
-    <link rel="icon" href="./img/Icono_Matices_Rosa.svg" />
+    <link rel="icon" href="../img/Icono_Matices_Rosa.svg" />
     <title>Matices</title>
   </head>
   <body>
@@ -41,19 +41,38 @@
         <div class="container-fluid px-3 px-md-4 px-lg-5">
           <a
             class="m-0 tx-titulo tx-RosaMatices logo-navbar"
-            href="./index.html"
+            href="../index.html"
           >
             <img
-              src="img/Icono_Matices_Rosa.svg"
-              class="img-fluid me-lg-3"
+              src="../img/Icono_Matices_Rosa.svg"
+              class="img-fluid"
               alt="Logo Matices"
             />
           </a>
           <a
             class="m-0 fs-2 navbar-brand d-none d-md-block tx-titulo tx-RosaMatices"
-            href="./index.html"
+            href="../index.html"
             >matices</a
           >
+          <form class="d-flex ms-auto me-4 order-lg-1" role="search">
+            <div class="input-group">
+              <input
+                type="search"
+                class="form-control d-none d-md-block bg-AzulMatices border border-0"
+                id="inputBuscarNavbar"
+                placeholder="Busca lo que desees..."
+                aria-label="Busca lo que desees..."
+                aria-describedby="botonBuscar"
+              />
+              <button
+                class="btn btn-outline-secondary bg-AzulClaro border border-0"
+                type="button"
+                id="botonBuscar"
+              >
+                <i class="fa-solid fa-magnifying-glass text-light"></i>
+              </button>
+            </div>
+          </form>
           <button
             class="navbar-toggler"
             type="button"
@@ -66,41 +85,33 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div
-            class="collapse navbar-collapse text-center ms-lg-5 ps-lg-5"
+            class="collapse navbar-collapse text-center mx-lg-5 px-lg-5"
             id="navbarLibreriaMatices"
           >
-            <ul class="navbar-nav me-auto my-2 mb-lg-0" id="lista-navbar">
+            <ul class="navbar-nav me-auto my-2 mb-lg-0">
               <li class="nav-item ms-auto mb-2 m-lg-0">
-                <a class="nav-link tx-RosaMatices active fs-5" href="#"
+                <a
+                  class="hvr-underline-from-left nav-link tx-RosaMatices"
+                  href="../index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item ms-auto mb-2">
-                <a
-                  class="hvr-underline-from-left nav-link mx-lg-3 tx-RosaMatices fs-5"
-                  href="./pages/nosotros.html"
-                  >Nosotros</a
-                >
+                <a class="nav-link active tx-RosaMatices" href="#">Nosotros</a>
               </li>
             </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
               <li class="hvr-grow nav-item ms-auto mb-4 mb-lg-0 me-lg-4">
-                <a href="./pages/error404.html" class="unstyled-Link"
-                  ><i
-                    class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
-                  ></i>
-                  <p class="m-0 d-lg-none tx-RosaMatices fs-5">Favoritos</p></a
-                >
+                <i
+                  class="fa-regular fa-heart fa-2xl d-none d-lg-inline tx-RosaMatices"
+                ></i>
+                <p class="m-0 d-lg-none tx-RosaMatices">Favoritos</p>
               </li>
               <li class="hvr-grow nav-item ms-auto">
-                <a href="./pages/login.html" class="unstyled-Link"
-                  ><i
-                    class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
-                  ></i>
-                  <p class="m-0 d-lg-none tx-RosaMatices fs-5">
-                    Iniciar sesión
-                  </p></a
-                >
+                <i
+                  class="fa-regular fa-user fa-2xl d-none d-lg-inline tx-RosaMatices"
+                ></i>
+                <p class="m-0 d-lg-none tx-RosaMatices">Iniciar sesión</p>
               </li>
             </ul>
           </div>
@@ -108,74 +119,151 @@
       </nav>
     </header>
 
-    <main>
-      <section>
-        <div
-          id="carouselMatices"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/banner1.webp" class="d-block w-100" alt="banner" />
-            </div>
-            <div class="carousel-item">
-              <img src="img/banner2.webp" class="d-block w-100" alt="banner" />
-            </div>
-            <div class="carousel-item">
-              <img src="img/banner3.webp" class="d-block w-100" alt="banner" />
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselMatices"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselMatices"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </section>
 
-      <section class="my-5 container">
-        <article class="row">
-          <div class="col-lg-6">
-            <h1 class="text-center tx-titulo">
-              ¿Ya compraste los regalos para estas fiestas?
-            </h1>
-            <p class="lead">
-              Nuestra cuidadosa selección de libros abarca desde clásicos
-              atemporales hasta las últimas tendencias en arte contemporáneo.
-              Explora las obras maestras de grandes maestros y descubre nuevas
-              voces que están dando forma al futuro del arte. <br />Nuestro
-              equipo apasionado está listo para guiarte y recomendarte las joyas
-              literarias y las herramientas perfectas para tu viaje artístico.
-              ¡Visítanos y déjate llevar por la magia de la creatividad en
-              Matices, donde cada libro es una obra de arte esperando ser
-              descubierta!
-            </p>
+    
+    <!-- Banner Horizontal -->
+    <main>
+      <div class="bannerNos">
+
+        <h1>"Somos Matices"</h1>
+      </div>
+      <div class="team-section space-between-sections">
+        <div class="container">
+          <p>
+            Conoce al increíble equipo que forma parte de tu libreria artística
+            favorita!
+          </p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Cards de Presentación del equipo -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="../img/Dylan.png"
+                class="card-img-top"
+                alt="Miembro 1"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Dylan Santiago Díaz</h5>
+              </div>
+            </div>
           </div>
-          <aside class="col-lg-6">
-            <img
-              src="img/fox-60CpKQ7u-yE-unsplash.jpg"
-              class="img-fluid"
-              alt="publicidad"
-            />
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quasi, alias numquam atque nihil et. Illo nostrum, veritatis voluptas sint nisi tempora nam excepturi odit exercitationem ad, optio, obcaecati consectetur!</p> -->
-          </aside>
-        </article>
-      </section>
+
+          <div class="col-md-4 mx-auto">
+            <div class="card">
+              <img
+                src="../img/Lucas.png"
+                class="card-img-top"
+                alt="Miembro 2"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Lucas Capdevila</h5>
+              </div>
+            </div>
+          </div>
+
+
+ 
+      
+
+          <div class="col-md-4">
+            <div class="card">
+              <img
+                src="../img/Patricio.png"
+                class="card-img-top"
+                alt="Miembro 3"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Patricio Asmet</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mx-auto">
+            <div class="card">
+              <img
+                src="../img/Mariana.png"
+                class="card-img-top"
+                alt="Miembro 4"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Mariana Sosa</h5>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mx-auto">
+            <div class="card">
+              <img src="../img/Agos.png" class="card-img-top" alt="Miembro 5" />
+              <div class="card-body">
+                <h5 class="card-title">Agostina Bellotti</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-section space-between-sections"></div>
+        <section>
+          <div class="row">
+            <aside class="col-md-6">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2>Misión</h2>
+                  <p class="aside-text">
+                    Nuestra misión como e-commerce es lograr la satisfacción
+                    total de las necesidades y expectativas de nuestros
+                    clientes, brindándoles productos de primera calidad pero lo
+                    mas importante prestándoles un excelente servicio, amable,
+                    eficaz y personalizado. Como equipo y empresa, perseguimos y
+                    participamos de procesos productivos como la promoción de
+                    actividades del campo de las artes visuales, teniendo en
+                    cuenta siempre el cuidado y respeto hacia los recursos
+                    naturales de nuestra tierra.
+                  </p>
+                  <!-- Contenido del Aside 1 -->
+                </div>
+
+                <div class="col-md-12">
+                  <img
+                    src="../img/Mision22_matices.png"
+                    class="img-fluid"
+                    alt="Imagen 4"
+                  />
+                </div>
+              </div>
+            </aside>
+
+            <aside class="col-md-6">
+              <div class="row">
+                <div class="col-md-12">
+                  <img
+                    src="../img/Vision2_matices.png"
+                    class="img-fluid"
+                    alt="Imagen 5"
+                  />
+                  <h2>Visión</h2>
+                  <p class="aside-text">
+                    Nuestra visión es lograr ser los más grandes líderes en la
+                    industria de los insumos de arte, ofrecer los productos
+                    innovadores y de la más alta calidad, para acompañar y
+                    potenciar las habilidades artisticas de cada persona y
+                    contar con la inteligencia y logística para competir con el
+                    mercado nacional. Además de esto queremos destacarnos por la
+                    dedicación a la formación , capacitación y desarrollo de
+                    nuestros empleados, respeto integral al medio ambiente y
+                    compromiso con el desarrollo del país.
+                  </p>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+      </div>
     </main>
+
 
     <footer>
       <section
@@ -183,10 +271,10 @@
       >
         <a
           class="link-underline link-underline-opacity-0 d-flex align-items-center justify-content-center w-50"
-          href="index.html"
+          href="../index.html"
         >
           <img
-            src="img/Icono_Matices_Rosa.svg"
+            src="../img/Icono_Matices_Rosa.svg"
             class="img-fluid logo-footer"
             alt="Logo Matices"
           />
@@ -209,14 +297,14 @@
             <li class="mb-2 col-12 d-lg-flex justify-content-lg-start">
               <a
                 class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
-                href="index.html"
+                href="../index.html"
                 >Inicio</a
               >
             </li>
             <li class="mb-2 col-12 d-lg-flex justify-content-lg-start">
               <a
                 class="hvr-underline-from-left link-underline link-underline-opacity-0 text-light"
-                href="./pages/Nosotros.html"
+                href="#"
                 >Quiénes somos</a
               >
             </li>
@@ -314,9 +402,6 @@
       </p>
     </footer>
 
-    <!--Canva de dibujo Error404-->
-    <script src="../js/canva.js"></script>
-
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/c7393ce70b.js"
@@ -329,7 +414,5 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="js/main.js"></script>
-    <script src="js/navbar.js"></script>
   </body>
 </html>
