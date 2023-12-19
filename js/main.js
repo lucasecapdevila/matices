@@ -1,7 +1,14 @@
 import Producto from "./classProducto.js";
 
 // Validaciones JS para formulario de administración
-import { validarNombreProducto, validarPrecio, validarCategoria, validarImgProd, validarDescripcionProd, validarCantStock } from "./validaciones.js";
+import {
+  validarNombreProducto,
+  validarPrecio,
+  validarCategoria,
+  validarImgProd,
+  validarDescripcionProd,
+  validarCantStock,
+} from "./validaciones.js";
 
 // Modal de Bootstrap
 const modalAdminProductos = new bootstrap.Modal(
@@ -125,38 +132,39 @@ function crearProducto(e) {
 
   if (creandoProducto) {
     //Validaciones JS
-    if (validarNombreProducto(nombreProducto.value, 3, 30) && 
-        validarPrecio(precioProducto.value, 1, 2000) &&
-        validarCategoria(categoriaProducto.value, 3, 20) &&
-        validarImgProd(imagenProducto.value) &&
-        validarDescripcionProd(descripcionProducto.value, 10, 100) &&
-        validarCantStock(stockDeProducto.value, 1, 1000)){
+    if (
+      validarNombreProducto(nombreProducto.value, 3, 30) &&
+      validarPrecio(precioProducto.value, 1, 2000) &&
+      validarCategoria(categoriaProducto.value, 3, 20) &&
+      validarImgProd(imagenProducto.value) &&
+      validarDescripcionProd(descripcionProducto.value, 10, 100) &&
+      validarCantStock(stockDeProducto.value, 1, 1000)
+    ) {
+      const nuevoProducto = new Producto(
+        undefined,
+        nombre.value,
+        precio.value,
+        categoria.value,
+        urlImagen.value,
+        descripcion.value,
+        stock.value
+      );
 
-    const nuevoProducto = new Producto(
-      undefined,
-      nombre.value,
-      precio.value,
-      categoria.value,
-      urlImagen.value,
-      descripcion.value,
-      stock.value
-    );
+      listaProductos.push(nuevoProducto);
+      limpiarFormulario();
 
-    listaProductos.push(nuevoProducto);
-    limpiarFormulario();
+      guardarEnLS();
 
-    guardarEnLS();
+      tablaProductos.classList.remove("d-none");
+      crearFila(nuevoProducto, listaProductos.length);
+      tituloSinProductos.classList.add("d-none");
 
-    tablaProductos.classList.remove("d-none");
-    crearFila(nuevoProducto, listaProductos.length);
-    tituloSinProductos.classList.add("d-none");
-
-    //  Mostrar Sweet Alert
-    Swal.fire({
-      title: "Se agregó el producto exitosamente",
-      text: `El producto ${nuevoProducto.nombre} fue creado exitosamente.`,
-      icon: "success",
-    });
+      //  Mostrar Sweet Alert
+      Swal.fire({
+        title: "Se agregó el producto exitosamente",
+        text: `El producto ${nuevoProducto.nombre} fue creado exitosamente.`,
+        icon: "success",
+      });
     }
   }
 }
@@ -221,6 +229,11 @@ window.editarProducto = (idProducto) => {
   }
 };
 
+window.verDetalleProducto = (idProducto) => {
+  window.location.href =
+    window.location.origin + "/pages/detalleProducto.html?id=" + idProducto;
+};
+
 window.eliminarProducto = (idProducto) => {
   Swal.fire({
     title: "¿Estas seguro que quieres borrar?",
@@ -251,9 +264,6 @@ window.eliminarProducto = (idProducto) => {
   });
 };
 
-window.verDetalleProducto = (idProducto) => {
-  window.location.href = window.location.origin + '/pages/detalleProducto.html?id=' + idProducto
-}
 
 btnNuevoProducto.addEventListener("click", mostrarModal);
 formulario.addEventListener("submit", crearProducto);
