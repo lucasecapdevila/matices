@@ -213,8 +213,43 @@
         </article>
       </section>
 
+      <!-- Filtros -->
+      <section class="bg-blanco">
+        <article
+          class="container my-3 p-4 bg-light rounded-top-5 d-flex justify-content-center align-items-center contenedor-busqueda"
+        >
+          <!-- Buscador -->
+          <form class="d-flex w-auto">
+            <div class="input-group">
+              <label
+                for="inputBuscar"
+                class="w-100 pt-2 me-2 tx-parrafo text-center mb-2 fs-5 fw-bold"
+              >
+                Buscar por producto o categoria:
+              </label>
+              <input
+                class="form-control rounded-start-4 ps-3 pb-2 inputBuscar border border-light"
+                id="inputBuscar"
+                type="search"
+                placeholder="Lapices..."
+                aria-label="search"
+              />
+              <button
+                type="submit"
+                class="btn BotonBusqueda rounded-end-4"
+                id="botonBuscar"
+              >
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </form>
+        </article>
+      </section>
+
       <!-- Productos -->
-      <section class="container p-4 pb-5 contenedorroductos my-3">
+      <section
+        class="container p-4 pb-5 contenedorProductos rounded-bottom-5 my-3"
+      >
         <h2 class="text-center tx-titulo fs-1 mb-4 tx-AzulOscuro">
           Nuestros Productos
         </h2>
