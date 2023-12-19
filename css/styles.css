@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@500&family=Roboto&display=swap");
 
 .bg-body-detalle {
-  background: #dbe8f7;
+  background: #fefefe;
 }
 
 body {
@@ -333,23 +333,22 @@ input::-webkit-inner-spin-button {
 
 /*! Estilos Agostina Error404 */
 @media screen and (max-width: 767px) {
-  .main-container button{
+  .main-container button {
     width: 80%;
   }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .main-container button{
+  .main-container button {
     width: 50%;
   }
 }
 
 @media screen and (min-width: 992px) {
-  .main-container button{
+  .main-container button {
     width: 33%;
   }
 }
-
 
 /*! Estilos Agostina - página Nosotros */
 .cuerpoNos {
@@ -511,8 +510,7 @@ input::-webkit-inner-spin-button {
 }
 
 .BotonBusqueda:hover {
-  background-color: #0d2572;
-  color: white;
+  background-color: #6f84c8;
 }
 
 .contenedor-busqueda {
@@ -521,4 +519,15 @@ input::-webkit-inner-spin-button {
 
 .bg-blanco {
   background-color: #ffffff;
+}
+
+/* Corección Página administración */
+.btn-crearProducto {
+  background-color: #274090;
+  color: white;
+}
+
+.btn-crearProducto:hover {
+  background-color: #6f84c8;
+  color: white;
 }
