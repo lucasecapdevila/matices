@@ -108,72 +108,120 @@
       </nav>
     </header>
 
-    <main>
-      <section>
-        <div
-          id="carouselMatices"
-          class="carousel slide"
-          data-bs-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="img/banner1.webp" class="d-block w-100" alt="banner" />
+    <main class="contenedorInicio">
+      <!-- Carousel -->
+      <section class="bg-RosaMatices">
+        <!-- Carousel Medianos y Grandes -->
+        <article class="d-none d-md-block">
+          <div
+            id="carouselMediano"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="7000">
+                <img src="./img/Banner0.png" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item" data-bs-interval="7000">
+                <img src="./img/Banner1.png" class="d-block w-100" alt="..." />
+              </div>
+              <div class="carousel-item" data-bs-interval="7000">
+                <img src="./img/Banner2.png" class="d-block w-100" alt="..." />
+              </div>
             </div>
-            <div class="carousel-item">
-              <img src="img/banner2.webp" class="d-block w-100" alt="banner" />
-            </div>
-            <div class="carousel-item">
-              <img src="img/banner3.webp" class="d-block w-100" alt="banner" />
-            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselMediano"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselMediano"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselMatices"
-            data-bs-slide="prev"
+        </article>
+        <!-- Carousel Pequeños -->
+        <article class="d-bloc d-md-none">
+          <div
+            id="carouselTelefonos"
+            class="carousel slide"
+            data-bs-ride="carousel"
           >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselMatices"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="./img/Banner0_Movil.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./img/Banner1_Movil.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./img/Banner2_Movil.png"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselTelefonos"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselTelefonos"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Siguiente</span>
+            </button>
+          </div>
+        </article>
       </section>
 
-      <section class="my-5 container">
-        <article class="row">
-          <div class="col-lg-6">
-            <h1 class="text-center tx-titulo">
-              ¿Ya compraste los regalos para estas fiestas?
-            </h1>
-            <p class="lead">
-              Nuestra cuidadosa selección de libros abarca desde clásicos
-              atemporales hasta las últimas tendencias en arte contemporáneo.
-              Explora las obras maestras de grandes maestros y descubre nuevas
-              voces que están dando forma al futuro del arte. <br />Nuestro
-              equipo apasionado está listo para guiarte y recomendarte las joyas
-              literarias y las herramientas perfectas para tu viaje artístico.
-              ¡Visítanos y déjate llevar por la magia de la creatividad en
-              Matices, donde cada libro es una obra de arte esperando ser
-              descubierta!
-            </p>
-          </div>
-          <aside class="col-lg-6">
-            <img
-              src="img/fox-60CpKQ7u-yE-unsplash.jpg"
-              class="img-fluid"
-              alt="publicidad"
-            />
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione quasi, alias numquam atque nihil et. Illo nostrum, veritatis voluptas sint nisi tempora nam excepturi odit exercitationem ad, optio, obcaecati consectetur!</p> -->
-          </aside>
-        </article>
+      <!-- Productos -->
+      <section class="container p-4 pb-5 contenedorroductos my-3">
+        <h2 class="text-center tx-titulo fs-1 mb-4 tx-AzulOscuro">
+          Nuestros Productos
+        </h2>
+        <article
+          class="d-flex justify-content-around flex-wrap"
+          id="grillaProductos"
+        ></article>
       </section>
     </main>
 
@@ -329,7 +377,7 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="js/main.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/navbar.js"></script>
   </body>
 </html>
