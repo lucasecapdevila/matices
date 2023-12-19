@@ -27,7 +27,7 @@ function generarGrilla() {
         $${producto.precio}
       </h5>
       <a
-        href="#"
+        href="/pages/detalleProducto.html?id=${producto.id}"
         class="btn btn-verProducto rounded-4 p-2 px-4 tx-parrafo fs-6 mt-2"
         >Ver Detalles</a
       >
