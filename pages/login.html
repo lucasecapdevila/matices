@@ -109,142 +109,89 @@
       </nav>
     </header>
 
-    <main class="container mt-2 text-center">
-      <h1>Lista de Productos</h1>
-      <button id="btnNuevoProducto" class="btn btn-primary">
-        Agregar nuevo producto
-      </button>
+    <main class="container-fluid d-flex flex-column justify-content-center">
+      <!-- Sign in -->
+      <section
+        class="row justify-content-center p-4 p-md-0 bg-light"
+        id="container-login"
+      >
+        <article
+          class="col-lg-6 col-md-8 d-flex flex-column justify-content-center p-md-5 formLogin p-3 bg-light"
+        >
+          <h2 class="tx-titulo text-center mb-lg-3 fs-1 tx-AzulOscuro">
+            ¡Bienvenido de nuevo!
+          </h2>
+          <p class="text-center tx-parrafo mb-lg-3">
+            Ingresa tus datos para empezar.
+          </p>
 
-      <section class="table-responsive mt-4">
-        <h3 id="sinProductos">En este momento no hay productos</h3>
-        <table id="tabla" class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">Precio</th>
-              <th scope="col">Categoría</th>
-              <th scope="col">Stock</th>
-              <th scope="col">Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="cuerpoTablaProductos">
-            <!-- Se crea dinamicamente -->
-          </tbody>
-        </table>
+          <form action="" class="mx-lg-5" method="post" id="form">
+            <div class="mb-md-4 mb-3" id="div-mail">
+              <label for="inputEmail" class="form-label tx-parrafo ps-1"
+                >E-Mail</label
+              >
+              <input
+                type="email"
+                required
+                autocomplete="username"
+                minlength="15"
+                maxlength="50"
+                class="inputLogin tx-parrafo ps-3"
+                id="inputEmail"
+                placeholder="johndoe@xyz.com"
+              />
+              <p class="text-danger ms-1 m-2" id="errorEmail"></p>
+            </div>
+            <div class="mb-md-4 mb-3">
+              <label for="inputPassword" class="form-label tx-parrafo ps-1"
+                >Contraseña</label
+              >
+              <input
+                type="password"
+                autocomplete="current-password"
+                required
+                minlength="8"
+                maxlength="35"
+                id="inputPassword"
+                class="inputLogin tx-parrafo ps-3"
+                placeholder="********"
+                aria-describedby="passwordHelpBlock"
+              />
+              <p class="text-danger ms-1 m-2" id="errorPassword"></p>
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn-iniciar tx-titulo px-4 py-2 my-lg-3 mb-md-4 mb-3"
+              >
+                Iniciar Sesión
+              </button>
+              <a href="#" class="d-block tx-parrafo mt-lg-2"
+                >¿Olvidaste tu contraseña?</a
+              >
+            </div>
+          </form>
+        </article>
+        <article
+          class="col-lg-6 col-md-12 bg-forms text-center d-none d-md-flex flex-column justify-content-center align-items-center"
+        >
+          <div class="mb-3 py-3">
+            <img
+              src="../img/Ilustración_Login.svg"
+              alt="Mujer Pintando"
+              class="w-100 mb-4 p-md-3"
+            />
+            <h2 class="tx-titulo text-light mb-3">¿Eres nuevo?</h2>
+            <p class="text-light mb-3 tx-parrafo">
+              Sé miembro de Matices ¡hoy mismo!
+            </p>
+            <button type="submit" class="btn-crear tx-titulo px-4 py-2 mb-lg-3">
+              Crear Cuenta
+            </button>
+          </div>
+        </article>
       </section>
     </main>
-
-    <!--* MODAL -->
-    <div
-      class="modal fade"
-      id="adminProductos"
-      tabindex="-1"
-      aria-labelledby="adminProductosLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="adminProductosLabel">
-              Administración de Productos
-            </h1>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <form id="formularioProducto">
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nombreProducto"
-                  minlength="3"
-                  maxlength="30"
-                  placeholder="Nombre"
-                  required
-                />
-                <label for="nombreProducto">Nombre del Producto</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="precioProducto"
-                  min="1"
-                  max="2000"
-                  step=".01"
-                  placeholder="Precio"
-                  required
-                />
-                <label for="precioProducto">Precio del Producto</label>
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="categoriaProducto"
-                  minlength="3"
-                  maxlength="20"
-                  placeholder="name@example.com"
-                  required
-                />
-                <label for="categoriaProducto">Categoría del producto</label>
-              </div>
-              <div id="contenedorUrlImagen" class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="imagenProducto"
-                  placeholder="Imagen"
-                  required
-                />
-                <label for="imagenProducto"
-                  >Agregue una ruta a la imagen del producto</label
-                >
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="descripcionProducto"
-                  minlength="10"
-                  maxlength="100"
-                  placeholder="Descripción del producto"
-                  required
-                />
-                <label for="descripcionProducto"
-                  >Descripción del producto</label
-                >
-              </div>
-              <div class="form-floating mb-3">
-                <input
-                  type="number"
-                  class="form-control"
-                  id="stockDeProducto"
-                  min="1"
-                  max="1000"
-                  placeholder="Cantidad en stock"
-                  required
-                />
-                <label for="stockDeProducto">Cantidad en stock</label>
-              </div>
-              <button
-                id="confirmarEdicionProducto"
-                type="submit"
-                class="btn btn-primary mt-2"
-              >
-                Confirmar
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
 
     <footer>
       <section
@@ -398,7 +345,7 @@
 
     <!-- Sweet Alert 2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/navbar.js"></script>
   </body>
 </html>
