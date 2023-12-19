@@ -1,5 +1,8 @@
 import Producto from "./classProducto.js";
 
+// Validaciones JS para formulario de administración
+import { validarNombreProducto, validarPrecio, validarCategoria, validarImgProd, validarDescripcionProd, validarCantStock } from "./validaciones.js";
+
 // Modal de Bootstrap
 const modalAdminProductos = new bootstrap.Modal(
   document.getElementById("adminProductos")
@@ -79,11 +82,13 @@ function crearProducto(e) {
   e.preventDefault();
 
   if (creandoProducto) {
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
+    //Validaciones JS
+    if (validarNombreProducto(nombreProducto.value, 3, 30) && 
+        validarPrecio(precioProducto.value, 1, 2000) &&
+        validarCategoria(categoriaProducto.value, 3, 20) &&
+        validarImgProd(imagenProducto.value) &&
+        validarDescripcionProd(descripcionProducto.value, 10, 100) &&
+        validarCantStock(stockDeProducto.value, 1, 1000)){
 
     const nuevoProducto = new Producto(
       undefined,
@@ -110,6 +115,7 @@ function crearProducto(e) {
       text: `El producto ${nuevoProducto.nombre} fue creado exitosamente.`,
       icon: "success",
     });
+    }
   }
 }
 
