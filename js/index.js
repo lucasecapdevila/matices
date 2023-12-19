@@ -10,7 +10,7 @@ console.log(listaProductos);
 function generarGrilla() {
   listaProductos.forEach((producto) => {
     grillaProductos.innerHTML += `
-    <div class="card cardProducto rounded-5 shadow mb-4">
+    <div class="card cardProducto rounded-5 shadow mb-4 mb-lg-5">
     <img
       src="${producto.urlImagen}"
       class="card-img-top"
