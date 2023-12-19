@@ -1,5 +1,8 @@
 import Producto from "./classProducto.js";
 
+// Validaciones JS para formulario de administración
+import { validarNombreProducto, validarPrecio, validarCategoria, validarImgProd, validarDescripcionProd, validarCantStock } from "./validaciones.js";
+
 // Modal de Bootstrap
 const modalAdminProductos = new bootstrap.Modal(
   document.getElementById("adminProductos")
@@ -50,7 +53,7 @@ const crearFila = (producto, fila) => {
     <td class="d-flex justify-content-center">
       <button class="btn btn-primary">Ver detalle</button>
       <button class="btn btn-warning mx-2" onclick="editarProducto('${producto.id}')">Editar</button>
-      <button class="btn btn-danger">Borrar</button>
+      <button class="btn btn-danger" onclick="eliminarProducto('${producto.id}')">Borrar</button>
     </td>
   </tr>
   `;
@@ -79,11 +82,13 @@ function crearProducto(e) {
   e.preventDefault();
 
   if (creandoProducto) {
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
-    //! Agregar validaciones JS
+    //Validaciones JS
+    if (validarNombreProducto(nombreProducto.value, 3, 30) && 
+        validarPrecio(precioProducto.value, 1, 2000) &&
+        validarCategoria(categoriaProducto.value, 3, 20) &&
+        validarImgProd(imagenProducto.value) &&
+        validarDescripcionProd(descripcionProducto.value, 10, 100) &&
+        validarCantStock(stockDeProducto.value, 1, 1000)){
 
     const nuevoProducto = new Producto(
       undefined,
@@ -110,6 +115,7 @@ function crearProducto(e) {
       text: `El producto ${nuevoProducto.nombre} fue creado exitosamente.`,
       icon: "success",
     });
+    }
   }
 }
 
@@ -170,6 +176,37 @@ window.editarProducto = (idProducto) => {
       ocultarModal();
     });
   }
+};
+
+window.eliminarProducto = (idProducto) => {
+  Swal.fire({
+    title: "¿Estas seguro que quieres borrar?",
+    text: "No puedes revertir este paso",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const posicionProductoAEliminar = listaProductos.findIndex(
+        (itemProducto) => itemProducto.id === idProducto
+      );
+      listaProductos.splice(posicionProductoAEliminar, 1);
+      guardarEnLS();
+      const tablaProductos = document.querySelector("tbody");
+      console.log(tablaProductos.children[posicionProductoAEliminar]);
+      tablaProductos.removeChild(
+        tablaProductos.children[posicionProductoAEliminar]
+      );
+      Swal.fire({
+        title: "Producto eliminado",
+        text: "El Producto fue eliminado exitosamente",
+        icon: "success",
+      });
+    }
+  });
 };
 
 btnNuevoProducto.addEventListener("click", mostrarModal);
